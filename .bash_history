@@ -34,3 +34,71 @@ nvim init.vim
 nvim
 explorer.exe .
 nvim
+nvim
+nvim
+curl -fsSL https://deb.nodesource.com/setup_15.x | sudo -E bash -
+nvim
+sudo apt-get install node
+sudo apt-get install node.js
+nvim
+tmux
+tmux
+tmux
+nvim
+cd ~
+ls
+ls -a
+cd .local
+ls-a
+ls
+cd ..
+cd .
+ls -a
+nvim
+nvim
+nvim
+tmux kill-session
+cd ~/.config
+ls -a
+cd nvim
+ls
+cd ..
+ls
+cd ..
+ls -a
+cd .config
+git init
+git commit -a
+git config --global user.email "dan.walters5@outlook.com"
+git config --global user.name "Dan Walters"
+git commit -a
+git add *
+ls
+ls -a
+rm -r .git
+git status
+ls -a
+cd nvim
+ls
+cd ../..
+git init
+git status
+git add *
+git status
+git status
+git add *
+git status
+git commit
+git config --global core.editor nvim
+git commit
+git remote add origint https://gitlab.com/dwdwdan/nvim-dotfiles.git
+git push origin master
+git push -u origin master
+git push
+git remote add origin https://gitlab.com/dwdwdan/nvim-dotfiles.git
+git push
+git push origin master
+tmux list-sessions
+tmux attach
+tmux kill-session
+tmux list-sessions
