@@ -1,2 +1,4 @@
 .config/nvim/plugged/*
 codeTesting/*
+.config/coc/*
+!.config/coc/ultisnips/*
