@@ -2,3 +2,6 @@
 codeTesting/*
 .config/coc/*
 !.config/coc/ultisnips/*
+.tmux/*
+.local/*
+.cache/*

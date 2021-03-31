@@ -102,3 +102,92 @@ tmux list-sessions
 tmux attach
 tmux kill-session
 tmux list-sessions
+tmux list-sessions
+nvim
+cd ~/.config/nvim
+git status
+git commit -a
+git push
+git push --set-upstream origin master
+git push
+tmux list-sessions
+tmux
+quit
+exit
+tmux
+clc
+clear
+quit
+exit
+exit
+tmux -u
+exit
+nvim ~/.tmux.conf 
+tmux source ~/.tmux.conf 
+sudo apt-get install fonts-powerline
+nvim ~/.tmux.conf 
+tmux source ~/.tmux.conf 
+nvim
+tmux kill-session
+nvim ~/.tmux/conf
+nvim ~/.tmux.conf
+tmux exit
+tmux kill-session
+tmux
+nvim
+tmux
+exit
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
+nvim ~/.tmux.conf
+tmux source ~/.tmux.conf
+nvim ~/.tmux.conf
+tmux source ~/.tmux.conf
+tmux kill-session -a
+tmux list-sessions
+nvim
+nvim
+nvim
+nvim
+nvim
+nvim
+nvim
+nvim .hyper.js
+ls -a
+exit
+exit
+tmux
+exit
+tmux
+cd ~/.config/nvim/
+mkdir after
+cd after
+mkdir ftplugin
+cd ftplugin
+nvim tex.vim
+nvim
+nvim
+nvim
+nvim ~
+nvim
+nvim
+nvim
+nvim
+nvim
+nvim
+nvim
+exit
+pip3 install neovim-remote
+sudo apt install python3-pip
+pip3 install neovim-remote
+sudo apt-get install procps
+latexmk -v
+sudo apt install latexmk
+latexmk
+cd ~
+ls
+cd codeTesting/
+latexmk latex.tex 
+ls
+exit
+tmux
+exit

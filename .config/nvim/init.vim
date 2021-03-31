@@ -1,15 +1,17 @@
 call plug#begin(stdpath('config').'/plugged')
 Plug 'neoclide/coc.nvim',{'branch':'release'}
-Plug 'itchny/lightline.vim'
+Plug 'itchyny/lightline.vim'
 Plug 'lervag/vimtex'
 Plug 'arcticicestudio/nord-vim'
 Plug 'tpope/vim-surround'
 Plug 'preservim/nerdtree'
+Plug 'vimwiki/vimwiki'
 call plug#end()
 
 
 inoremap jk <esc>
 colorscheme nord
+let g:lightline = {'colorscheme':'nord'}
 
 set number
 set relativenumber
@@ -31,6 +33,7 @@ let &showbreak='~~' " Show ~~ at the start of wrapped lines
 set backspace=indent,start,eol
 
 hi visual ctermbg=yellow ctermfg=black
+hi comment ctermfg=grey
 
 if has('virtualedit')
 		set virtualedit=block " Allows block visual selection of empty space
@@ -56,21 +59,24 @@ nmap <leader>f :NERDTreeToggle <CR>
 
 let g:coc_global_extensions = ["coc-snippets","coc-json","coc-vimtex"]
 
-" use tab to cycle between suggested autocompletes
+" Use tab to trigger completion and navigate
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
-
-" Use <s-tab> to cycle backwards
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
+function! s:check_back_space() abort
+	  let col = col('.') - 1
+	    return !col || getline('.')[col - 1]  =~# '\s'
+	 endfunction
+	
 " Use <C-s> to expand snippets
-imap <C-s> <Plug>(coc-snippets-expand) 
+imap <C-s> <Plug>(coc-snippets-expand)
 let g:coc_snippet_next = '<C-a>' " Use <C-a> to move to next location in snippet
 
 " Echo current syntax type
-command SynID echo synIDattr(synID(line("."), col("."), 1), "name")
+command! SynID echo synIDattr(synID(line("."), col("."), 1), "name")
 
 " Easier navigation around splits
 nnoremap <C-h> <C-w>h
@@ -78,4 +84,5 @@ nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
 
-
+let g:vimtex_compiler_progname='nvr'
+let g:vimtex_fold_enabled=1
