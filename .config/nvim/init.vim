@@ -25,6 +25,7 @@ set lazyredraw
 set nojoinspaces
 set cursorline
 
+set list lcs=tab:\|\ "Use | character to show indent levels
 set wrap " Turn word wrapping on
 set breakindent " Indent after line wrapped
 set linebreak " Only break at certain characters
