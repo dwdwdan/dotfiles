@@ -399,3 +399,6 @@ exit
 ~
 :q
 q
+nvim .gitignore
+cd ~
+nvim .gitignore

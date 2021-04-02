@@ -6,6 +6,7 @@ Plug 'lervag/vimtex'
 Plug 'tpope/vim-surround'
 Plug 'preservim/nerdtree'
 Plug 'christianchiarulli/nvcode-color-schemes.vim'
+Plug 'tpope/vim-fugitive'
 call plug#end()
 
 
@@ -81,6 +82,9 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+
+nnoremap j gj
+nnoremap k gk
 
 let g:vimtex_compiler_progname='nvr'
 let g:vimtex_fold_enabled=1
