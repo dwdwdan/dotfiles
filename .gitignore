@@ -1,7 +1,6 @@
+*
+!.config/nvim/*
 .config/nvim/plugged/*
-codeTesting/*
-.config/coc/*
-!.config/coc/ultisnips/*
-.tmux/*
-.local/*
-.cache/*
+
+!/config/coc/ultisnips/*
+!.tmux.conf
