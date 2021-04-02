@@ -90,3 +90,8 @@ nnoremap k gk
 
 let g:vimtex_compiler_progname='nvr'
 let g:vimtex_fold_enabled=1
+
+augroup DWDWDAN
+	autocmd!
+	autocmd BufWritePre * :%s/\s\+$//e
+augroup END

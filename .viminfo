@@ -10,11 +10,18 @@
 
 # hlsearch on (H) or off (h):
 ~h
+# Last Substitute String:
+$
+
 # Command Line History (newest to oldest):
+:q
+|2,0,1617373018,,"q"
 :wq
 |2,0,1617045781,,"wq"
 
 # Search String History (newest to oldest):
+? @$
+|2,1,1617373012,,"@$"
 
 # Expression History (newest to oldest):
 
@@ -25,16 +32,28 @@
 # Registers:
 
 # File marks:
-'0  3  14  ~/.config/nvim/init.vim
-|4,48,3,14,1617045781,"~/.config/nvim/init.vim"
+'0  1  0  ~/codeTesting/latex.tex
+|4,48,1,0,1617373018,"~/codeTesting/latex.tex"
+'1  3  14  ~/.config/nvim/init.vim
+|4,49,3,14,1617045781,"~/.config/nvim/init.vim"
 
 # Jumplist (newest first):
+-'  1  0  ~/codeTesting/latex.tex
+|4,39,1,0,1617373018,"~/codeTesting/latex.tex"
+-'  3  14  ~/.config/nvim/init.vim
+|4,39,3,14,1617045781,"~/.config/nvim/init.vim"
 -'  3  14  ~/.config/nvim/init.vim
 |4,39,3,14,1617045781,"~/.config/nvim/init.vim"
 -'  1  0  ~/.config/nvim/init.vim
 |4,39,1,0,1617045722,"~/.config/nvim/init.vim"
+-'  1  0  ~/.config/nvim/init.vim
+|4,39,1,0,1617045722,"~/.config/nvim/init.vim"
 
 # History of marks within files (newest to oldest):
+
+> ~/codeTesting/latex.tex
+	*	1617373015	0
+	"	1	0
 
 > ~/.config/nvim/init.vim
 	*	1617045779	0
