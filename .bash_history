@@ -191,3 +191,211 @@ ls
 exit
 tmux
 exit
+cd ~/codeTesting/
+nvim latex.tex
+nvim latex.tex
+nvim
+nvim latex.tex 
+nvim latex.tex 
+nvim latex.tex 
+nvim latex.tex 
+nvim latex.tex 
+nvim latex.tex 
+nvim latex.tex 
+cd ..
+nvim
+:q
+exit
+cd ~/codeTesting/
+ls
+r latex.dvi
+rm latex.dvi
+ls
+rm latex.synctex.gz 
+ls
+cd ..
+ls -a
+cd .config
+ls
+cd wslu
+ls
+cd ..
+cd nvim
+ls
+cd ..
+cd coc/ultisnips/
+ls
+cd ~
+nvim .gitignore
+cd codeTesting/
+ls
+rm latex.texMYVIMRC 
+explorer.exe .
+cd ..
+git status
+nvim .gitignore
+git add .gitignore
+git commit
+git add *
+git commit
+git add *
+git commit
+git commit -a
+nvim .gitignore
+git commit -a
+nvim .gitignore
+git add .gitignore
+git commit
+git add *
+git status
+git add -A
+cd .tmux/plugins
+ls
+cd ..
+ls
+cd ..
+nvim .gitignore
+git add -A
+git commit
+nvim .gitignore
+git reset
+git status
+git add .config/nvim/after
+git add .tmux.conf
+git status
+git add -A
+git status
+nvim .gitignore
+git reset
+git add -A
+git status
+git commit
+git push
+ls
+git init
+git status
+cd vimwiki
+git init
+git remote add origin https://gitlab.com/dwdwdan/vimwiki.git
+ls
+git add .
+git commit -m "Initial Commit"
+git push
+git push --set-upstream origin master
+cd ..
+ls
+cd vimwiki_html/
+ls
+index.html
+start index.html
+firefox index.html
+firefox.exe index.html
+cd ..
+ls
+cd LatexPackage/
+nvim
+nvim myPackage.sty
+git init
+git remote add origin https://gitlab.com/dwdwdan/customlatexpackage.git
+mv myPackage.sty
+mv myPackage.sty main.sty
+git add .
+git status
+rm myPackage.sty\:Zone.Identifier 
+git status
+git add .
+git status
+git commit
+git push
+git push --set-upstream origin master
+ls
+git commit
+git add .
+git status
+git commit
+git push
+git add .
+git commit
+git push
+git add .
+git commit
+git push
+git log
+git log --oneline
+git log --oneline --decorate
+git log --pretty="%s"
+git log --pretty="- %s"
+exit
+tmux attach
+tmux
+exit
+sudo apt=get remove nvim
+sudo apt-get remove nvim
+sudo apt-get remove neovim
+sudo apt-get install snap
+sudo snap install --edge nvim --classic
+snap -v
+snap
+snap warnings
+sudo snap install --edge nvim --classic
+ping http://localhost.v2
+ping http://localhost.v2/nvim
+sudo snap install --beta nvim --classic
+systemctl status snapd.service
+exit
+tmux
+exut
+exit
+treesitter
+tree-sitter
+printf "\x1b[38;2;255;100;0mTRUECOLOR\x1b[0m\n"
+sudo apt-get install fonts-powerline
+exit
+nvim .
+nvim
+nvim
+nvim
+exit
+snap install --edge nvim --classic
+snap refresh snapd
+systemctl status snapd
+sudo add-apt-repository ppa:neovim-ppa/unstable
+sudo apt-get neovim
+sudo apt-get nvim
+sudo apt-get install nvim
+sudo apt-get install neovim
+nvim -V
+nvim --version
+nvim
+tmux
+exit
+exit
+exit
+tmux
+tmux
+exit
+# clone
+git clone https://github.com/powerline/fonts.git --depth=1
+# install
+cd fonts
+./install.sh
+# clean-up a bit
+cd ..
+rm -rf fonts
+exit
+tmux
+exit
+clear
+exit
+tmux
+exit
+exit
+tmux
+exit
+nvim
+exit
+tmux
+exit
+~
+:q
+q

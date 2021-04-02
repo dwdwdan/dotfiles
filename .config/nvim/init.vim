@@ -1,24 +1,24 @@
 call plug#begin(stdpath('config').'/plugged')
 Plug 'neoclide/coc.nvim',{'branch':'release'}
-Plug 'itchyny/lightline.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'lervag/vimtex'
-Plug 'arcticicestudio/nord-vim'
 Plug 'tpope/vim-surround'
 Plug 'preservim/nerdtree'
-Plug 'vimwiki/vimwiki'
+Plug 'christianchiarulli/nvcode-color-schemes.vim'
 call plug#end()
 
 
 inoremap jk <esc>
-colorscheme nord
-let g:lightline = {'colorscheme':'nord'}
+colorscheme onedark
+let g:airline_theme='onedark'
+set termguicolors
 
 set number
 set relativenumber
-set hlsearch
+set nohlsearch
 set ignorecase
 set incsearch
-set autochdir
 set lazyredraw
 set nojoinspaces
 set cursorline
@@ -48,8 +48,6 @@ nnoremap / /\v
 nnoremap <leader>o o<Esc>k
 nnoremap <leader>O O<Esc>j
 
-" Command to clear search highlighting
- nnoremap <leader>n :noh<Cr>
 
 set scrolloff=3 " keep 3 lines visible below/above cursor
 set sidescrolloff=3 " Similarly but horizontally
