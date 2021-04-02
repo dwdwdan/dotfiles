@@ -31,7 +31,7 @@ set breakindent " Indent after line wrapped
 set linebreak " Only break at certain characters
 set breakat -= "/" " Make it so that it doesn't break at /
 set breakindentopt=shift:2 " Indent wrapped words by 2
-let &showbreak='~~' " Show ~~ at the start of wrapped lines
+let &showbreak='⮡ ' " Show ⮡ at the start of wrapped lines (Unicode U+2BA1)
 
 set backspace=indent,start,eol
 
