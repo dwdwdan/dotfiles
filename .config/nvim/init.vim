@@ -14,7 +14,6 @@ inoremap jk <esc>
 colorscheme onedark
 let g:airline_theme='onedark'
 set termguicolors
-
 set number
 set relativenumber
 set nohlsearch
@@ -37,7 +36,7 @@ hi visual ctermbg=yellow ctermfg=black
 hi comment ctermfg=grey
 
 if has('virtualedit')
-		set virtualedit=block " Allows block visual selection of empty space
+	set virtualedit=block " Allows block visual selection of empty space
 endif
 
 set tabstop=3 " Make tabs 3 spaces long
@@ -60,16 +59,16 @@ let g:coc_global_extensions = ["coc-snippets","coc-json","coc-vimtex"]
 
 " Use tab to trigger completion and navigate
 inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
+	\ pumvisible() ? "\<C-n>" :
+	\ <SID>check_back_space() ? "\<TAB>" :
+	\ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 function! s:check_back_space() abort
-	  let col = col('.') - 1
-	    return !col || getline('.')[col - 1]  =~# '\s'
-	 endfunction
-	
+	let col = col('.') - 1
+	return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
 " Use <C-s> to expand snippets
 imap <C-s> <Plug>(coc-snippets-expand)
 let g:coc_snippet_next = '<C-a>' " Use <C-a> to move to next location in snippet
