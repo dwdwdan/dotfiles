@@ -402,3 +402,92 @@ q
 nvim .gitignore
 cd ~
 nvim .gitignore
+sudo apt-get treesitter
+npm install tree-sitter-cli
+npm install -g npm@7.8.0
+clear
+tree-sitter --version
+libstdc++
+cd ~
+git status
+ls
+ls -la
+git status
+git add .gitignore
+git commit
+git status
+git commit -a
+git push
+cd codeTesting/
+nvim .
+nvim .
+vim .
+nvim .
+nvim latex.tex
+clear
+cd ..
+cd .local
+ls-la
+ls -la
+cd share
+ls -la
+cd ..
+cd lib
+ls -la
+cd ../bin
+ls -la
+cd ../..
+git rm --cached .landscape/*
+git rm --cached .bash_history .motd_shown .sudo_as_admin_successful .viminfor
+git rm --cached .viminfo
+git status
+git commit
+git push
+clear
+exit
+nvim
+nvim
+alias vimrc "nvim ~/.config/nvim/init.vim"
+alias vim=nvim
+alias vimrc="nvim ~/.config/nvim/init.vim"
+vimrc
+vimrc
+chktex
+sudo apt install chktex
+chktex
+clear
+chktex
+chktex
+vimrc
+vimrc
+clear
+vimrc
+vimrc
+exit
+tmux
+exit
+vimrc
+cd ~
+ls -la
+nvim .bashrc
+source .bashrc
+q
+tmux
+q
+exit
+q
+cd ~
+nvim .bashrc
+:q
+q
+askjas
+q
+q
+q
+cd ~
+nvim .bashrc]
+nvim .bashrc
+source .bashrc
+vim
+q
+q
