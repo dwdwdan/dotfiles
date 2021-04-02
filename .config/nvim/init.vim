@@ -26,6 +26,8 @@ set nojoinspaces
 set cursorline
 
 set list lcs=tab:\|\ "Use | character to show indent levels
+
+" Word Wrapping
 set nowrap " Turn word wrapping on
 set breakindent " Indent after line wrapped
 set linebreak " Only break at certain characters
@@ -36,9 +38,6 @@ let &showbreak='⮡ ' " Show ⮡ at the start of wrapped lines (Unicode U+2BA1)
 nnoremap <silent> <leader>w :set wrap! <CR> " Toggle to turn wrap on and off
 
 set backspace=indent,start,eol
-
-hi visual ctermbg=yellow ctermfg=black
-hi comment ctermfg=grey
 
 if has('virtualedit')
 	set virtualedit=block " Allows block visual selection of empty space
