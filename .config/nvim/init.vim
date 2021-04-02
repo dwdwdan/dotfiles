@@ -8,6 +8,7 @@ Plug 'preservim/nerdtree'
 Plug 'christianchiarulli/nvcode-color-schemes.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-syntastic/syntastic'
+Plug 'karb94/neoscroll.nvim'
 call plug#end()
 
 
