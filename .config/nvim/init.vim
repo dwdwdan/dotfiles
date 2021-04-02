@@ -26,12 +26,14 @@ set nojoinspaces
 set cursorline
 
 set list lcs=tab:\|\ "Use | character to show indent levels
-set wrap " Turn word wrapping on
+set nowrap " Turn word wrapping on
 set breakindent " Indent after line wrapped
 set linebreak " Only break at certain characters
 set breakat -= "/" " Make it so that it doesn't break at /
 set breakindentopt=shift:2 " Indent wrapped words by 2
 let &showbreak='⮡ ' " Show ⮡ at the start of wrapped lines (Unicode U+2BA1)
+
+nnoremap <silent> <leader>w :set wrap! <CR> " Toggle to turn wrap on and off
 
 set backspace=indent,start,eol
 
