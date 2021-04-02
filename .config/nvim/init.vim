@@ -9,6 +9,7 @@ Plug 'christianchiarulli/nvcode-color-schemes.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-syntastic/syntastic'
 Plug 'karb94/neoscroll.nvim'
+Plug 'junegunn/fzf', {'do':{-> fzf#install() } } | Plug 'junegunn/fzf.vim'
 call plug#end()
 
 
@@ -92,6 +93,8 @@ nnoremap k gk
 
 let g:vimtex_compiler_progname='nvr'
 let g:vimtex_fold_enabled=1
+
+nnoremap <C-p> :Files <CR>
 
 augroup DWDWDAN
 	autocmd!
