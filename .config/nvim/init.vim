@@ -7,6 +7,7 @@ Plug 'tpope/vim-surround'
 Plug 'preservim/nerdtree'
 Plug 'christianchiarulli/nvcode-color-schemes.vim'
 Plug 'tpope/vim-fugitive'
+Plug 'vim-syntastic/syntastic'
 call plug#end()
 
 
@@ -14,6 +15,7 @@ inoremap jk <esc>
 colorscheme onedark
 let g:airline_theme='onedark'
 set termguicolors
+
 set number
 set relativenumber
 set nohlsearch
