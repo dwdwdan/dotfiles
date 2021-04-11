@@ -16,6 +16,7 @@ call plug#end()
 
 " Roll from j to k to leave insert mode
 inoremap jk <esc>
+let mapleader=" "
 
 "Colourscheme setup
 colorscheme onedark
