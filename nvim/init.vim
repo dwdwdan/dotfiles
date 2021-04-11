@@ -107,6 +107,7 @@ let g:vimtex_fold_enabled=1
 
 " Use <C-p> to find a file in the project using fzf
 nnoremap <C-p> :Files <CR>
+let $FZF_DEFAULT_COMMAND="find . -not -path \"*/.git/*\"" " Include dotfiles but not any files inside a .git folder
 
 " use ga to use EasyAlign plugin
 xmap ga <Plug>(EasyAlign)
