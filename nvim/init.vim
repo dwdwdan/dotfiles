@@ -61,7 +61,7 @@ set sidescrolloff=3 " Similarly but horizontally
 let NERDTreeShowHidden=1
 nmap <leader>f :NERDTreeToggle <CR>
 
-let g:coc_global_extensions = ["coc-snippets","coc-json","coc-vimtex"]
+let g:coc_global_extensions = ["coc-snippets","coc-json","coc-vimtex","coc-git"]
 
 " Use tab to trigger completion and navigate
 inoremap <silent><expr> <TAB>
