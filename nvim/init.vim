@@ -117,6 +117,8 @@ let $FZF_DEFAULT_COMMAND="find . -not -path \"*/.git/*\"" " Include dotfiles but
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
+lua require('neoscroll').setup()
+
 augroup DWDWDAN
 	autocmd!
 	autocmd BufWritePre * :%s/\s\+$//e " Clears white space at end of lign on save
