@@ -1,8 +1,0 @@
-*
-!.config/nvim/*
-.config/nvim/plugged/*
-
-!/config/coc/ultisnips/*
-!.tmux.conf
-!.bashrc
-!.bash_profile
