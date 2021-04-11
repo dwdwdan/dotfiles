@@ -37,7 +37,7 @@ set nojoinspaces " Don't insert 2 spaces when joining lines after punctuation
 set cursorline " Highlight the lighn the cursor is on
 
 " Use | character to show indent levels
-set list lcs=tab:\|\
+set list lcs=tab:\|\ "
 
 " Word Wrapping
 set nowrap " Turn word wrapping on
