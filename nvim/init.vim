@@ -18,6 +18,9 @@ call plug#end()
 inoremap jk <esc>
 let mapleader=" "
 
+" Command to reload init.vim
+command! Vimrc so ~/.config/nvim/init.vim
+
 "Colourscheme setup
 colorscheme onedark
 let g:airline_theme='onedark'
