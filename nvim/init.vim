@@ -10,6 +10,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'vim-syntastic/syntastic'
 Plug 'karb94/neoscroll.nvim'
 Plug 'junegunn/fzf', {'do':{-> fzf#install() } } | Plug 'junegunn/fzf.vim'
+Plug 'junegunn/vim-easy-align'
 call plug#end()
 
 
@@ -95,6 +96,9 @@ let g:vimtex_compiler_progname='nvr'
 let g:vimtex_fold_enabled=1
 
 nnoremap <C-p> :Files <CR>
+
+xmap ga <Plug>(EasyAlign)
+nmap ga <Plug>(EasyAlign)
 
 augroup DWDWDAN
 	autocmd!
