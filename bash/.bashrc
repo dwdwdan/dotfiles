@@ -33,7 +33,7 @@ gitForPrompt(){
 export PS1;
 
 alias vim=nvim
-alias vimrc="cd ~/dotfiles;vim ."
+alias dotfiles="cd ~/dotfiles;vim ."
 alias q="exit"
 alias gs="git status"
 
