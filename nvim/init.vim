@@ -110,7 +110,9 @@ let g:vimtex_compiler_progname='nvr'
 let g:vimtex_fold_enabled=1
 
 " Use <C-p> to find a file in the project using fzf
-nnoremap <C-p> :Files <CR>
+nnoremap <C-p> :Files<CR>
+" Use P to find text in the current file
+nnoremap P :Rg<CR>
 let $FZF_DEFAULT_COMMAND="find . -not -path \"*/.git/*\"" " Include dotfiles but not any files inside a .git folder
 
 " use ga to use EasyAlign plugin
