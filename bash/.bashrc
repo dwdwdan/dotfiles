@@ -35,6 +35,7 @@ export PS1;
 alias vim=nvim
 alias vimrc="cd ~/dotfiles;vim ."
 alias q="exit"
+alias gs="git status"
 
 # cd to selected directory
 fd() {
