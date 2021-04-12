@@ -69,6 +69,7 @@ nnoremap <leader>O O<Esc>j
 
 set scrolloff=3 " keep 3 lines visible below/above cursor
 set sidescrolloff=3 " Similarly but horizontally
+set signcolumn=yes
 
 let NERDTreeShowHidden=1
 " Use <leader>f to toggle NERDTree
