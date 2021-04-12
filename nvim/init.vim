@@ -38,6 +38,10 @@ set cursorline " Highlight the lighn the cursor is on
 " Use | character to show indent levels
 set list lcs=tab:\|\ "
 
+set colorcolumn=120,121
+hi colorcolumn guibg=black
+
+
 " Word Wrapping
 set nowrap " Turn word wrapping on
 set breakindent " Indent after line wrapped
