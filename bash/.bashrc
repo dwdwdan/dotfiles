@@ -36,6 +36,8 @@ alias vim=nvim
 alias dotfiles="cd ~/dotfiles;vim ."
 alias q="exit"
 alias gs="git status"
+alias cls="clear"
+alias bashrc="source ~/.bashrc"
 
 # cd to selected directory
 fd() {
