@@ -21,14 +21,11 @@ gitForPrompt(){
 		then
 			gitStatement+="↑";
 		fi
-
-
 		gitStatement+=")";
 	else
 		gitStatement="";
 	fi
 }
-
 
 export PS1;
 
