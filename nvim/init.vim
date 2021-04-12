@@ -8,7 +8,6 @@ Plug 'preservim/nerdtree'
 Plug 'christianchiarulli/nvcode-color-schemes.vim'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-syntastic/syntastic'
-Plug 'karb94/neoscroll.nvim'
 Plug 'junegunn/fzf', {'do':{-> fzf#install() } } | Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
 call plug#end()
@@ -116,8 +115,6 @@ let $FZF_DEFAULT_COMMAND="find . -not -path \"*/.git/*\"" " Include dotfiles but
 " use ga to use EasyAlign plugin
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
-
-lua require('neoscroll').setup()
 
 augroup DWDWDAN
 	autocmd!
