@@ -16,7 +16,7 @@ gitForPrompt(){
 		then
 			gitStatement+="!";
 		fi
-		unpushed=$(git rev-list master ^origin/master)
+		unpushed=$(git rev-list $branch ^origin/$branch)
 		if [ -n "$unpushed" ];
 		then
 			gitStatement+="↑";
