@@ -38,7 +38,7 @@ set cursorline " Highlight the lighn the cursor is on
 " Use | character to show indent levels
 set list lcs=tab:\|\ "
 
-set colorcolumn=120,121
+let &colorcolumn=join(range(120,999),",")
 hi colorcolumn guibg=black
 
 
