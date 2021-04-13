@@ -1,0 +1,62 @@
+# Document Templates
+snippet PAT "PAT Problem template"
+\documentclass{article}
+\usepackage{myPackage}
+
+\title{${1:PAT}}
+\author{${2:D Walters}}
+
+\begin{document}
+	$0
+\end{document}
+endsnippet
+
+snippet article "General article template"
+\documentclass{article}
+\usepackage{myPackage}
+
+\title{${1:Title}}
+\author{${2:D Walters}}
+
+\begin{document}
+	$0
+\end{document}
+endsnippet
+
+# Basic begin env
+snippet begin "General begin env"
+\begin{${1:Environment}}
+	$0
+\end{$1}
+endsnippet
+
+snippet \[ "Display Math mode" A
+\[
+	$0
+\]
+endsnippet
+# A valid snippet should starts with:
+#
+#		snippet trigger_word [ "description" [ options ] ]
+#
+# and end with:
+#
+#		endsnippet
+#
+# Snippet options:
+#
+#		b - Beginning of line.
+#		i - In-word expansion.
+#		w - Word boundary.
+#		r - Regular expression
+#		e - Custom context snippet
+#		A - Snippet will be triggered automatically, when condition matches.
+#
+# Basic example:
+#
+#		snippet emitter "emitter properties" b
+#		private readonly ${1} = new Emitter<$2>()
+#		public readonly ${1/^_(.*)/$1/}: Event<$2> = this.$1.event
+#		endsnippet
+#
+# Online reference: https://github.com/SirVer/ultisnips/blob/master/doc/UltiSnips.txt
