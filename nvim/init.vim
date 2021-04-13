@@ -124,6 +124,9 @@ let $FZF_DEFAULT_COMMAND="find . -not -path \"*/.git/*\"" " Include dotfiles but
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
+" Command to easily find TODO's in project
+command! TODO Rg TODO
+
 augroup DWDWDAN
 	autocmd!
 	autocmd BufWritePre * :%s/\s\+$//e " Clears white space at end of lign on save
