@@ -28,6 +28,7 @@ let g:gruvbox_vert_split='bg3'
 
 colorscheme gruvbox
 let g:airline_theme='base16_gruvbox_dark_hard'
+let g:airline_powerline_fonts=1
 set termguicolors
 
 
