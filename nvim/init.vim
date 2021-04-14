@@ -22,8 +22,8 @@ let mapleader=" "
 command! Vimrc so ~/.config/nvim/init.vim
 
 "Colourscheme setup
-colorscheme onedark
-let g:airline_theme='onedark'
+colorscheme gruvbox
+let g:airline_theme='base16_gruvbox_dark_hard'
 set termguicolors
 
 
