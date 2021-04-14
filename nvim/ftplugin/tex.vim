@@ -6,4 +6,4 @@ set wrap
 " If in a visual selection, use that
 xmap <leader>& ga*&
 " Use if in normal mode, assume we want inside the environment
-nmap <leader>& gaie*&
+nmap <leader>& viega*&
