@@ -94,9 +94,9 @@ function! s:check_back_space() abort
 	return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-" Use <C-s> to expand snippets
-imap <C-s> <Plug>(coc-snippets-expand)
-let g:coc_snippet_next = '<C-a>' " Use <C-a> to move to next location in snippet
+" Use <C-d> to expand snippets
+imap <C-d> <Plug>(coc-snippets-expand)
+let g:coc_snippet_next = '<C-f>' " Use <C-f> to move to next location in snippet
 
 " Echo current syntax type
 command! SynID echo synIDattr(synID(line("."), col("."), 1), "name")
