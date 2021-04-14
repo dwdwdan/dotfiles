@@ -11,6 +11,7 @@ Plug 'vim-syntastic/syntastic'
 Plug 'junegunn/fzf', {'do':{-> fzf#install() } } | Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'wincent/scalpel'
+Plug 'preservim/nerdcommenter'
 call plug#end()
 
 
