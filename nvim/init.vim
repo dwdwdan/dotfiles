@@ -12,6 +12,7 @@ Plug 'junegunn/fzf', {'do':{-> fzf#install() } } | Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'wincent/scalpel'
 Plug 'preservim/nerdcommenter'
+Plug 'thaerkh/vim-workspace'
 call plug#end()
 
 set termguicolors
@@ -173,6 +174,14 @@ command! TODO Rg TODO
 " use ga to use EasyAlign plugin
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
+
+
+""""""""""""""""""""""""""""""
+"       VIM-WORKSPACE        "
+""""""""""""""""""""""""""""""
+let g:workspace_session_directory = $HOME . '/.vimfiles/sessions/'
+let g:workspace_undodir = $HOME . '/.vimfiles/undofiles/'
+nnoremap <leader>s :ToggleWorkspace<CR>
 
 
 """"""""""""""""""""""""""""""
