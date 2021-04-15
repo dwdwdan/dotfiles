@@ -16,10 +16,13 @@ gitForPrompt(){
 		then
 			gitStatement+="!";
 		fi
-		unpushed=$(git rev-list $branch ^origin/$branch)
-		if [ -n "$unpushed" ];
+		if [ -n "$(git checkout)" ];
 		then
-			gitStatement+="↑";
+			unpushed=$(git rev-list $branch ^origin/$branch)
+			if [ -n "$unpushed" ];
+			then
+				gitStatement+="↑";
+			fi
 		fi
 		gitStatement+=")";
 	else
