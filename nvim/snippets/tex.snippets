@@ -73,33 +73,58 @@ snippet claim "claim env"
 \end{claim}
 endsnippet
 
+snippet tab(ular)? "tabular env" r
+\begin{tabular}{${1:c|c}}
+	$2 & $3 \\
+	$0
+\end{tabular}
+endsnippet
+
+snippet table "table env"
+\begin{table}
+	\centering
+	\begin{tabular}{${1:c|c}}
+		$2 & $3 \\
+		$4
+	\end{tabular}
+	\caption{${5:caption}}
+	\label{tab: ${6:$5}}
+\end{table}
+endsnippet
+
+snippet fig(ure)? "figure env" r
+\begin{figure}
+	\centering
+	\includegraphics[width=${1:0.8}\textwidth]{${2:Image Filepath}}
+	\caption{${3:caption}}
+	\label{fig: ${4:$3}}
+\end{figure}
+endsnippet
+
+snippet align* "align* env"
+\begin{align*}
+	$1 & $2 \\
+	$0
+\end{align*}
+endsnippet
+
+snippet sec(tion)? "Section" r
+\section{${1:section heading}}
+\label{sec: ${2:$1}}
+endsnippet
+
+snippet sub(sec(tion)?)? "subsection" r
+\subsection{${1:subsection heading}}
+\label{sub: ${2:$1}}
+endsnippet
+
+snippet sub(sub(sec(tion)?)?)?|ssub "subsubsection" r
+\subsubsection{${1:subsubsection heading}}
+\label{ssub: ${2:$1}}
+endsnippet
+
 snippet \[ "Display Math mode" A
 \[
 	$0
 \]
 endsnippet
-# A valid snippet should starts with:
-#
-#		snippet trigger_word [ "description" [ options ] ]
-#
-# and end with:
-#
-#		endsnippet
-#
-# Snippet options:
-#
-#		b - Beginning of line.
-#		i - In-word expansion.
-#		w - Word boundary.
-#		r - Regular expression
-#		e - Custom context snippet
-#		A - Snippet will be triggered automatically, when condition matches.
-#
-# Basic example:
-#
-#		snippet emitter "emitter properties" b
-#		private readonly ${1} = new Emitter<$2>()
-#		public readonly ${1/^_(.*)/$1/}: Event<$2> = this.$1.event
-#		endsnippet
-#
-# Online reference: https://github.com/SirVer/ultisnips/blob/master/doc/UltiSnips.txt
