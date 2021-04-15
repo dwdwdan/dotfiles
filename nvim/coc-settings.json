@@ -1,6 +1,5 @@
 {
 	"explorer.icon.enableNerdfont":true,
-	"explorer.quitOnOpen":true,
 	"explorer.git.enable":true,
 	"explorer.file.showHiddenFiles":true
 }
