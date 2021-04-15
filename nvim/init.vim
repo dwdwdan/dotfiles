@@ -142,10 +142,13 @@ function! s:check_back_space() abort
 	return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-" Use <C-d> to expand snippets
-imap <C-d> <Plug>(coc-snippets-expand)
-let g:coc_snippet_next = '<C-f>' " Use <C-f> to move to next location in snippet
+"coc-snippets
+	" Use <C-d> to expand snippets
+	imap <C-d> <Plug>(coc-snippets-expand)
+	let g:coc_snippet_next = '<C-f>' " Use <C-f> to move to next location in snippet
 
+"coc-explorer
+	nnoremap <leader>t :CocCommand explorer<CR>
 
 """"""""""""""""""""""""""""""
 "         VIMTEX             "
