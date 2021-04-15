@@ -20,6 +20,24 @@ set termguicolors
 inoremap jk <esc>
 let mapleader=" "
 
+" make it so that j and k move by visual lines rather than active lines
+nnoremap j gj
+nnoremap k gk
+
+" Allow backspacing beyond the point when entered insert mode
+set backspace=indent,start,eol
+
+if has('virtualedit')
+	set virtualedit=block " Allows block visual selection of empty space
+endif
+
+" Use magic search automatically
+nnoremap / /\v
+
+" Commands to add line before and after current one
+nnoremap <leader>o o<Esc>k
+nnoremap <leader>O O<Esc>j
+
 """"""""""""""""""""""""""""""
 "       COMMANDS             "
 """"""""""""""""""""""""""""""
@@ -37,26 +55,6 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
-
-" make it so that j and k move by visual lines rather than active lines
-nnoremap j gj
-nnoremap k gk
-
-" Allow backspacing beyond the point when entered insert mode
-set backspace=indent,start,eol
-
-if has('virtualedit')
-	set virtualedit=block " Allows block visual selection of empty space
-endif
-
-
-" Use magic search automatically
-nnoremap / /\v
-
-" Commands to add line before and after current one
-nnoremap <leader>o o<Esc>k
-nnoremap <leader>O O<Esc>j
-
 
 
 """""""""""""""""""""""""""""
@@ -154,6 +152,8 @@ let g:coc_snippet_next = '<C-f>' " Use <C-f> to move to next location in snippet
 let g:vimtex_compiler_progname='nvr'
 let g:vimtex_fold_enabled=1
 let g:vimtex_indent_on_ampersands=0
+
+
 """"""""""""""""""""""""""""""
 "            FZF             "
 """"""""""""""""""""""""""""""
@@ -175,6 +175,9 @@ xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
 
+""""""""""""""""""""""""""""""
+"       AUTOCMDS             "
+""""""""""""""""""""""""""""""
 augroup DWDWDAN
 	autocmd!
 	autocmd BufWritePre * :%s/\s\+$//e " Clears white space at end of lign on save
