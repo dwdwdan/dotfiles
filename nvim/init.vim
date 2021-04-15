@@ -160,7 +160,7 @@ let g:vimtex_indent_on_ampersands=0
 " Use <C-p> to find a file in the project using fzf
 nnoremap <C-p> :Files<CR>
 " Use P to find text in the current file
-nnoremap P :Rg<CR>
+nnoremap <leader>p :Rg<CR>
 let $FZF_DEFAULT_COMMAND="find . -not -path \"*/.git/*\"" " Include dotfiles but not any files inside a .git folder
 
 " Command to easily find TODO's in project
