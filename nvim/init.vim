@@ -119,7 +119,7 @@ nnoremap <silent> <leader>w :set wrap! <CR>
 """"""""""""""""""""""""""""""
 "       COC.NVIM             "
 """"""""""""""""""""""""""""""
-let g:coc_global_extensions = ["coc-snippets","coc-json","coc-vimtex","coc-git"]
+let g:coc_global_extensions = ["coc-snippets","coc-json","coc-vimtex","coc-git","coc-explorer"]
 
 " Use tab to trigger completion and navigate
 inoremap <silent><expr> <TAB>
