@@ -153,8 +153,7 @@ let g:coc_snippet_next = '<C-f>' " Use <C-f> to move to next location in snippet
 """"""""""""""""""""""""""""""
 let g:vimtex_compiler_progname='nvr'
 let g:vimtex_fold_enabled=1
-
-
+let g:vimtex_indent_on_ampersands=0
 """"""""""""""""""""""""""""""
 "            FZF             "
 """"""""""""""""""""""""""""""
