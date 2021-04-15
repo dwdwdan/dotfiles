@@ -4,7 +4,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'lervag/vimtex'
 Plug 'tpope/vim-surround'
-Plug 'preservim/nerdtree'
 Plug 'gruvbox-community/gruvbox'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-syntastic/syntastic'
@@ -115,14 +114,6 @@ set breakindentopt=shift:2 " Indent wrapped words by 2
 let &showbreak='⮡ ' " Show ⮡ at the start of wrapped lines (Unicode U+2BA1)
 " Toggle to turn wrap on and off
 nnoremap <silent> <leader>w :set wrap! <CR>
-
-
-""""""""""""""""""""""""""""""
-"       NERDTREE             "
-""""""""""""""""""""""""""""""
-let NERDTreeShowHidden=1
-" Use <leader>f to toggle NERDTree
-nmap <leader>f :NERDTreeToggle <CR>
 
 
 """"""""""""""""""""""""""""""
