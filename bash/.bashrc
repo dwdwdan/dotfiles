@@ -23,6 +23,7 @@ gitForPrompt(){
 }
 
 export PS1;
+export GH_EDITOR="nvim"
 
 alias v=nvim
 alias vim=nvim
