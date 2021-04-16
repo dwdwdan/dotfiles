@@ -157,22 +157,22 @@ let g:vimtex_indent_on_ampersands=0
 """"""""""""""""""""""""""""""
 "            FZF             "
 """"""""""""""""""""""""""""""
-" Use <C-p> to find a file in the project using fzf
-nnoremap <C-p> :Files<CR>
-" Use P to find text in the current file
-nnoremap <leader>p :Rg<CR>
-let $FZF_DEFAULT_COMMAND="find . -not -path \"*/.git/*\"" " Include dotfiles but not any files inside a .git folder
+"" Use <C-p> to find a file in the project using fzf
+"nnoremap <C-p> :Files<CR>
+"" Use P to find text in the current file
+"nnoremap <leader>p :Rg<CR>
+"let $FZF_DEFAULT_COMMAND="find . -not -path \"*/.git/*\"" " Include dotfiles but not any files inside a .git folder
 
-" Command to easily find TODO's in project
-command! TODO Rg TODO
+"" Command to easily find TODO's in project
+"command! TODO Rg TODO
 
 
 """"""""""""""""""""""""""""""
 "         TELESCOPE          "
 """"""""""""""""""""""""""""""
-nnoremap <leader>ff <cmd>Telescope find_files<CR>
-nnoremap <leader>fg <cmd>Telescope live_grep<CR>
-nnoremap <leader>fb <cmd>Telescope buffers<CR>
+nnoremap <C-p> <cmd>Telescope git_files<CR>
+nnoremap g<C-p> <cmd>Telescope find_files hidden=true<CR>
+nnoremap <A-p> <cmd>Telescope live_grep<CR>
 nnoremap <leader>fh <cmd>Telescope help_tags<CR>
 
 
