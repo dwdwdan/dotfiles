@@ -12,6 +12,10 @@ Plug 'junegunn/vim-easy-align'
 Plug 'wincent/scalpel'
 Plug 'preservim/nerdcommenter'
 Plug 'thaerkh/vim-workspace'
+
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
 call plug#end()
 
 set termguicolors
