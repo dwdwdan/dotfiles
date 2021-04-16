@@ -83,7 +83,7 @@ set ignorecase " By default, ignore case on searches
 set incsearch " Show results as typed, rather than waiting for <CR>
 set lazyredraw " Don't redraw screen while executing macros, increases speed
 set nojoinspaces " Don't insert 2 spaces when joining lines after punctuation
-set cursorline " Highlight the lighn the cursor is on
+set cursorline " Highlight the line the cursor is on
 
 set tabstop=3 " Make tabs 3 spaces long
 set shiftwidth=3 " when using << or >> move 3 characters
