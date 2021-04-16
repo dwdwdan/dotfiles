@@ -15,6 +15,7 @@ Plug 'thaerkh/vim-workspace'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'numkil/ag.nvim'
 call plug#end()
 
 set termguicolors
@@ -160,7 +161,7 @@ nnoremap <C-p> <cmd>Telescope git_files<CR>
 nnoremap g<C-p> <cmd>Telescope find_files hidden=true<CR>
 nnoremap <A-p> <cmd>Telescope live_grep<CR>
 nnoremap <leader>fh <cmd>Telescope help_tags<CR>
-
+command! TODO :Ag TODO
 
 """"""""""""""""""""""""""""""
 "       EASYALIGN            "
