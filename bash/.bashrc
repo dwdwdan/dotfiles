@@ -24,6 +24,7 @@ gitForPrompt(){
 
 export PS1;
 
+alias v=nvim
 alias vim=nvim
 alias dotfiles="cd ~/dotfiles;vim ."
 alias q="exit"
