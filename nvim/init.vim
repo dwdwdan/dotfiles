@@ -35,9 +35,6 @@ endif
 " Use magic search automatically
 nnoremap / /\v
 
-" Commands to add line before and after current one
-nnoremap <leader>o o<Esc>k
-nnoremap <leader>O O<Esc>j
 
 """"""""""""""""""""""""""""""
 "       COMMANDS             "
