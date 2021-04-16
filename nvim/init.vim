@@ -8,11 +8,17 @@ Plug 'tpope/vim-unimpaired'
 Plug 'gruvbox-community/gruvbox'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-syntastic/syntastic'
-Plug 'junegunn/fzf', {'do':{-> fzf#install() } } | Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'wincent/scalpel'
 Plug 'preservim/nerdcommenter'
 Plug 'thaerkh/vim-workspace'
+
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+Plug 'fannheyward/telescope-coc.nvim'
+Plug 'nvim-telescope/telescope-github.nvim'
+Plug 'numkil/ag.nvim'
 call plug#end()
 
 set termguicolors
@@ -149,17 +155,25 @@ let g:vimtex_indent_on_ampersands=0
 
 
 """"""""""""""""""""""""""""""
-"            FZF             "
+"         TELESCOPE          "
 """"""""""""""""""""""""""""""
-" Use <C-p> to find a file in the project using fzf
-nnoremap <C-p> :Files<CR>
-" Use P to find text in the current file
-nnoremap <leader>p :Rg<CR>
-let $FZF_DEFAULT_COMMAND="find . -not -path \"*/.git/*\"" " Include dotfiles but not any files inside a .git folder
+nnoremap <C-p> <cmd>Telescope git_files<CR>
+nnoremap g<C-p> <cmd>Telescope find_files hidden=true<CR>
+nnoremap <A-p> <cmd>Telescope live_grep<CR>
+nnoremap <leader>fh <cmd>Telescope help_tags<CR>
+command! TODO :Ag TODO
+lua << EOF
+require('telescope').setup{
+	defaults={
+		initial_mode="normal"
+	}
+}
+require('telescope').load_extension('coc')
+require('telescope').load_extension('gh')
+EOF
 
-" Command to easily find TODO's in project
-command! TODO Rg TODO
-
+command! Gissues Telescope gh issues
+command! GPR Telescope gh pull_request
 
 """"""""""""""""""""""""""""""
 "       EASYALIGN            "
