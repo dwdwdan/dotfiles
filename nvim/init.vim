@@ -15,6 +15,7 @@ Plug 'thaerkh/vim-workspace'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'fannheyward/telescope-coc.nvim'
 Plug 'numkil/ag.nvim'
 call plug#end()
 
@@ -162,6 +163,9 @@ nnoremap g<C-p> <cmd>Telescope find_files hidden=true<CR>
 nnoremap <A-p> <cmd>Telescope live_grep<CR>
 nnoremap <leader>fh <cmd>Telescope help_tags<CR>
 command! TODO :Ag TODO
+lua << EOF
+require('telescope').load_extension('coc')
+EOF
 
 """"""""""""""""""""""""""""""
 "       EASYALIGN            "
