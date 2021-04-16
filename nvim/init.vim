@@ -185,4 +185,5 @@ nnoremap <leader>s :ToggleWorkspace<CR>
 augroup DWDWDAN
 	autocmd!
 	autocmd BufWritePre * :%s/\s\+$//e " Clears white space at end of lign on save
+	autocmd InsertEnter * :norm zz " centre cursor when enter insert mode
 augroup END
