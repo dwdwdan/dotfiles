@@ -16,6 +16,7 @@ Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'fannheyward/telescope-coc.nvim'
+Plug 'nvim-telescope/telescope-github.nvim'
 Plug 'numkil/ag.nvim'
 call plug#end()
 
@@ -165,7 +166,11 @@ nnoremap <leader>fh <cmd>Telescope help_tags<CR>
 command! TODO :Ag TODO
 lua << EOF
 require('telescope').load_extension('coc')
+require('telescope').load_extension('gh')
 EOF
+
+command! Gissues Telescope gh issues
+command! GPR Telescope gh pull_request
 
 """"""""""""""""""""""""""""""
 "       EASYALIGN            "
