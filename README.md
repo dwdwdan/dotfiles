@@ -1,6 +1,9 @@
 # My Dotfiles
 These are my dotfiles for nvim, bash and tmux.
 
+##Requirements
+ - Neovim Nightly (0.5+)
+
 ## Installation
 The installation for these relies on symlinks, I shall list the required ones below
  - `~/.config/nvim/init.vim` -> `nvim/init.vim`
