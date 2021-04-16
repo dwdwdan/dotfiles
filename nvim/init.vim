@@ -7,7 +7,6 @@ Plug 'tpope/vim-surround'
 Plug 'gruvbox-community/gruvbox'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-syntastic/syntastic'
-Plug 'junegunn/fzf', {'do':{-> fzf#install() } } | Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-easy-align'
 Plug 'wincent/scalpel'
 Plug 'preservim/nerdcommenter'
@@ -152,19 +151,6 @@ endfunction
 let g:vimtex_compiler_progname='nvr'
 let g:vimtex_fold_enabled=1
 let g:vimtex_indent_on_ampersands=0
-
-
-""""""""""""""""""""""""""""""
-"            FZF             "
-""""""""""""""""""""""""""""""
-"" Use <C-p> to find a file in the project using fzf
-"nnoremap <C-p> :Files<CR>
-"" Use P to find text in the current file
-"nnoremap <leader>p :Rg<CR>
-"let $FZF_DEFAULT_COMMAND="find . -not -path \"*/.git/*\"" " Include dotfiles but not any files inside a .git folder
-
-"" Command to easily find TODO's in project
-"command! TODO Rg TODO
 
 
 """"""""""""""""""""""""""""""
