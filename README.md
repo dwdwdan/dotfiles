@@ -15,3 +15,4 @@ The installation for these relies on symlinks, I shall list the required ones be
  - `~/.config/coc/ultisnips` -> `nvim/snippets`
  - `~/.tmux.conf` -> `.tmux.conf`
 
+You can create a file `~/.personalbashrc` to add personal bash commands. I have aliases to get around my file system quicker.

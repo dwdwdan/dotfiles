@@ -52,6 +52,10 @@ fd() {
 	tmux new-window -c "$PWD" 2>/dev/null && exec tmux a
 	exec tmux
 }
+if [ -f ~/.personal.bashrc ];
+then
+	source ~/.personal.bashrc;
+fi
 
 echo "Sourced Bashrc"
 
