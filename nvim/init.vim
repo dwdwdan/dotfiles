@@ -91,6 +91,7 @@ set shiftwidth=3 " when using << or >> move 3 characters
 set scrolloff=3 " keep 3 lines visible below/above cursor
 set sidescrolloff=3 " Similarly but horizontally
 set signcolumn=yes
+set mouse=a
 
 " Use | character to show indent levels
 set list lcs=tab:\|\ "
