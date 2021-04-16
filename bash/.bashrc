@@ -26,7 +26,7 @@ export PS1;
 
 alias v=nvim
 alias vim=nvim
-alias dotfiles="cd ~/dotfiles;vim ."
+alias dotfiles="cd ~/dotfiles;v"
 alias q="exit"
 alias gs="git status"
 alias cls="clear"
