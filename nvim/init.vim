@@ -165,6 +165,11 @@ nnoremap <A-p> <cmd>Telescope live_grep<CR>
 nnoremap <leader>fh <cmd>Telescope help_tags<CR>
 command! TODO :Ag TODO
 lua << EOF
+require('telescope').setup{
+	defaults={
+		initial_mode="normal"
+	}
+}
 require('telescope').load_extension('coc')
 require('telescope').load_extension('gh')
 EOF
