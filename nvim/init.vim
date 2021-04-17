@@ -19,6 +19,9 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'fannheyward/telescope-coc.nvim'
 Plug 'nvim-telescope/telescope-github.nvim'
 Plug 'numkil/ag.nvim'
+
+Plug 'nvim-treesitter/nvim-treesitter',{'do':':TSUpdate'}
+Plug 'nvim-treesitter/playground'
 call plug#end()
 
 set termguicolors
@@ -175,6 +178,18 @@ EOF
 command! Gissues Telescope gh issues
 command! GPR Telescope gh pull_request
 
+
+""""""""""""""""""""""""""""""
+"       Tree Sitter          "
+""""""""""""""""""""""""""""""
+lua <<EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = "maintained",
+  highlight = {
+    enable = true,
+  },
+}
+EOF
 """"""""""""""""""""""""""""""
 "       EASYALIGN            "
 """"""""""""""""""""""""""""""
