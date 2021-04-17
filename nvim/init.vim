@@ -182,26 +182,9 @@ command! GPR Telescope gh pull_request
 """"""""""""""""""""""""""""""
 "       Tree Sitter          "
 """"""""""""""""""""""""""""""
-lua <<EOF
-require'nvim-treesitter.configs'.setup {
-	ensure_installed = "maintained",
-	highlight = {
-		enable = true,
-	},
-	incremental_selection = {
-		enable = true,
-	},
-	indent = {
-		enable = true,
-	},
-	playground = {
-		enable = true,
-		updatetime = 25,
-	}
-}
-EOF
-set foldmethod=expr
-set foldexpr=nvim_treesitter#foldexpr()
+lua require('treesitter')
+
+
 """"""""""""""""""""""""""""""
 "       EASYALIGN            "
 """"""""""""""""""""""""""""""
