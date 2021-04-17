@@ -184,10 +184,13 @@ command! GPR Telescope gh pull_request
 """"""""""""""""""""""""""""""
 lua <<EOF
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = "maintained",
-  highlight = {
-    enable = true,
-  },
+	ensure_installed = "maintained",
+	highlight = {
+		enable = true,
+	},
+	incremental_selection = {
+		enable = true,
+	},
 }
 EOF
 """"""""""""""""""""""""""""""
