@@ -191,8 +191,17 @@ require'nvim-treesitter.configs'.setup {
 	incremental_selection = {
 		enable = true,
 	},
+	indent = {
+		enable = true,
+	},
+	playground = {
+		enable = true,
+		updatetime = 25,
+	}
 }
 EOF
+set foldmethod=expr
+set foldexpr=nvim_treesitter#foldexpr()
 """"""""""""""""""""""""""""""
 "       EASYALIGN            "
 """"""""""""""""""""""""""""""
