@@ -164,7 +164,7 @@ nnoremap <C-p> <cmd>Telescope git_files<CR>
 nnoremap g<C-p> <cmd>Telescope find_files hidden=true<CR>
 nnoremap <A-p> <cmd>Telescope live_grep<CR>
 nnoremap <leader>fh <cmd>Telescope help_tags<CR>
-command! TODO :Ag TODO
+command! TODO :Ag (TODO)|(FIXME)
 lua require('telescopeConfig')
 
 command! Gissues Telescope gh issues
