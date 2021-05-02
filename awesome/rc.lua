@@ -56,6 +56,8 @@ beautiful.hotkeys_font="SpaceMono for Powerline 14"
 beautiful.hotkeys_description_font="SpaceMono for Powerline 14"
 beautiful.hotkeys_modifiers_fg="#bbbbbb"
 beautiful.hotkeys_fg="#ffffff"
+beautiful.useless_gap=5
+beautiful.gap_single_client=true
 
 -- Multiple monitor helper
 local xrandr=require("xrandr")
