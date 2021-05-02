@@ -615,5 +615,5 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 awful.spawn.with_shell("xrandr --output HDMI-1-1 --primary --right-of eDP-1-1")
 
 -- Autostart Applications
-awful.spawn.with_shell("compton")
+awful.spawn.with_shell("compton -b -f")
 awful.spawn.with_shell("nitrogen --restore")
