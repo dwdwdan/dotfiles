@@ -353,6 +353,10 @@ globalkeys = gears.table.join(
 		 awful.spawn("kitty -e ranger") end,
 		 {description = "ranger", group = "software"}),
 
+	 awful.key({ modkey }, "a",     function ()
+		 awful.spawn("pavucontrol") end,
+		 {description = "Audio Controls", group = "software"}),
+
     awful.key({ modkey }, "x",
               function ()
                   awful.prompt.run {
