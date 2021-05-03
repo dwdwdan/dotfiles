@@ -193,6 +193,8 @@ end
 -- Re-set wallpaper when a screen's geometry changes (e.g. different resolution)
 screen.connect_signal("property::geometry", set_wallpaper)
 
+local volume_widget = require('awesome-wm-widgets.volume-widget.volume')
+
 awful.screen.connect_for_each_screen(function(s)
 	-- Wallpaper
 	set_wallpaper(s)
@@ -238,6 +240,7 @@ awful.screen.connect_for_each_screen(function(s)
 		s.mytasklist, -- Middle widget
 		{ -- Right widgets
 			layout = wibox.layout.fixed.horizontal,
+			volume_widget{widget_type='arc'},
 			wibox.widget.systray(),
 			mytextclock,
 		},
