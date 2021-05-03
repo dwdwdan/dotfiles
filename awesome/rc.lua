@@ -50,14 +50,7 @@ end
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
-beautiful.init(gears.filesystem.get_themes_dir() .. "zenburn/theme.lua")
-beautiful.font="Lato, Light 14"
-beautiful.hotkeys_font="SpaceMono for Powerline 14"
-beautiful.hotkeys_description_font="Lato 14"
-beautiful.hotkeys_modifiers_fg="#bbbbbb"
-beautiful.hotkeys_fg="#ffffff"
-beautiful.useless_gap=5
-beautiful.gap_single_client=true
+beautiful.init("~/.config/awesome/mytheme.lua")
 
 -- Multiple monitor helper
 local xrandr=require("xrandr")
