@@ -12,6 +12,7 @@ Plug 'junegunn/vim-easy-align'
 Plug 'wincent/scalpel'
 Plug 'preservim/nerdcommenter'
 Plug 'thaerkh/vim-workspace'
+Plug 'norcalli/nvim-colorizer.lua'
 
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
@@ -192,6 +193,10 @@ let g:workspace_session_directory = $HOME . '/.vimfiles/sessions/'
 let g:workspace_undodir = $HOME . '/.vimfiles/undofiles/'
 nnoremap <leader>s :ToggleWorkspace<CR>
 
+""""""""""""""""""""""""""""""
+"           Colorizer        "
+""""""""""""""""""""""""""""""
+lua require('colorizer').setup()
 
 """"""""""""""""""""""""""""""
 "       AUTOCMDS             "
