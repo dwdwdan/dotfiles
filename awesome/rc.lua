@@ -573,3 +573,4 @@ awful.spawn.with_shell("xrandr --output HDMI-1-1 --primary --right-of eDP-1-1")
 -- Autostart Applications
 awful.spawn.with_shell("compton -b -f")
 awful.spawn.with_shell("nitrogen --restore")
+awful.spawn("thunderbird",{tag="<Email>"})
