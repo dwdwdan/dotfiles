@@ -189,12 +189,81 @@ screen.connect_signal("property::geometry", set_wallpaper)
 local volume_widget = require('awesome-wm-widgets.volume-widget.volume')
 local logout_popup = require('awesome-wm-widgets.logout-popup-widget.logout-popup')
 
+function trayScreenWibar()
+	local thisscreen=screen[screen.count()]
+	awful.tag({ "<Main>", "<Neovim>", "<Firefox>", "<Bash>", "<Email>", "6", "7", "8", "9" }, thisscreen, awful.layout.layouts[2])
+	local bar=awful.wibar({
+		position="top",
+		screen=thisscreen,
+		width=thisscreen.geometry.width,
+		})
+
+	local tray = wibox.widget.systray()
+	tray:set_screen(thisscreen)
+	local mytaglist = awful.widget.taglist {
+		screen  = thisscreen,
+		filter  = awful.widget.taglist.filter.all,
+		buttons = taglist_buttons
+	}
+	bar:setup{
+		layout = wibox.layout.align.horizontal,
+		{ -- Left widgets
+			layout = wibox.layout.fixed.horizontal,
+			logout_popup.widget{},
+			mytaglist,
+			mypromptbox,
+		},
+		mytasklist, -- Middle widget
+		{ -- Right widgets
+			layout = wibox.layout.fixed.horizontal,
+			volume_widget{widget_type='arc'},
+			tray,
+			mytextclock,
+		},
+	}
+end
+
+local function secondScreenWibar()
+	local thisscreen=screen[1]
+	awful.tag({ "<Main>", "<Neovim>", "<Firefox>", "<Bash>", "<Email>", "6", "7", "8", "9" }, thisscreen, awful.layout.layouts[2])
+	local bar=awful.wibar({
+		position="top",
+		screen=thisscreen,
+		width=thisscreen.geometry.width,
+		})
+
+	local mytaglist = awful.widget.taglist {
+		screen  = thisscreen,
+		filter  = awful.widget.taglist.filter.all,
+		buttons = taglist_buttons
+	}
+	bar:setup{
+		layout = wibox.layout.align.horizontal,
+		{ -- Left widgets
+			layout = wibox.layout.fixed.horizontal,
+			logout_popup.widget{},
+			mytaglist,
+			mypromptbox,
+		},
+		mytasklist, -- Middle widget
+		{ -- Right widgets
+			layout = wibox.layout.fixed.horizontal,
+			volume_widget{widget_type='arc'},
+			mytextclock,
+		},
+	}
+end
+
+trayScreenWibar()
+secondScreenWibar()
+
+
 awful.screen.connect_for_each_screen(function(s)
 	-- Wallpaper
-	set_wallpaper(s)
+	--set_wallpaper(s)
 
 	-- Each screen has its own tag table.
-	awful.tag({ "<Main>", "<Neovim>", "<Firefox>", "<Bash>", "<Email>", "6", "7", "8", "9" }, s, awful.layout.layouts[2])
+	--awful.tag({ "<Main>", "<Neovim>", "<Firefox>", "<Bash>", "<Email>", "6", "7", "8", "9" }, s, awful.layout.layouts[2])
 
 	-- Create a promptbox for each screen
 	s.mypromptbox = awful.widget.prompt()
@@ -221,25 +290,25 @@ awful.screen.connect_for_each_screen(function(s)
 	}
 
 	-- Create the wibox
-	s.mywibox = awful.wibar({ position = "top", screen = s })
+	--s.mywibox = awful.wibar({ position = "top", screen = s })
 
 	-- Add widgets to the wibox
-	s.mywibox:setup {
-		layout = wibox.layout.align.horizontal,
-		{ -- Left widgets
-			layout = wibox.layout.fixed.horizontal,
-			logout_popup.widget{},
-			s.mytaglist,
-			s.mypromptbox,
-		},
-		s.mytasklist, -- Middle widget
-		{ -- Right widgets
-			layout = wibox.layout.fixed.horizontal,
-			volume_widget{widget_type='arc'},
-			wibox.widget.systray(),
-			mytextclock,
-		},
-	}
+	--s.mywibox:setup {
+		--layout = wibox.layout.align.horizontal,
+		--{ -- Left widgets
+			--layout = wibox.layout.fixed.horizontal,
+			--logout_popup.widget{},
+			--s.mytaglist,
+			--s.mypromptbox,
+		--},
+		--s.mytasklist, -- Middle widget
+		--{ -- Right widgets
+			--layout = wibox.layout.fixed.horizontal,
+			--volume_widget{widget_type='arc'},
+			--wibox.widget.systray(),
+			--mytextclock,
+		--},
+	--}
 end)
 -- }}}
 
