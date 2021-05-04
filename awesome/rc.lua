@@ -241,14 +241,12 @@ local function secondScreenWibar()
 		layout = wibox.layout.align.horizontal,
 		{ -- Left widgets
 			layout = wibox.layout.fixed.horizontal,
-			logout_popup.widget{},
 			mytaglist,
 			mypromptbox,
 		},
 		mytasklist, -- Middle widget
 		{ -- Right widgets
 			layout = wibox.layout.fixed.horizontal,
-			volume_widget{widget_type='arc'},
 			mytextclock,
 		},
 	}
