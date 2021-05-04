@@ -187,6 +187,7 @@ end
 screen.connect_signal("property::geometry", set_wallpaper)
 
 local volume_widget = require('awesome-wm-widgets.volume-widget.volume')
+local logout_popup = require('awesome-wm-widgets.logout-popup-widget.logout-popup')
 
 awful.screen.connect_for_each_screen(function(s)
 	-- Wallpaper
@@ -227,6 +228,7 @@ awful.screen.connect_for_each_screen(function(s)
 		layout = wibox.layout.align.horizontal,
 		{ -- Left widgets
 			layout = wibox.layout.fixed.horizontal,
+			logout_popup.widget{},
 			s.mytaglist,
 			s.mypromptbox,
 		},
@@ -352,6 +354,10 @@ globalkeys = gears.table.join(
 		awful.spawn("pavucontrol") end,
 		{description = "Audio Controls", group = "software"}),
 
+	awful.key({ modkey }, "p",     function ()
+		logout_popup.launch() end,
+		{description = "Show Shutdown Menu", group = "awesome"}),
+
 	awful.key({ modkey }, "x",
 		function ()
 			awful.prompt.run {
@@ -361,11 +367,11 @@ globalkeys = gears.table.join(
 				history_path = awful.util.get_cache_dir() .. "/history_eval"
 			}
 		end,
-		{description = "lua execute prompt", group = "awesome"}),
+		{description = "lua execute prompt", group = "awesome"})
 	-- Menubar
 
-	awful.key({ modkey }, "p", function() menubar.show() end,
-		{description = "show the menubar", group = "launcher"})
+	--awful.key({ modkey }, "p", function() menubar.show() end,
+		--{description = "show the menubar", group = "launcher"})
 
 )
 
