@@ -1,2 +1,4 @@
 tmp/*
 tmp
+nvim/plugged/*
+nvim/plugged
