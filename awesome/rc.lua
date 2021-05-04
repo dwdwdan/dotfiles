@@ -164,7 +164,7 @@ function makeMainScreenWiBar()
 		layout = wibox.layout.align.horizontal,
 		{ -- Left widgets
 			layout = wibox.layout.fixed.horizontal,
-			logout_popup.widget{},
+			logout_popup.widget{bg_color='#141414',text_color='#aaaaaa',accent_color='#91231c'},
 			mytaglist,
 			mypromptbox,
 		},
@@ -351,7 +351,7 @@ globalkeys = gears.table.join(
 		{description = "Audio Controls", group = "software"}),
 
 	awful.key({ modkey }, "p",     function ()
-		logout_popup.launch() end,
+		logout_popup.launch{bg_color='#141414',text_color='#aaaaaa',accent_color='#91231c'} end,
 		{description = "Show Shutdown Menu", group = "awesome"}),
 
 	awful.key({ modkey }, "x",
