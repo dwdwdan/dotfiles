@@ -140,7 +140,7 @@ local logout_popup = require('awesome-wm-widgets.logout-popup-widget.logout-popu
 
 function makeMainScreenWiBar()
 	local thisscreen=screen[screen.count()]
-	awful.tag({ "<Main>", "<Neovim>", "<Firefox>", "<Bash>", "<Email>", "6", "7", "8", "9" }, thisscreen, awful.layout.layouts[2])
+	awful.tag({ "<Main>", "<Terminal>", "<Firefox>", "4", "5", "6", "<Email>", "<Social>", "<OBS>" }, thisscreen, awful.layout.layouts[2])
 	local mytasklist = awful.widget.tasklist {
 		screen  = thisscreen,
 		filter  = awful.widget.tasklist.filter.currenttags,
