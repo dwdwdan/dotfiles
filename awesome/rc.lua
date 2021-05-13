@@ -91,6 +91,9 @@ awful.layout.layouts = {
 -- Keyboard map indicator and switcher
 mykeyboardlayout = awful.widget.keyboardlayout()
 
+-- Set up monitors
+awful.spawn.with_shell("xrandr --output HDMI-1-1 --primary --right-of eDP-1-1")
+
 -- {{{ Wibar
 -- Create a textclock widget
 mytextclock = wibox.widget.textclock()
@@ -139,7 +142,7 @@ local volume_widget = require('awesome-wm-widgets.volume-widget.volume')
 local logout_popup = require('awesome-wm-widgets.logout-popup-widget.logout-popup')
 
 function makeMainScreenWiBar()
-	local thisscreen=screen[screen.count()]
+	local thisscreen=screen[1]
 	awful.tag({ "<Main>", "<Terminal>", "<Firefox>", "4", "5", "6", "<Email>", "<Social>", "<OBS>" }, thisscreen, awful.layout.layouts[2])
 	local mytasklist = awful.widget.tasklist {
 		screen  = thisscreen,
@@ -179,7 +182,7 @@ function makeMainScreenWiBar()
 end
 
 local function makeSecondScreenWibar()
-	local thisscreen=screen[1]
+	local thisscreen=screen[screen.count()]
 	awful.tag({ "<Main>", "<Neovim>", "<Firefox>", "<Bash>", "<Email>", "6", "7", "8", "9" }, thisscreen, awful.layout.layouts[2])
 	local bar=awful.wibar({
 		position="top",
@@ -572,8 +575,6 @@ client.connect_signal("focus", function(c) c.border_color = beautiful.border_foc
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 
 
--- Set up monitors
-awful.spawn.with_shell("xrandr --output HDMI-1-1 --primary --right-of eDP-1-1")
 
 -- Autostart Applications
 awful.spawn.with_shell("compton -b -f")
