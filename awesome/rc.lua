@@ -56,7 +56,7 @@ beautiful.init("~/.config/awesome/mytheme.lua")
 local xrandr=require("xrandr")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "kitty"
+terminal = "alacritty"
 editor = os.getenv("EDITOR") or "editor"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -347,7 +347,7 @@ globalkeys = gears.table.join(
 		{description = "Email", group = "software"}),
 
 	awful.key({ modkey, "Control" }, "f",     function ()
-		awful.spawn("kitty -e ranger") end,
+		awful.spawn("alacritty -e ranger") end,
 		{description = "Ranger", group = "software"}),
 
 	awful.key({ modkey, }, "f",     function ()
