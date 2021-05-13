@@ -21,6 +21,8 @@ Plug 'fannheyward/telescope-coc.nvim'
 Plug 'nvim-telescope/telescope-github.nvim'
 Plug 'numkil/ag.nvim'
 
+Plug 'folke/todo-comments.nvim'
+
 Plug 'nvim-treesitter/nvim-treesitter',{'do':':TSUpdate'}
 Plug 'nvim-treesitter/playground'
 call plug#end()
@@ -165,7 +167,6 @@ nnoremap <C-p> <cmd>Telescope git_files<CR>
 nnoremap g<C-p> <cmd>Telescope find_files hidden=true<CR>
 nnoremap <A-p> <cmd>Telescope live_grep<CR>
 nnoremap <leader>fh <cmd>Telescope help_tags<CR>
-command! TODO :Ag (TODO)|(FIXME)
 lua require('telescopeConfig')
 
 command! Gissues Telescope gh issues
@@ -197,6 +198,13 @@ nnoremap <leader>s :ToggleWorkspace<CR>
 "           Colorizer        "
 """"""""""""""""""""""""""""""
 lua require('colorizer').setup()
+
+
+""""""""""""""""""""""""""""""
+"           TODO             "
+""""""""""""""""""""""""""""""
+lua require('todoConfig')
+nnoremap <c-t> <cmd>TodoTelescope<cr>
 
 """"""""""""""""""""""""""""""
 "       AUTOCMDS             "
