@@ -1,7 +1,16 @@
-require('telescope').setup{
+local actions = require('telescope.actions')
+local trouble = require('trouble.providers.telescope')
+
+local telescope = require('telescope')
+
+telescope.setup{
 	defaults={
-		initial_mode="normal"
-	}
+		initial_mode="normal",
+		mappings={
+			i = { ["<c-t>"] = trouble.open_with_trouble },
+			n = { ["<c-t>"] = trouble.open_with_trouble },
+		},
+	},
 }
-require('telescope').load_extension('coc')
-require('telescope').load_extension('gh')
+telescope.load_extension('coc')
+telescope.load_extension('gh')

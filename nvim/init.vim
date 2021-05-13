@@ -22,6 +22,8 @@ Plug 'nvim-telescope/telescope-github.nvim'
 Plug 'numkil/ag.nvim'
 
 Plug 'folke/todo-comments.nvim'
+Plug 'kyazdani42/nvim-web-devicons'
+Plug 'folke/trouble.nvim'
 
 Plug 'nvim-treesitter/nvim-treesitter',{'do':':TSUpdate'}
 Plug 'nvim-treesitter/playground'
@@ -205,6 +207,14 @@ lua require('colorizer').setup()
 """"""""""""""""""""""""""""""
 lua require('todoConfig')
 nnoremap <c-t> <cmd>TodoTelescope<cr>
+nnoremap <c-T> <cmd>TodoTrouble<cr>
+
+
+""""""""""""""""""""""""""""""
+"           Trouble          "
+""""""""""""""""""""""""""""""
+lua require('troubleConfig')
+
 
 """"""""""""""""""""""""""""""
 "       AUTOCMDS             "
