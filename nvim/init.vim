@@ -5,7 +5,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'lervag/vimtex'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
-Plug 'gruvbox-community/gruvbox'
+Plug 'shaunsingh/moonlight.nvim'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-syntastic/syntastic'
 Plug 'junegunn/vim-easy-align'
@@ -68,12 +68,9 @@ nnoremap <C-l> <C-w>l
 
 
 """""""""""""""""""""""""""""
-"         GRUVBOX           "
+"         Moonlight         "
 """""""""""""""""""""""""""""
-let g:gruvbox_italic='1'
-let g:gruvbox_contrast_dark='medium'
-let g:gruvbox_vert_split='bg3'
-colorscheme gruvbox
+colorscheme moonlight
 
 
 """""""""""""""""""""""""""""
