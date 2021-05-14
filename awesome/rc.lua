@@ -358,6 +358,10 @@ globalkeys = gears.table.join(
 		awful.spawn("pavucontrol") end,
 		{description = "Audio Controls", group = "software"}),
 
+	awful.key({ modkey , "Control" }, "b",     function ()
+		awful.spawn.with_shell("feh --recursive --randomize --bg-fill ~/wallpapers") end,
+		{description = "Change Background", group = "utility"}),
+
 	awful.key({ modkey }, "p",     function ()
 		logout_popup.launch{bg_color='#141414',text_color='#aaaaaa',accent_color='#91231c'} end,
 		{description = "Show Shutdown Menu", group = "awesome"}),
@@ -578,6 +582,6 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 
 -- Autostart Applications
 awful.spawn.with_shell("compton -b -f")
-awful.spawn.with_shell("nitrogen --restore")
+awful.spawn.with_shell("feh --recursive --randomize --bg-fill ~/wallpapers")
 awful.spawn.with_shell("numlockx on")
 awful.spawn("thunderbird",{tag="<Email>"})
