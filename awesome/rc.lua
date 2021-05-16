@@ -51,7 +51,6 @@ end
 -- {{{ Variable definitions
 -- Themes define colours, icons, font and wallpapers.
 beautiful.init("~/.config/awesome/mytheme.lua")
-
 -- Multiple monitor helper
 local xrandr=require("xrandr")
 
@@ -579,6 +578,8 @@ client.connect_signal("focus", function(c) c.border_color = beautiful.border_foc
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 
 
+beautiful.notification_max_width=300
+beautiful.notification_max_height=100
 
 -- Autostart Applications
 awful.spawn.with_shell("compton -b -f")
