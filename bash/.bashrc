@@ -43,17 +43,6 @@ fd() {
 		cd "$dir"
 	}
 
-[[ -z "$TMUX" && -n "$USE_TMUX" ]] && {
-	[[ -n "$ATTACH_ONLY" ]] && {
-		tmux a 2>/dev/null || {
-			cd && exec tmux
-		}
-	exit
-	}
-
-	tmux new-window -c "$PWD" 2>/dev/null && exec tmux a
-	exec tmux
-}
 if [ -f ~/.personal.bashrc ];
 then
 	source ~/.personal.bashrc;
@@ -64,21 +53,6 @@ neofetch
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/dan/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/dan/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/dan/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/dan/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
 
 . "$HOME/.cargo/env"
 
