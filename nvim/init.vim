@@ -168,6 +168,8 @@ let g:vimtex_indent_on_ampersands=0
 nnoremap <C-p> <cmd>Telescope git_files<CR>
 nnoremap g<C-p> <cmd>Telescope find_files hidden=true<CR>
 nnoremap <A-p> <cmd>Telescope live_grep<CR>
+nnoremap <leader>gb <cmd>Telescope git_branches<CR>
+nnoremap <leader>gc <cmd>Telescope git_commits<CR>
 nnoremap <leader>fh <cmd>Telescope help_tags<CR>
 lua require('telescopeConfig')
 
