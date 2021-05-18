@@ -374,7 +374,19 @@ globalkeys = gears.table.join(
 				history_path = awful.util.get_cache_dir() .. "/history_eval"
 			}
 		end,
-		{description = "lua execute prompt", group = "awesome"})
+		{description = "lua execute prompt", group = "awesome"}),
+
+	awful.key({ }, "XF86AudioRaiseVolume" ,     function ()
+	awful.spawn.with_shell("amixer -D pulse sset Master 2%+", false) end,
+		{description = "Increase Volume", group = "Audio"}),
+
+	awful.key({ }, "XF86AudioLowerVolume" ,     function ()
+	awful.spawn.with_shell("amixer -D pulse sset Master 2%-", false) end,
+		{description = "Decrease Volume", group = "Audio"}),
+
+	awful.key({ }, "XF86AudioMute" ,     function ()
+	awful.spawn.with_shell("amixer -D pulse sset Master toggle", false) end,
+		{description = "Mute Volume", group = "Audio"})
 )
 
 clientkeys = gears.table.join(
@@ -585,4 +597,4 @@ beautiful.notification_max_height=100
 awful.spawn.with_shell("compton -b -f")
 awful.spawn.with_shell("feh --recursive --randomize --bg-fill ~/wallpapers")
 awful.spawn.with_shell("numlockx on")
-awful.spawn("thunderbird",{tag="<Email>"})
+--awful.spawn("thunderbird",{tag="<Email>"})
