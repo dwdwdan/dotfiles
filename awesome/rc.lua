@@ -479,7 +479,7 @@ for i = 1, 9 do
 					awful.tag.viewtoggle(tag)
 				else
 					tag = new_tag(i)
-					awful,tag.viewtoggle(tag)
+					awful.tag.viewtoggle(tag)
 				end
 			end,
 			{description = "toggle tag #" .. i, group = "tag"}),
