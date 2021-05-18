@@ -330,12 +330,12 @@ globalkeys = gears.table.join(
 		{description = "cycle through multimonitor", group = "utility"}),
 
 	awful.key({ modkey }, "b",     function ()
-		awful.util.spawn("firefox",{tag="<Firefox>"})
+		awful.util.spawn("firefox")
 		end,
 		{description = "Firefox", group = "software"}),
 
 	awful.key({ modkey }, "d",     function ()
-		awful.util.spawn("ferdi",{tag="<Social>"})
+		awful.util.spawn("ferdi")
 		end,
 		{description = "Ferdi - Messaging", group = "software"}),
 
