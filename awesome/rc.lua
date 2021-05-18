@@ -339,11 +339,6 @@ globalkeys = gears.table.join(
 		end,
 		{description = "Ferdi - Messaging", group = "software"}),
 
-	awful.key({ modkey }, "e",     function ()
-		screen[2].tags[5]:view_only()
-		end,
-		{description = "Email", group = "software"}),
-
 	awful.key({ modkey, "Control" }, "f",     function ()
 		awful.spawn("alacritty -e ranger") end,
 		{description = "Ranger", group = "software"}),
