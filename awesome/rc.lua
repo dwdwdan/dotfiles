@@ -447,8 +447,9 @@ clientkeys = gears.table.join(
 -- Be careful: we use keycodes to make it work on any keyboard layout.
 -- This should map on the top row of your keyboard, usually 1 to 9.
 --
-local function new_tag(i)
-	tag = awful.tag.add(i,{
+local function new_tag()
+	local num_tags = #awful.screen.focused().tags
+	tag = awful.tag.add(num_tags+1,{
 		screen = awful.screen.focused(),
 		layout = awful.layout.layouts[default_layout]
 	})
@@ -465,7 +466,7 @@ for i = 1, 9 do
 				if tag then
 					tag:view_only()
 				else
-					tag = new_tag(i)
+					tag = new_tag()
 					tag:view_only()
 				end
 			end,
@@ -478,7 +479,7 @@ for i = 1, 9 do
 				if tag then
 					awful.tag.viewtoggle(tag)
 				else
-					tag = new_tag(i)
+					tag = new_tag()
 					awful.tag.viewtoggle(tag)
 				end
 			end,
@@ -491,7 +492,7 @@ for i = 1, 9 do
 					if tag then
 						client.focus:move_to_tag(tag)
 					else
-						tag = new_tag(i)
+						tag = new_tag()
 						client.focus:move_to_tag(tag)
 					end
 				end
