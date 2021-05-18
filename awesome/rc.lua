@@ -331,12 +331,11 @@ globalkeys = gears.table.join(
 
 	awful.key({ modkey }, "b",     function ()
 		awful.util.spawn("firefox",{tag="<Firefox>"})
-		screen[2].tags[3]:view_only()
 		end,
 		{description = "Firefox", group = "software"}),
 
 	awful.key({ modkey }, "d",     function ()
-		awful.util.spawn("ferdi",{tag="<Social>"}) --Ferdi refuses to be controlled by tags for some reason
+		awful.util.spawn("ferdi",{tag="<Social>"})
 		end,
 		{description = "Ferdi - Messaging", group = "software"}),
 
