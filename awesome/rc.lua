@@ -53,6 +53,7 @@ end
 beautiful.init("~/.config/awesome/mytheme.lua")
 -- Multiple monitor helper
 local xrandr=require("xrandr")
+local default_layout=2
 
 -- This is used later as the default terminal and editor to run.
 terminal = "alacritty"
@@ -142,7 +143,7 @@ local logout_popup = require('awesome-wm-widgets.logout-popup-widget.logout-popu
 
 function makeMainScreenWiBar()
 	local thisscreen=screen[1]
-	awful.tag({ "<Main>", "<Terminal>", "<Firefox>", "4", "5", "6", "<Email>", "<Social>", "<OBS>" }, thisscreen, awful.layout.layouts[2])
+	awful.tag({"1"}, thisscreen, awful.layout.layouts[default_layout])
 	local mytasklist = awful.widget.tasklist {
 		screen  = thisscreen,
 		filter  = awful.widget.tasklist.filter.currenttags,
@@ -182,7 +183,7 @@ end
 
 local function makeSecondScreenWibar()
 	local thisscreen=screen[screen.count()]
-	awful.tag({ "<Main>", "<Neovim>", "<Firefox>", "<Bash>", "<Email>", "6", "7", "8", "9" }, thisscreen, awful.layout.layouts[2])
+	awful.tag({"1"}, thisscreen, awful.layout.layouts[default_layout])
 	local bar=awful.wibar({
 		position="top",
 		screen=thisscreen,
@@ -453,6 +454,12 @@ for i = 1, 9 do
 				local screen = awful.screen.focused()
 				local tag = screen.tags[i]
 				if tag then
+					tag:view_only()
+				else
+					tag = awful.tag.add(i,{
+						screen = awful.screen.focused(),
+						layout = awful.layout.layouts[default_layout]
+					})
 					tag:view_only()
 				end
 			end,
