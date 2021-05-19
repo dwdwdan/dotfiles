@@ -168,6 +168,7 @@ function makeMainScreenWiBar()
 		layout = wibox.layout.align.horizontal,
 		{ -- Left widgets
 			layout = wibox.layout.fixed.horizontal,
+			tray,
 			mytaglist,
 			mypromptbox,
 		},
@@ -181,7 +182,6 @@ function makeMainScreenWiBar()
 			layout = wibox.layout.fixed.horizontal,
 			my_volume,
 			my_battery,
-			tray,
 		},
 	}
 end
