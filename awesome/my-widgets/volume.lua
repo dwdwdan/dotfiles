@@ -3,7 +3,7 @@ local watch = require("awful.widget.watch")
 local theme = require("mytheme")
 
 local vol_text = wibox.widget{
-	font = theme.font,
+	font = theme.mono_font,
 	widget = wibox.widget.textbox,
 }
 
@@ -16,6 +16,12 @@ vol_widget:set_fg(theme.fg_normal)
 watch("amixer -c 1 sget 'PCM'",1,function(widget, stdout, stderr, exitreason, exitcode)
 	local vol_percent = string.match(stdout,"%[[^%s]*%]")
 	vol_percent = vol_percent:sub(2,-3)
+	if(tonumber(vol_percent) < 100) then
+		vol_percent = " "..vol_percent
+	end
+	if(tonumber(vol_percent) < 10) then
+		vol_percent = " "..vol_percent
+	end
 	if(vol_percent == "100") then
 		vol_percent = "🔊"..vol_percent
 	elseif(vol_percent =="0") then
