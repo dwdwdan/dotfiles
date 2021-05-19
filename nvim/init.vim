@@ -27,6 +27,8 @@ Plug 'folke/trouble.nvim'
 
 Plug 'nvim-treesitter/nvim-treesitter',{'do':':TSUpdate'}
 Plug 'nvim-treesitter/playground'
+
+Plug 'ThePrimeagen/harpoon'
 call plug#end()
 
 set termguicolors
@@ -212,6 +214,22 @@ nnoremap <c-T> <cmd>TodoTrouble<cr>
 """"""""""""""""""""""""""""""
 lua require('troubleConfig')
 
+
+""""""""""""""""""""""""""""""
+"           Harpoon          "
+""""""""""""""""""""""""""""""
+nnoremap <leader>m <cmd>lua require('harpoon.mark').add_file()<cr>
+nnoremap <leader>`1 <cmd>lua require('harpoon.ui').nav_file(1)<cr>
+nnoremap <leader>`2 <cmd>lua require('harpoon.ui').nav_file(2)<cr>
+nnoremap <leader>`3 <cmd>lua require('harpoon.ui').nav_file(3)<cr>
+nnoremap <leader>`4 <cmd>lua require('harpoon.ui').nav_file(4)<cr>
+nnoremap <leader>`5 <cmd>lua require('harpoon.ui').nav_file(5)<cr>
+nnoremap <leader>`6 <cmd>lua require('harpoon.ui').nav_file(6)<cr>
+nnoremap <leader>`7 <cmd>lua require('harpoon.ui').nav_file(7)<cr>
+nnoremap <leader>`8 <cmd>lua require('harpoon.ui').nav_file(8)<cr>
+nnoremap <leader>`9 <cmd>lua require('harpoon.ui').nav_file(9)<cr>
+nnoremap <leader>`0 <cmd>lua require('harpoon.ui').nav_file(10)<cr>
+nnoremap <leader>mi <cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>
 
 """"""""""""""""""""""""""""""
 "       AUTOCMDS             "
