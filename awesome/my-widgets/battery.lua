@@ -32,6 +32,10 @@ watch("acpi",10,function(widget, stdout, stderr, exitreason, exitcode)
 	end
 	bat_percent = bat_percent.."%"
 	bat_text:set_text("🔋"..bat_status..bat_percent)
+	if(tonumber(bat_percent) < 20 and bat_status == "⬇") then
+		bat_widget:set_bg(theme.bg_urgent)
+		bat_widget:set_fg(theme.fg_urgent)
+	end
 end, bat_widget)
 
 return bat_widget
