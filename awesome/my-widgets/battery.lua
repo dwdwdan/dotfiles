@@ -13,7 +13,7 @@ bat_widget:set_widget(bat_text)
 bat_widget:set_bg(theme.bg_widget)
 bat_widget:set_fg(theme.fg_widget)
 
-watch("acpi",15,function(widget, stdout, stderr, exitreason, exitcode)
+watch("acpi",60,function(widget, stdout, stderr, exitreason, exitcode)
 	local bat_percent = string.match(stdout,"%d?%d?%d%%")
 	bat_percent = bat_percent:sub(1,-2)
 	if(tonumber(bat_percent) < 100) then
