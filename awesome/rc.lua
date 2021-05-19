@@ -138,8 +138,8 @@ local tasklist_buttons = gears.table.join(
 		awful.client.focus.byidx(-1)
 	end))
 
-local volume_widget = require('awesome-wm-widgets.volume-widget.volume')
 local logout_popup = require('awesome-wm-widgets.logout-popup-widget.logout-popup')
+local my_volume = require('my-widgets.volume')
 
 function makeMainScreenWiBar()
 	local thisscreen=screen[1]
@@ -174,7 +174,7 @@ function makeMainScreenWiBar()
 		mytasklist, -- Middle widget
 		{ -- Right widgets
 			layout = wibox.layout.fixed.horizontal,
-			volume_widget{widget_type='arc'},
+			my_volume,
 			tray,
 			mytextclock,
 		},
