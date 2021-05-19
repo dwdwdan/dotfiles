@@ -109,11 +109,6 @@ set mouse=a
 set list lcs=tab:\|\ "
 
 
-""""""""""""""""""""""""""""""
-"       COLORCOLUMN          "
-""""""""""""""""""""""""""""""
-let &colorcolumn=join(range(120,999),",")
-hi colorcolumn guibg=black
 
 
 """"""""""""""""""""""""""""""
