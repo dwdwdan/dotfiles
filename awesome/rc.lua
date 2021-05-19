@@ -144,7 +144,7 @@ local my_battery = require('my-widgets.battery')
 
 function makeMainScreenWiBar()
 	local thisscreen=screen[1]
-	awful.tag({"1"}, thisscreen, awful.layout.layouts[default_layout])
+	awful.tag({"1","2","3","4","5","6","7","8","9"}, thisscreen, awful.layout.layouts[default_layout])
 	local mytasklist = awful.widget.tasklist {
 		screen  = thisscreen,
 		filter  = awful.widget.tasklist.filter.currenttags,
@@ -188,7 +188,7 @@ end
 
 local function makeSecondScreenWibar()
 	local thisscreen=screen[screen.count()]
-	awful.tag({"1"}, thisscreen, awful.layout.layouts[default_layout])
+	awful.tag({"1","2","3","4","5","6","7","8","9"}, thisscreen, awful.layout.layouts[default_layout])
 	local bar=awful.wibar({
 		position="top",
 		screen=thisscreen,
@@ -446,16 +446,6 @@ clientkeys = gears.table.join(
 -- Bind all key numbers to tags.
 -- Be careful: we use keycodes to make it work on any keyboard layout.
 -- This should map on the top row of your keyboard, usually 1 to 9.
---
-local function new_tag()
-	local num_tags = #awful.screen.focused().tags
-	tag = awful.tag.add(num_tags+1,{
-		screen = awful.screen.focused(),
-		layout = awful.layout.layouts[default_layout]
-	})
-	return tag
-end
-
 for i = 1, 9 do
 	globalkeys = gears.table.join(globalkeys,
 		-- View tag only.
@@ -464,9 +454,6 @@ for i = 1, 9 do
 				local screen = awful.screen.focused()
 				local tag = screen.tags[i]
 				if tag then
-					tag:view_only()
-				else
-					tag = new_tag()
 					tag:view_only()
 				end
 			end,
@@ -478,9 +465,6 @@ for i = 1, 9 do
 				local tag = screen.tags[i]
 				if tag then
 					awful.tag.viewtoggle(tag)
-				else
-					tag = new_tag()
-					awful.tag.viewtoggle(tag)
 				end
 			end,
 			{description = "toggle tag #" .. i, group = "tag"}),
@@ -490,9 +474,6 @@ for i = 1, 9 do
 				if client.focus then
 					local tag = client.focus.screen.tags[i]
 					if tag then
-						client.focus:move_to_tag(tag)
-					else
-						tag = new_tag()
 						client.focus:move_to_tag(tag)
 					end
 				end
@@ -504,9 +485,6 @@ for i = 1, 9 do
 				if client.focus then
 					local tag = client.focus.screen.tags[i]
 					if tag then
-						client.focus:toggle_tag(tag)
-					else
-						tag = new_tag(i)
 						client.focus:toggle_tag(tag)
 					end
 				end
