@@ -168,7 +168,6 @@ function makeMainScreenWiBar()
 		layout = wibox.layout.align.horizontal,
 		{ -- Left widgets
 			layout = wibox.layout.fixed.horizontal,
-			logout_popup.widget{bg_color='#141414',text_color='#aaaaaa',accent_color='#91231c'},
 			mytaglist,
 			mypromptbox,
 		},
