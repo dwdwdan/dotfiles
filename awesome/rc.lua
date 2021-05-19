@@ -174,12 +174,7 @@ function makeMainScreenWiBar()
 			mytaglist,
 			mypromptbox,
 		},
-		{
-			mytextclock,
-			valign="center",
-			halign="center",
-			layout=wibox.container.place
-		},
+		nil,
 		{ -- Right widgets
 			layout = wibox.layout.fixed.horizontal,
 			my_pack,
