@@ -5,3 +5,4 @@
 
 ## Awesome WM
 - [ ] Add battery widget
+- [ ] Add ability to easily delete tag
