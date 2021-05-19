@@ -142,6 +142,7 @@ local logout_popup = require('awesome-wm-widgets.logout-popup-widget.logout-popu
 local my_volume = require('my-widgets.volume')
 local my_battery = require('my-widgets.battery')
 local my_date = require('my-widgets.date')
+local my_pack = require('my-widgets.pack')
 
 function makeMainScreenWiBar()
 	local thisscreen=screen[1]
@@ -181,6 +182,7 @@ function makeMainScreenWiBar()
 		},
 		{ -- Right widgets
 			layout = wibox.layout.fixed.horizontal,
+			my_pack,
 			my_date,
 			my_volume,
 			my_battery,
