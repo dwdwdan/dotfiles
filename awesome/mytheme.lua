@@ -15,11 +15,11 @@ theme.font="Lato, Light 14"
 theme.mono_font="Noto Mono 14"
 
 theme.bg_normal     = "#141414"
-theme.bg_focus      = "#282828"
+theme.bg_focus      = "#202020"
 theme.bg_urgent     = "#ff0000"
 theme.bg_minimize   = "#444444"
-theme.bg_systray    = theme.bg_normal
 theme.bg_widget     = theme.bg_normal
+theme.bg_systray    = theme.bg_widget
 
 theme.fg_normal     = "#aaaaaa"
 theme.fg_focus      = "#ffffff"
@@ -34,11 +34,12 @@ theme.border_normal = "#000000"
 theme.border_focus  = "#444444"
 theme.border_marked = "#91231c"
 
-theme.taglist_bg_empty = "#000000"
-theme.taglist_fg_empty = "#555555"
-theme.taglist_bg_occupied = "#282828"
-theme.taglist_bg_focus = "#999999"
-theme.taglist_fg_focus = "#000000"
+theme.taglist_bg_empty = theme.bg_normal
+theme.taglist_fg_empty = theme.bg_normal
+theme.taglist_bg_occupied = theme.bg_normal
+theme.taglist_fg_occupied = theme.bg_normal
+theme.taglist_bg_focus = theme.bg_focus
+theme.taglist_fg_focus = theme.bg_focus
 
 theme.hotkeys_font="SpaceMono for Powerline 14"
 theme.hotkeys_description_font="Lato 14"
