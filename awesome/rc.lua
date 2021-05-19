@@ -140,6 +140,7 @@ local tasklist_buttons = gears.table.join(
 
 local logout_popup = require('awesome-wm-widgets.logout-popup-widget.logout-popup')
 local my_volume = require('my-widgets.volume')
+local my_battery = require('my-widgets.battery')
 
 function makeMainScreenWiBar()
 	local thisscreen=screen[1]
@@ -175,6 +176,7 @@ function makeMainScreenWiBar()
 		{ -- Right widgets
 			layout = wibox.layout.fixed.horizontal,
 			my_volume,
+			my_battery,
 			tray,
 			mytextclock,
 		},
