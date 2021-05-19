@@ -10,8 +10,8 @@ local vol_text = wibox.widget{
 local vol_widget = wibox.widget.background()
 vol_widget:set_widget(vol_text)
 
-vol_widget:set_bg(theme.bg_normal)
-vol_widget:set_fg(theme.fg_normal)
+vol_widget:set_bg(theme.bg_widget)
+vol_widget:set_fg(theme.fg_widget)
 
 watch("amixer -c 1 sget 'PCM'",1,function(widget, stdout, stderr, exitreason, exitcode)
 	local vol_percent = string.match(stdout,"%[[^%s]*%]")
