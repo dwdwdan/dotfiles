@@ -14,8 +14,16 @@ vol_widget:set_bg(theme.bg_normal)
 vol_widget:set_fg(theme.fg_normal)
 
 watch("amixer -c 1 sget 'PCM'",1,function(widget, stdout, stderr, exitreason, exitcode)
-	local vol_percent = string.match(stdout,"%[...%]")
-	vol_percent = "🔉"..vol_percent:sub(2,-2)
+	local vol_percent = string.match(stdout,"%[[^%s]*%]")
+	vol_percent = vol_percent:sub(2,-3)
+	if(vol_percent == "100") then
+		vol_percent = "🔊"..vol_percent
+	elseif(vol_percent =="0") then
+		vol_percent = "🔈"..vol_percent
+	else
+		vol_percent = "🔉"..vol_percent
+	end
+	vol_percent = vol_percent.."%"
 	vol_text:set_text(vol_percent)
 end, vol_widget)
 
