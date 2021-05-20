@@ -4,5 +4,5 @@
 - [x] Change treesitter highlighting to always emphasis TODOs and FIXMEs
 
 ## Awesome WM
-- [ ] Add battery widget
-- [ ] Add ability to easily delete tag
+- [x] Add battery widget
+- [ ] Dynamically change weather symbol based on conditions

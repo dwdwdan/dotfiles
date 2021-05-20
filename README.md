@@ -17,3 +17,10 @@ The installation for these relies on symlinks, I shall list the required ones be
  - `~/.tmux.conf` -> `.tmux.conf`
 
 You can create a file `~/.personalbashrc` to add personal bash commands. I have aliases to get around my file system quicker.
+
+For the awesome weather widget create a file `weather_conf.lua` inside `awesome` with the contents
+```
+city="London"
+api_key="abcdefghijklmnopqrstuvwxyz"
+```
+An api key can be acquired from [openweathermap](https://openweathermap.org/api).

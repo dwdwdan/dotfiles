@@ -4,3 +4,4 @@ nvim/plugged/*
 nvim/plugged
 newsboat/urls
 nohup.out
+awesome/weather_conf.lua

@@ -143,6 +143,7 @@ local my_volume = require('my-widgets.volume')
 local my_battery = require('my-widgets.battery')
 local my_date = require('my-widgets.date')
 local my_pack = require('my-widgets.pack')
+local my_weather = require('my-widgets.weather')
 
 function makeMainScreenWiBar()
 	local thisscreen=screen[1]
@@ -177,6 +178,7 @@ function makeMainScreenWiBar()
 		nil,
 		{ -- Right widgets
 			layout = wibox.layout.fixed.horizontal,
+			my_weather,
 			my_pack,
 			my_date,
 			my_volume,
