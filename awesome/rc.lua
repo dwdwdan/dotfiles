@@ -341,6 +341,11 @@ globalkeys = gears.table.join(
 		end,
 		{description = "Firefox", group = "software"}),
 
+	awful.key({ modkey, "Shift" }, "m",     function ()
+		awful.util.spawn("firefox https://accounts.spotify.com/en/login?continue=https:%2F%2Fopen.spotify.com%2F")
+		end,
+		{description = "Spotify Web Client", group = "software"}),
+
 	awful.key({ modkey }, "d",     function ()
 		awful.util.spawn("ferdi")
 		end,
@@ -427,21 +432,7 @@ clientkeys = gears.table.join(
 			c.maximized = not c.maximized
 			c:raise()
 		end ,
-		{description = "(un)maximize", group = "client"}),
-
-	awful.key({ modkey, "Control" }, "m",
-		function (c)
-			c.maximized_vertical = not c.maximized_vertical
-			c:raise()
-		end ,
-		{description = "(un)maximize vertically", group = "client"}),
-
-	awful.key({ modkey, "Shift"   }, "m",
-		function (c)
-			c.maximized_horizontal = not c.maximized_horizontal
-			c:raise()
-		end ,
-		{description = "(un)maximize horizontally", group = "client"})
+		{description = "(un)maximize", group = "client"})
 )
 
 -- Bind all key numbers to tags.
