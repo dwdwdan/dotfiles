@@ -30,6 +30,7 @@ export VISUAL="nvim"
 alias v=nvim
 alias vim=nvim
 alias dotfiles="cd ~/repos/dotfiles;v"
+alias web="cd ~/repos/website;v"
 alias q="exit"
 alias gs="git status"
 alias cls="clear"
