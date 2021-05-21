@@ -20,7 +20,8 @@ You can create a file `~/.personalbashrc` to add personal bash commands. I have 
 
 For the awesome weather widget create a file `weather_conf.lua` inside `awesome` with the contents
 ```
-city="London"
+city="123456"
 api_key="abcdefghijklmnopqrstuvwxyz"
 ```
+The city code can be found by finding the city on [openweathermap](https://openweathermap.org) and taking the last part of the address.
 An api key can be acquired from [openweathermap](https://openweathermap.org/api).
