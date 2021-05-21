@@ -36,6 +36,7 @@ alias gs="git status"
 alias cls="clear"
 alias bashrc="source ~/.bashrc"
 alias ls="ls -la"
+alias rweb="cd ~/repos/website; bundle exec jekyll serve --livereload"
 
 # cd to selected directory
 fd() {
