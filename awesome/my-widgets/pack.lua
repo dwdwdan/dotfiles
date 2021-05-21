@@ -1,5 +1,6 @@
 local wibox = require("wibox")
 local watch = require("awful.widget.watch")
+local awful = require("awful")
 local theme = require("mytheme")
 
 local pack_text = wibox.widget{
@@ -17,5 +18,11 @@ watch("apt list --upgradable",60,function(widget, stdout, stderr, exitreason, ex
 	local _,number_to_upgrade = string.gsub(stdout, "\n", "\n")
 	pack_text:set_text(" 📦 "..number_to_upgrade-1) --the -1 is to account for the listing output of apt list
 end, pack_widget)
+
+local upgrade_all = function(lx, ly, button, mods, find_widgets_result)
+	awful.spawn("alacritty -e sudo apt upgrade")
+end
+
+pack_widget:connect_signal("button::press",upgrade_all)
 
 return pack_widget
