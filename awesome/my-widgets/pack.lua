@@ -20,7 +20,7 @@ watch("apt list --upgradable",60,function(widget, stdout, stderr, exitreason, ex
 end, pack_widget)
 
 local upgrade_all = function(lx, ly, button, mods, find_widgets_result)
-	awful.spawn("alacritty -e sudo apt upgrade")
+	awful.spawn.with_shell("alacritty -e ~/.scripts/upgrade.sh")
 end
 
 pack_widget:connect_signal("button::press",upgrade_all)
