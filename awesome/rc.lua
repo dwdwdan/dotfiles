@@ -345,6 +345,12 @@ globalkeys = gears.table.join(
 		awful.util.spawn("thunderbird")
 		end,
 		{description = "Thunderbird", group = "software"}),
+
+	awful.key({ modkey }, "e",     function ()
+		awful.util.spawn("emacs")
+		end,
+		{description = "Emacs", group = "software"}),
+
 	awful.key({ modkey, "Shift" }, "m",     function ()
 		awful.util.spawn("firefox https://accounts.spotify.com/en/login?continue=https:%2F%2Fopen.spotify.com%2F")
 		end,
