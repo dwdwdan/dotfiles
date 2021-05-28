@@ -31,7 +31,7 @@ watch("acpi",10,function(widget, stdout, stderr, exitreason, exitcode)
 		bat_percent = " "..bat_percent
 	end
 	bat_percent = bat_percent.."%"
-	bat_text:set_text(" 🔋"..bat_status..bat_percent)
+	bat_text:set_text("🔋"..bat_status..bat_percent)
 end, bat_widget)
 
 return bat_widget
