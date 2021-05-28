@@ -14,7 +14,7 @@ date_widget:set_bg(theme.bg_widget)
 date_widget:set_fg(theme.fg_widget)
 
 watch("date +'%F %H:%M'",30,function(widget, stdout, stderr, exitreason, exitcode)
-	date_text:set_text(" 📆 "..stdout)
+	date_text:set_text("📆 "..stdout)
 end, date_widget)
 
 return date_widget

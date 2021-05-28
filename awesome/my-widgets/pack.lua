@@ -16,7 +16,7 @@ pack_widget:set_fg(theme.fg_widget)
 
 watch("apt list --upgradable",60,function(widget, stdout, stderr, exitreason, exitcode)
 	local _,number_to_upgrade = string.gsub(stdout, "\n", "\n")
-	pack_text:set_text(" 📦 "..number_to_upgrade-1) --the -1 is to account for the listing output of apt list
+	pack_text:set_text("📦 "..number_to_upgrade-1) --the -1 is to account for the listing output of apt list
 end, pack_widget)
 
 local upgrade_all = function(lx, ly, button, mods, find_widgets_result)

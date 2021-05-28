@@ -18,7 +18,7 @@ weather_widget:set_fg(theme.fg_widget)
 watch("curl 'https://api.openweathermap.org/data/2.5/weather?id="..city.."&APPID="..api_key.."&units=metric'",600,function(widget, stdout, stderr, exitreason, exitcode)
 	local temp = string.match(stdout,"\"temp\":%d+")
 	temp = temp:sub(8)
-	weather_text:set_text(" 🌥 "..temp.."℃ ")
+	weather_text:set_text("🌥 "..temp.."℃")
 end, weather_widget)
 
 local open_weather = function(lx, ly, button, mods, find_widgets_result)

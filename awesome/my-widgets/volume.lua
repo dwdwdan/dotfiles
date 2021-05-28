@@ -23,11 +23,11 @@ watch("amixer -c 1 sget 'PCM'",1,function(widget, stdout, stderr, exitreason, ex
 		vol_percent = " "..vol_percent
 	end
 	if(vol_percent == "100") then
-		vol_percent = " 🔊"..vol_percent
+		vol_percent = "🔊"..vol_percent
 	elseif(vol_percent =="0") then
-		vol_percent = " 🔈"..vol_percent
+		vol_percent = "🔈"..vol_percent
 	else
-		vol_percent = " 🔉"..vol_percent
+		vol_percent = "🔉"..vol_percent
 	end
 	vol_percent = vol_percent.."%"
 	vol_text:set_text(vol_percent)
