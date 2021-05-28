@@ -145,6 +145,7 @@ local my_date = require('my-widgets.date')
 local my_pack = require('my-widgets.pack')
 local my_weather = require('my-widgets.weather')
 local sep = require('my-widgets.sep')
+local pad = require('my-widgets.pad')
 
 function makeMainScreenWiBar()
 	local thisscreen=screen[1]
@@ -185,6 +186,7 @@ function makeMainScreenWiBar()
 			my_date, sep,
 			my_volume, sep,
 			my_battery,
+			pad,
 		},
 	}
 end
