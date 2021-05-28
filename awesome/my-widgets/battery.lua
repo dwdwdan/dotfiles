@@ -1,6 +1,7 @@
 local wibox = require("wibox")
 local watch = require("awful.widget.watch")
 local theme = require("mytheme")
+local awful = require("awful")
 
 local bat_text = wibox.widget{
 	font = theme.mono_font,
@@ -33,5 +34,11 @@ watch("acpi",10,function(widget, stdout, stderr, exitreason, exitcode)
 	bat_percent = bat_percent.."%"
 	bat_text:set_text("🔋"..bat_status..bat_percent)
 end, bat_widget)
+
+local open_info = function(lx, ly, button, mods, find_widgets_result)
+	awful.spawn.with_shell("alacritty -e ~/.scripts/bat_status.sh")
+end
+
+bat_widget:connect_signal("button::press",open_info)
 
 return bat_widget
