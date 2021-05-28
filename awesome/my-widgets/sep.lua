@@ -13,6 +13,6 @@ sep_widget:set_widget(sep_text)
 sep_widget:set_bg(theme.bg_seperator)
 sep_widget:set_fg(theme.fg_seperator)
 
-sep_text:set_text(" | ")
+sep_text:set_text(" ❬ ")
 
 return sep_widget
