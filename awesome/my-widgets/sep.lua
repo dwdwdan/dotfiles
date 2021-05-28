@@ -3,7 +3,7 @@ local watch = require("awful.widget.watch")
 local theme = require("mytheme")
 
 local sep_text = wibox.widget{
-	font = theme.mono_font,
+	font = theme.sep_font,
 	widget = wibox.widget.textbox,
 }
 
