@@ -179,6 +179,7 @@ function makeMainScreenWiBar()
 		nil,
 		{ -- Right widgets
 			layout = wibox.layout.fixed.horizontal,
+			sep, --TODO Can't decide if I like this one being here
 			my_weather, sep,
 			my_pack, sep,
 			my_date, sep,
