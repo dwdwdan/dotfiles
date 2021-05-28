@@ -19,6 +19,7 @@ theme.bg_focus      = "#202020"
 theme.bg_urgent     = "#ff0000"
 theme.bg_minimize   = "#444444"
 theme.bg_widget     = theme.bg_normal
+theme.bg_seperator     = theme.bg_normal
 theme.bg_systray    = theme.bg_widget
 
 theme.fg_normal     = "#aaaaaa"
@@ -26,6 +27,7 @@ theme.fg_focus      = "#ffffff"
 theme.fg_urgent     = "#ffffff"
 theme.fg_minimize   = "#ffffff"
 theme.fg_widget     = theme.fg_normal
+theme.fg_seperator     = "#666666"
 
 theme.useless_gap   = dpi(10)
 theme.gap_single_client=true
