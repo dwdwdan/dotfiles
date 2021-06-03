@@ -557,6 +557,12 @@ before packages are loaded."
 (setq org-startup-truncated nil)
 (setq org-agenda-files '("~/org"))
 (setq org-directory "~/org")
+(setq org-capture-templates
+      '(("t" "Todo" entry (file+headline "~/org/todo.org" "Tasks")
+         "* TODO %?\n  %i\n  %a")
+        ("r" "Reference" entry (file+headline "~/org/reference.org" "Reference")
+         "* %?\n"))
+)
 )
 
 
