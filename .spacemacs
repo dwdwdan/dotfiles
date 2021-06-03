@@ -545,13 +545,10 @@ configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
 (setq-default evil-escape-key-sequence "jk")
-(setq org-todo-keywords `((sequence "TODO(t)" "FIXME(f)" "SOLVED(s)" "WRITTENUP(w)" "UPLOADED(u)" "|"  "CHECKED(c)" "DONE(d)" ))
+(setq org-todo-keywords `((sequence "TODO(t)" "FIXME(f)" "|" "DONE(d)" ))
       org-todo-keyword-faces
       `(("TODO" :foreground "#ECBE7B" :underline t)
-        ("FIXME" :foreground "#FF6C6B" :underline t)
-        ("SOLVED" :foreground "#61CB6F" :underline t)
-        ("WRITTENUP" :foreground "#9999ff" :underline t)
-        ("UPLOADED" :foreground "#ffff99" :underline t))
+        ("FIXME" :foreground "#FF6C6B" :underline t))
       )
 (setq org-roam-directory "~/org/roam")
 (setq org-startup-truncated nil)
