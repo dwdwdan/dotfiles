@@ -544,22 +544,32 @@ This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
-(setq-default evil-escape-key-sequence "jk")
-(setq org-todo-keywords `((sequence "TODO(t)" "FIXME(f)" "|" "DONE(d)" ))
-      org-todo-keyword-faces
-      `(("TODO" :foreground "#ECBE7B" :underline t)
-        ("FIXME" :foreground "#FF6C6B" :underline t))
-      )
-(setq org-roam-directory "~/org/roam")
-(setq org-startup-truncated nil)
-(setq org-agenda-files '("~/org"))
-(setq org-directory "~/org")
-(setq org-capture-templates
-      '(("t" "Todo" entry (file+headline "~/org/todo.org" "Tasks")
-         "* TODO %?\n  %i\n  %a")
-        ("r" "Reference" entry (file+headline "~/org/reference.org" "Reference")
-         "* %?\n"))
-)
+  (setq-default evil-escape-key-sequence "jk")
+
+  ;; Org todo keywords
+  (setq org-todo-keywords `((sequence "TODO(t)" "FIXME(f)" "|" "DONE(d)" ))
+        org-todo-keyword-faces
+        `(("TODO" :foreground "#ECBE7B" :underline t)
+          ("FIXME" :foreground "#FF6C6B" :underline t))
+  )
+
+  ;; Soft wrap lines in org mode
+  (setq org-startup-truncated nil)
+
+  ;; Org directories
+  (setq org-roam-directory "~/org/roam")
+  (setq org-agenda-files '("~/org"))
+  (setq org-directory "~/org")
+
+  ;; Org Capture Templates
+  (setq org-capture-templates
+        '(("t" "Todo" entry (file+headline "~/org/todo.org" "Tasks")
+          "* TODO %?\n  %i\n  %a")
+          ("r" "Reference" entry (file+headline "~/org/reference.org" "Reference")
+          "* %?\n"))
+  )
+  ;; Use a proportional font for org mode
+  (add-hook 'org-mode-hook 'variable-pitch-mode)
 )
 
 
@@ -581,5 +591,7 @@ This function is called at the very end of Spacemacs initialization."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(italic ((t (:slant italic)))))
+ '(fixed-pitch ((t (:family "JetBrains Mono"))))
+ '(italic ((t (:slant italic))))
+ '(variable-pitch ((t (:family "DejaVu Sans, Book")))))
 )
