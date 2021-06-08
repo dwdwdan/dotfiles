@@ -2,3 +2,8 @@
 
 * TODO Dynamically change weather symbol based on conditions
   Should probably change the way temperature is extracted to something JSON based rather than just regex when I do this as well.
+
+* TODO Podboat auto-download [0%]
+  - [ ] Configure podcast download location
+  - [ ] Automatically download last 2 podcasts from each stream
+  - [ ] Delete if any more than this
