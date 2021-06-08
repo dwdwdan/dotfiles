@@ -384,7 +384,23 @@ awful.key({ modkey }, "x",
   end,
   {description = "lua execute prompt", group = "awesome"}),
 
-awful.key({ }, "XF86AudioRaiseVolume" ,     function ()
+awful.key({ }, "XF86AudioStop" ,     function ()
+    awful.util.spawn("firefox https://accounts.spotify.com/en/login?continue=https:%2F%2Fopen.spotify.com%2F") end,
+    {description = "Open Spotify", group = "Audio"}),
+
+  awful.key({ }, "XF86AudioPrev" ,     function ()
+  awful.spawn.with_shell("playerctl previous", false) end,
+    {description = "Previous Track", group = "Audio"}),
+
+  awful.key({ }, "XF86AudioNext" ,     function ()
+  awful.spawn.with_shell("playerctl next", false) end,
+    {description = "Next Track", group = "Audio"}),
+
+  awful.key({ }, "XF86AudioPlay" ,     function ()
+  awful.spawn.with_shell("playerctl play-pause", false) end,
+    {description = "Play/Pause", group = "Audio"}),
+
+  awful.key({ }, "XF86AudioRaiseVolume" ,     function ()
   awful.spawn.with_shell("amixer -D pulse sset Master 2%+", false) end,
     {description = "Increase Volume", group = "Audio"}),
 
