@@ -7,3 +7,6 @@
   - [ ] Configure podcast download location
   - [ ] Automatically download last 2 podcasts from each stream
   - [ ] Delete if any more than this
+
+* TODO Calendar Button in awesome
+  Make it so clicking the calendar widget opens thunderbird
