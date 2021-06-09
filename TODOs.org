@@ -10,3 +10,6 @@
 
 * TODO Calendar Button in awesome
   Make it so clicking the calendar widget opens thunderbird
+** DONE Open thunderbird generally
+** TODO Focus thunderbird
+** TODO Open calendar Specifically

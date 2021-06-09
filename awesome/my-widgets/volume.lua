@@ -16,6 +16,7 @@ vol_widget:set_fg(theme.fg_widget)
 watch("amixer -c 1 sget 'PCM'",1,function(widget, stdout, stderr, exitreason, exitcode)
 	local vol_percent = string.match(stdout,"%[[^%s]*%]")
 	vol_percent = vol_percent:sub(2,-3)
+  vol_percent = " "..vol_percent
 	if(tonumber(vol_percent) < 100) then
 		vol_percent = " "..vol_percent
 	end
