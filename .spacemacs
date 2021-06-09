@@ -573,6 +573,9 @@ before packages are loaded."
   )
   ;; Use a proportional font for org mode
   (add-hook 'org-mode-hook 'variable-pitch-mode)
+
+  ;; Set projectile to show open buffers and recent files first when browsing a project
+  (setq projectile-sort-order 'recently-active)
 )
 
 
