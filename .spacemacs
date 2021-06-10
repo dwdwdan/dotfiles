@@ -403,7 +403,8 @@ It should only modify the values of Spacemacs settings."
    ;;   :size-limit-kb 1000)
    ;; When used in a plist, `visual' takes precedence over `relative'.
    ;; (default nil)
-   dotspacemacs-line-numbers `(:relative t)
+   dotspacemacs-line-numbers `(:relative t
+                               :disabled-for-modes org-mode)
 
    ;; Code folding method. Possible values are `evil', `origami' and `vimish'.
    ;; (default 'evil)
@@ -571,8 +572,17 @@ before packages are loaded."
           ("r" "Reference" entry (file+headline "~/org/reference.org" "Reference")
           "* %?\n"))
   )
+
+  (defun org-mode-config()
+    (variable-pitch-mode)
+    (set-face-attribute 'org-table nil :inherit 'fixed-pitch)
+    (set-face-attribute 'org-code nil :inherit 'fixed-pitch)
+    (set-face-attribute 'org-block nil :inherit 'fixed-pitch)
+    (setq yas-indent-line 'fixed))
+
   ;; Use a proportional font for org mode
-  (add-hook 'org-mode-hook 'variable-pitch-mode)
+  (add-hook 'org-mode-hook #'org-mode-config)
+
 
   ;; Set projectile to show open buffers and recent files first when browsing a project
   (setq projectile-sort-order 'recently-active)
@@ -603,5 +613,5 @@ This function is called at the very end of Spacemacs initialization."
  ;; If there is more than one, they won't work right.
  '(fixed-pitch ((t (:family "JetBrains Mono"))))
  '(italic ((t (:slant italic))))
- '(variable-pitch ((t (:family "DejaVu Sans, Book")))))
+ '(variable-pitch ((t (:family "Chilanka")))))
 )
