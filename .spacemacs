@@ -32,7 +32,12 @@ This function should only modify configuration layer settings."
 
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
-   '(html
+   '(
+     (conda :variables
+            conda-anaconda-home "~/miniconda3")
+     (python :variables
+             python-fill-column 99)
+     html
      javascript
      lua
      unicode-fonts
