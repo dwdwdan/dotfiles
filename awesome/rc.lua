@@ -52,6 +52,7 @@ beautiful.init("~/.config/awesome/mytheme.lua")
 -- Multiple monitor helper
 local xrandr=require("xrandr")
 local default_layout=2
+awful.spawn.with_shell("~/.screenlayout/primary.sh")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "alacritty"
@@ -90,7 +91,6 @@ awful.layout.layouts = {
 mykeyboardlayout = awful.widget.keyboardlayout()
 
 -- Set up monitors
-awful.spawn.with_shell("xrandr --output HDMI-1-1 --primary --right-of eDP-1-1")
 
 -- Create a wibox for each screen and add it
 local taglist_buttons = gears.table.join(
