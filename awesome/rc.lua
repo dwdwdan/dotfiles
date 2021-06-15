@@ -599,7 +599,7 @@ beautiful.notification_max_width=300
 beautiful.notification_max_height=100
 
 -- Autostart Applications
-awful.spawn.with_shell("compton -b -f")
+awful.spawn.with_shell("picom")
 awful.spawn.with_shell("feh --recursive --randomize --bg-fill ~/wallpapers")
 awful.spawn.with_shell("numlockx on")
 --awful.spawn("thunderbird",{tag="<Email>"})
