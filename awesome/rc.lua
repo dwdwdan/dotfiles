@@ -401,15 +401,15 @@ awful.key({ }, "XF86AudioStop" ,     function ()
     {description = "Play/Pause", group = "Audio"}),
 
   awful.key({ }, "XF86AudioRaiseVolume" ,     function ()
-  awful.spawn.with_shell("amixer -D pulse sset Master 2%+", false) end,
+  awful.spawn.with_shell("pamixer -i 2", false) end,
     {description = "Increase Volume", group = "Audio"}),
 
   awful.key({ }, "XF86AudioLowerVolume" ,     function ()
-  awful.spawn.with_shell("amixer -D pulse sset Master 2%-", false) end,
+      awful.spawn.with_shell("pamixer -d 2") end,
     {description = "Decrease Volume", group = "Audio"}),
 
   awful.key({ }, "XF86AudioMute" ,     function ()
-  awful.spawn.with_shell("amixer -D pulse sset Master toggle", false) end,
+  awful.spawn.with_shell("pamixer -t", false) end,
     {description = "Mute Volume", group = "Audio"})
 )
 

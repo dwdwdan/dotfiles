@@ -13,10 +13,8 @@ vol_widget:set_widget(vol_text)
 vol_widget:set_bg(theme.bg_widget)
 vol_widget:set_fg(theme.fg_widget)
 
-watch("amixer -c 1 sget 'PCM'",1,function(widget, stdout, stderr, exitreason, exitcode)
-	local vol_percent = string.match(stdout,"%[[^%s]*%]")
-	vol_percent = vol_percent:sub(2,-3)
-  vol_percent = " "..vol_percent
+watch("pamixer --get-volume",1,function(widget, stdout, stderr, exitreason, exitcode)
+  vol_percent = " "..stdout
 	if(tonumber(vol_percent) < 100) then
 		vol_percent = " "..vol_percent
 	end
@@ -30,7 +28,6 @@ watch("amixer -c 1 sget 'PCM'",1,function(widget, stdout, stderr, exitreason, ex
 	else
 		vol_percent = "🔉"..vol_percent
 	end
-	vol_percent = vol_percent.."%"
 	vol_text:set_text(vol_percent)
 end, vol_widget)
 
