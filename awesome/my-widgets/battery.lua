@@ -14,17 +14,8 @@ bat_widget:set_widget(bat_text)
 bat_widget:set_bg(theme.bg_widget)
 bat_widget:set_fg(theme.fg_widget)
 
-watch("acpi",10,function(widget, stdout, stderr, exitreason, exitcode)
-	local bat_status = ""
-	if(string.find(stdout,"Dis")) then
-		bat_status = "⬇"
-	elseif(string.find(stdout,"Full")) then
-		bat_status = " "
-	else
-		bat_status = "⬆"
-	end
-	local bat_percent = string.match(stdout,"%d?%d?%d%%")
-	bat_percent = bat_percent:sub(1,-2)
+watch("cat /sys/class/power_supply/BAT0/capacity",10,function(widget, stdout, stderr, exitreason, exitcode)
+	local bat_percent = stdout
 	if(tonumber(bat_percent) < 100) then
 		bat_percent = " "..bat_percent
 	end
@@ -32,7 +23,7 @@ watch("acpi",10,function(widget, stdout, stderr, exitreason, exitcode)
 		bat_percent = " "..bat_percent
 	end
 	bat_percent = bat_percent.."%"
-	bat_text:set_text("🔋"..bat_status..bat_percent)
+	bat_text:set_text("🔋"..bat_percent)
 end, bat_widget)
 
 local open_info = function(lx, ly, button, mods, find_widgets_result)

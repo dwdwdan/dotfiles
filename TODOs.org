@@ -13,3 +13,7 @@
 ** DONE Open thunderbird generally
 ** TODO Focus thunderbird
 ** TODO Open calendar Specifically
+
+* TODO Fix battery widget
+  Not currently showing a % sign for some reason.
+
