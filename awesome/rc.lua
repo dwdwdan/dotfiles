@@ -358,8 +358,8 @@ awful.key({ modkey, "Control" }, "f",     function ()
   {description = "Ranger", group = "software"}),
 
 awful.key({ modkey, }, "f",     function ()
-  awful.spawn("pcmanfm") end,
-  {description = "PCMan File Manager", group = "software"}),
+  awful.spawn("thunar") end,
+  {description = "Thunar File Manager", group = "software"}),
 
 awful.key({ modkey }, "a",     function ()
   awful.spawn("pavucontrol") end,
