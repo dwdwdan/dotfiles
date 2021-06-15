@@ -28,7 +28,7 @@ theme.fg_seperator  = "#666666"
 
 theme.useless_gap   = dpi(10)
 theme.gap_single_client=true
-theme.border_width  = dpi(2)
+theme.border_width  = 0
 theme.border_normal = "#000000"
 theme.border_focus  = "#444444"
 theme.border_marked = "#91231c"
