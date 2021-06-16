@@ -573,6 +573,9 @@ before packages are loaded."
         TeX-view-program-list '(("PDF Tools" TeX-pdf-tools-sync-view))
         TeX-source-correlate-start-server t
 )
+
+  (setq-default evil-escape-delay 0.2)
+
   ;; Org directories
   (setq org-roam-directory "~/org/roam")
   (setq org-agenda-files '("~/org"))
