@@ -7,9 +7,9 @@ local themes_path = gfs.get_themes_dir()
 
 local theme = {}
 
-theme.font="Lato, Light 14"
-theme.mono_font="JetBrains Mono 14"
-theme.sep_font="JetBrains Mono 18"
+theme.font="Lato, Light 12"
+theme.mono_font="JetBrains Mono 12"
+theme.sep_font="JetBrains Mono 16"
 theme.rounded_corners=20
 
 theme.bg_normal     = "#141414"
