@@ -7,12 +7,20 @@ local vol_text = wibox.widget{
 	widget = wibox.widget.textbox,
 }
 
-local vol_widget = wibox.widget.background()
-vol_widget:set_widget(vol_text)
-
-vol_widget:set_bg(theme.bg_widget)
-vol_widget:set_fg(theme.fg_widget)
-
+local vol_widget = wibox.widget {
+  {
+    {
+      widget = vol_text
+    },
+    left = 10,
+    right = 10,
+    widget = wibox.container.margin,
+  },
+  bg =theme.bg_widget,
+  fg = theme.fg_widget,
+  shape = theme.widget_shape,
+  widget=wibox.container.background,
+}
 watch("pamixer --get-volume",1,function(widget, stdout, stderr, exitreason, exitcode)
   vol_percent = " "..stdout
 	if(tonumber(vol_percent) < 100) then

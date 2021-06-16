@@ -9,11 +9,20 @@ local weather_text = wibox.widget{
 	widget = wibox.widget.textbox,
 }
 
-local weather_widget = wibox.widget.background()
-weather_widget:set_widget(weather_text)
-
-weather_widget:set_bg(theme.bg_widget)
-weather_widget:set_fg(theme.fg_widget)
+local weather_widget = wibox.widget {
+  {
+    {
+      widget = weather_text
+    },
+    left = 10,
+    right = 10,
+    widget = wibox.container.margin,
+  },
+  bg = theme.bg_widget,
+  fg = theme.fg_widget,
+  shape = theme.widget_shape,
+  widget = wibox.container.background,
+}
 
 watch("curl 'https://api.openweathermap.org/data/2.5/weather?id="..city.."&APPID="..api_key.."&units=metric'",600,function(widget, stdout, stderr, exitreason, exitcode)
 	local temp = string.match(stdout,"\"temp\":%d+")

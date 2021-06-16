@@ -7,6 +7,9 @@ local themes_path = gfs.get_themes_dir()
 
 local theme = {}
 
+theme.widget_shape = function(cr, width, height)
+  shape.partially_rounded_rect(cr, width, height, true, true, false, false)
+end
 theme.font="Lato, Light 12"
 theme.mono_font="JetBrains Mono 12"
 theme.sep_font="JetBrains Mono 16"
@@ -16,7 +19,7 @@ theme.bg_normal     = "#141414"
 theme.bg_focus      = "#202020"
 theme.bg_urgent     = "#ff0000"
 theme.bg_minimize   = "#444444"
-theme.bg_widget     = theme.bg_normal
+theme.bg_widget     = theme.bg_focus
 theme.bg_seperator  = theme.bg_normal
 theme.bg_systray    = theme.bg_widget
 

@@ -10,9 +10,9 @@ local pad_text = wibox.widget{
 local pad_widget = wibox.widget.background()
 pad_widget:set_widget(pad_text)
 
-pad_widget:set_bg(theme.bg_widget)
-pad_widget:set_fg(theme.fg_widget)
+pad_widget:set_bg(theme.bg_normal)
+pad_widget:set_fg(theme.fg_normal)
 
-pad_text:set_text(" ")
+pad_text:set_text("  ")
 
 return pad_widget

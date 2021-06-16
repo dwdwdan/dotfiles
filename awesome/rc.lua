@@ -176,13 +176,11 @@ bar:setup{
 		nil,
 		{ -- Right widgets
 			layout = wibox.layout.fixed.horizontal,
-			sep, --TODO Can't decide if I like this one being here
-			my_weather, sep,
+			my_weather, pad,
 			-- my_pack, sep,
-			my_date, sep,
-			my_volume, sep,
-			my_battery,
-			pad,
+			my_date, pad,
+			my_volume, pad,
+			my_battery, pad,
 		},
 	}
 end

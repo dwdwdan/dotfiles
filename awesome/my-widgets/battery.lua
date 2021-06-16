@@ -8,11 +8,20 @@ local bat_text = wibox.widget{
 	widget = wibox.widget.textbox,
 }
 
-local bat_widget = wibox.widget.background()
-bat_widget:set_widget(bat_text)
-
-bat_widget:set_bg(theme.bg_widget)
-bat_widget:set_fg(theme.fg_widget)
+local bat_widget = wibox.widget {
+  {
+    {
+      widget = bat_text
+    },
+    left = 10,
+    right = 10,
+    widget = wibox.container.margin,
+  },
+  bg =theme.bg_widget,
+  fg = theme.fg_widget,
+  shape = theme.widget_shape,
+  widget=wibox.container.background,
+}
 
 watch("cat /sys/class/power_supply/BAT0/capacity",10,function(widget, stdout, stderr, exitreason, exitcode)
 	local bat_percent = stdout
