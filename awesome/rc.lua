@@ -162,7 +162,11 @@ function makeMainScreenWiBar()
 	local mytaglist = awful.widget.taglist {
 		screen  = thisscreen,
 		filter  = awful.widget.taglist.filter.all,
-		buttons = taglist_buttons
+		buttons = taglist_buttons,
+    style = {
+      shape = gears.shape.circle,
+      spacing = 7,
+    },
 	}
 
 bar:setup{
@@ -197,7 +201,11 @@ local function makeSecondScreenWibar()
 	local mytaglist = awful.widget.taglist {
 		screen  = thisscreen,
 		filter  = awful.widget.taglist.filter.all,
-		buttons = taglist_buttons
+		buttons = taglist_buttons,
+    style = {
+      shape = gears.shape.circle,
+      spacing = 7,
+    },
 	}
 	bar:setup{
 		layout=wibox.layout.stack,

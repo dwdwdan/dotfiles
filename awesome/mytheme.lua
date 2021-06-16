@@ -37,12 +37,12 @@ theme.border_normal = "#000000"
 theme.border_focus  = "#444444"
 theme.border_marked = "#91231c"
 
-theme.taglist_bg_empty = theme.bg_normal
-theme.taglist_fg_empty = theme.bg_normal
-theme.taglist_bg_occupied = theme.bg_normal
-theme.taglist_fg_occupied = theme.bg_normal
-theme.taglist_bg_focus = theme.bg_focus
-theme.taglist_fg_focus = theme.bg_focus
+theme.taglist_bg_empty = theme.bg_widget
+theme.taglist_fg_empty = theme.taglist_bg_empty
+theme.taglist_bg_occupied = theme.taglist_bg_empty
+theme.taglist_fg_occupied = theme.taglist_bg_occupied
+theme.taglist_bg_focus = "#555555"
+theme.taglist_fg_focus = theme.taglist_bg_focus
 
 theme.hotkeys_font="SpaceMono for Powerline 14"
 theme.hotkeys_description_font="Lato 14"
