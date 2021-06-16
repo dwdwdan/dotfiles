@@ -50,6 +50,7 @@ end
 -- Themes define colours, icons, font and wallpapers.
 beautiful.init("~/.config/awesome/mytheme.lua")
 -- Multiple monitor helper
+local theme = require("mytheme")
 local xrandr=require("xrandr")
 local default_layout=2
 awful.spawn.with_shell("~/.screenlayout/primary.sh")
@@ -578,6 +579,18 @@ awful.rules.rules = {
 }
 -- }}}
 
+function is_maximized(c)
+
+	-- if window fills screen, remove rounded corners and translucent borders
+	local function _fills_screen()
+		local wa = c.screen.workarea
+		local cg = c:geometry()
+		return wa.x == cg.x and wa.y == cg.y and wa.width == cg.width and wa.height == cg.height
+	end
+
+	return c.maximized or (not c.floating and _fills_screen())
+end
+
 -- Signal function to execute when a new client appears.
 client.connect_signal("manage", function (c)
 	-- Set the windows at the slave,
@@ -595,8 +608,19 @@ end)
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 
-beautiful.notification_max_width=300
-beautiful.notification_max_height=100
+
+client.connect_signal("property::geometry", function(c)
+                        if not is_maximized(c) then
+                          c.shape = function(cr, w, h)
+                            gears.shape.rounded_rect(cr, w, h, theme.rounded_corners)
+                          end
+                        else
+                          c.shape = gears.shape.rectangle
+                        end
+                      end)
+
+-- beautiful.notification_max_width=300
+-- beautiful.notification_max_height=100
 
 -- Autostart Applications
 awful.spawn.with_shell("picom")

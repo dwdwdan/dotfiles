@@ -10,6 +10,7 @@ local theme = {}
 theme.font="Lato, Light 14"
 theme.mono_font="JetBrains Mono 14"
 theme.sep_font="JetBrains Mono 18"
+theme.rounded_corners=20
 
 theme.bg_normal     = "#141414"
 theme.bg_focus      = "#202020"
