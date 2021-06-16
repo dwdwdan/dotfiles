@@ -40,6 +40,12 @@ This function should only modify configuration layer settings."
      html
      javascript
      lua
+     (latex :variables
+            latex-enable-folding t
+            latex-enable-magic t
+            latex-refresh-preview t
+            magic-latex-enable-block-align t
+            magic-latex-enable-inline-image t)
      xkcd
      pdf
      github
@@ -563,6 +569,10 @@ before packages are loaded."
   ;; Soft wrap lines in org mode
   (setq org-startup-truncated nil)
 
+  (setq TeX-view-program-selection '((output-pdf "PDF Tools"))
+        TeX-view-program-list '(("PDF Tools" TeX-pdf-tools-sync-view))
+        TeX-source-correlate-start-server t
+)
   ;; Org directories
   (setq org-roam-directory "~/org/roam")
   (setq org-agenda-files '("~/org"))
