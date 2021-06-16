@@ -37,6 +37,7 @@ alias cls="clear"
 alias bashrc="source ~/.bashrc"
 alias ls="ls -la"
 alias rweb="cd ~/repos/website; bundle exec jekyll serve --livereload"
+alias run="screen -d -m"
 
 # cd to selected directory
 fd() {
