@@ -15,8 +15,8 @@ theme.mono_font="JetBrains Mono 12"
 theme.sep_font="JetBrains Mono 16"
 theme.rounded_corners=20
 
-theme.bg_normal     = "#141414"
-theme.bg_focus      = "#202020"
+theme.bg_normal     = "#222222"
+theme.bg_focus      = "#333333"
 theme.bg_urgent     = "#ff0000"
 theme.bg_minimize   = "#444444"
 theme.bg_widget     = theme.bg_focus
