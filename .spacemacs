@@ -560,10 +560,11 @@ before packages are loaded."
   (setq-default evil-escape-key-sequence "jk")
 
   ;; Org todo keywords
-  (setq org-todo-keywords `((sequence "TODO(t)" "FIXME(f)" "|" "DONE(d)" ))
+  (setq org-todo-keywords `((sequence "TODO(t)" "FIXME(f)" "|" "DONE(d)" "CANCELLED(c)"))
         org-todo-keyword-faces
-        `(("TODO" :foreground "#ECBE7B" :underline t)
-          ("FIXME" :foreground "#FF6C6B" :underline t))
+        `(("TODO" :foreground "#ECBE7B")
+          ("FIXME" :foreground "#FF6C6B")
+          ("CANCELLED" :foreground "#FF6C6B"))
   )
 
   ;; Soft wrap lines in org mode
