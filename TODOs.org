@@ -14,7 +14,8 @@
 ** TODO Focus thunderbird
 ** TODO Open calendar Specifically
 
-* TODO Fix battery widget
+* CANCELLED Fix battery widget
+  CLOSED: [2021-06-18 Fri 10:57]
   Not currently showing a % sign for some reason.
 
 * TODO Add notification on low battery
