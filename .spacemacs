@@ -59,7 +59,8 @@ This function should only modify configuration layer settings."
      markdown
      multiple-cursors
      (org :variables
-          org-enable-roam-support t)
+          org-enable-roam-support t
+          org-want-todo-bindings t)
      deft
      ;; (shell :variables
      ;;        shell-default-height 30
