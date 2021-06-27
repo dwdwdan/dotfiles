@@ -30,8 +30,8 @@ export PATH="~/.local/bin:$PATH"
 
 alias v=nvim
 alias vim=nvim
-alias dotfiles="cd ~/repos/dotfiles;v"
-alias web="cd ~/repos/website;v"
+alias dotfiles="cd ~/repos/dotfiles"
+alias web="cd ~/repos/website"
 alias q="exit"
 alias gs="git status"
 alias cls="clear"
