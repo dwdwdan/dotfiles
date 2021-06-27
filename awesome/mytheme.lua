@@ -13,7 +13,6 @@ end
 theme.font="Lato, Light 12"
 theme.mono_font="JetBrains Mono 12"
 theme.sep_font="JetBrains Mono 16"
-theme.rounded_corners=20
 
 theme.bg_normal     = "#282a36"
 theme.bg_focus      = "#44475a"
