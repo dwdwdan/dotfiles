@@ -1,7 +1,5 @@
 call plug#begin(stdpath('config').'/plugged')
 Plug 'neoclide/coc.nvim',{'branch':'release'}
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'lervag/vimtex'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
@@ -25,6 +23,8 @@ Plug 'folke/trouble.nvim'
 
 Plug 'nvim-treesitter/nvim-treesitter',{'do':':TSUpdate'}
 Plug 'nvim-treesitter/playground'
+
+Plug 'hoob3rt/lualine.nvim'
 call plug#end()
 
 set termguicolors
@@ -71,6 +71,11 @@ nnoremap <leader>l <C-w>l
 let g:airline_theme='dracula'
 let g:airline_powerline_fonts=1
 
+
+"""""""""""""""""""""""""""""
+"         LUALINE           "
+"""""""""""""""""""""""""""""
+lua require('lualineConfig')
 
 """"""""""""""""""""""""""""""
 "          SETS              "
