@@ -57,6 +57,8 @@ awful.spawn.with_shell("~/.screenlayout/primary.sh")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "alacritty"
+guiFileManager = "pcmanfm"
+browser = "brave"
 editor = os.getenv("EDITOR") or "editor"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -336,9 +338,9 @@ awful.key({ modkey, }, "Return", function () awful.spawn(terminal) end,
   {description = "open a terminal", group = "software"}),
 
 awful.key({ modkey }, "b",     function ()
-  awful.util.spawn("firefox")
+  awful.util.spawn(browser)
   end,
-  {description = "Firefox", group = "software"}),
+  {description = "Browser", group = "software"}),
 
 awful.key({ modkey }, "t",     function ()
   awful.util.spawn("thunderbird")
@@ -351,7 +353,7 @@ awful.key({ modkey }, "e",     function ()
   {description = "Emacs", group = "software"}),
 
 awful.key({ modkey, "Shift" }, "m",     function ()
-  awful.util.spawn("firefox https://accounts.spotify.com/en/login?continue=https:%2F%2Fopen.spotify.com%2F")
+  awful.util.spawn(browser.."https://accounts.spotify.com/en/login?continue=https:%2F%2Fopen.spotify.com%2F")
   end,
   {description = "Spotify Web Client", group = "software"}),
 
@@ -365,8 +367,8 @@ awful.key({ modkey, "Control" }, "f",     function ()
   {description = "Ranger", group = "software"}),
 
 awful.key({ modkey, }, "f",     function ()
-  awful.spawn("thunar") end,
-  {description = "Thunar File Manager", group = "software"}),
+  awful.spawn(guiFileManager) end,
+  {description = "File Manager", group = "software"}),
 
 awful.key({ modkey }, "a",     function ()
   awful.spawn("pavucontrol") end,
