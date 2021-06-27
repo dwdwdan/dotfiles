@@ -8,10 +8,8 @@ Plug 'tpope/vim-unimpaired'
 Plug 'dracula/vim'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-syntastic/syntastic'
-Plug 'junegunn/vim-easy-align'
 Plug 'wincent/scalpel'
 Plug 'preservim/nerdcommenter'
-Plug 'thaerkh/vim-workspace'
 Plug 'norcalli/nvim-colorizer.lua'
 
 Plug 'nvim-lua/popup.nvim'
@@ -171,21 +169,6 @@ lua require('treesitter')
 
 
 """"""""""""""""""""""""""""""
-"       EASYALIGN            "
-""""""""""""""""""""""""""""""
-" use ga to use EasyAlign plugin
-xmap ga <Plug>(EasyAlign)
-nmap ga <Plug>(EasyAlign)
-
-
-""""""""""""""""""""""""""""""
-"       VIM-WORKSPACE        "
-""""""""""""""""""""""""""""""
-let g:workspace_session_directory = $HOME . '/.vimfiles/sessions/'
-let g:workspace_undodir = $HOME . '/.vimfiles/undofiles/'
-nnoremap <leader>s :ToggleWorkspace<CR>
-
-""""""""""""""""""""""""""""""
 "           Colorizer        "
 """"""""""""""""""""""""""""""
 lua require('colorizer').setup()
@@ -204,16 +187,6 @@ nnoremap <c-T> <cmd>TodoTrouble<cr>
 """"""""""""""""""""""""""""""
 lua require('troubleConfig')
 
-
-""""""""""""""""""""""""""""""
-"           Harpoon          "
-""""""""""""""""""""""""""""""
-nnoremap <leader>m <cmd>lua require('harpoon.mark').add_file()<cr>
-nnoremap <leader>h <cmd>lua require('harpoon.ui').nav_file(1)<cr>
-nnoremap <leader>j <cmd>lua require('harpoon.ui').nav_file(2)<cr>
-nnoremap <leader>k <cmd>lua require('harpoon.ui').nav_file(3)<cr>
-nnoremap <leader>l <cmd>lua require('harpoon.ui').nav_file(4)<cr>
-nnoremap <leader>mi <cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>
 
 """"""""""""""""""""""""""""""
 "       AUTOCMDS             "
