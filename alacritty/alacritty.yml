@@ -8,8 +8,8 @@
 #
 # All imports must either be absolute paths starting with `/`, or paths relative
 # to the user's home directory starting with `~/`.
-#import:
-#- ~/.config/alacritty/themes.yml
+import:
+  - ~/repos/dotfiles/alacritty/dracula.yml
 
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
@@ -23,7 +23,7 @@
   # available, otherwise `xterm-256color` is used.
   #TERM: alacritty
 
-window:
+#window:
   # Window dimensions (changes require restart)
   #
   # Number of lines/columns (not pixels) in the terminal. The number of columns
@@ -75,7 +75,7 @@ window:
   #startup_mode: Windowed
 
   # Window title
-   title: Alacritty
+  #title: Alacritty
 
   # Allow terminal applications to change Alacritty's window title.
   #dynamic_title: true
@@ -111,7 +111,7 @@ font:
     #   - (macOS) Menlo
     #   - (Linux/BSD) monospace
     #   - (Windows) Consolas
-    family: Jetbrainsmono
+    family: jetbrainsmono
 
     # The `style` can be specified to pick a specific face.
     #style: Regular
@@ -150,7 +150,7 @@ font:
     #style: Bold Italic
 
   # Point size
-  size: 13.0
+  size: 12.0
 
   # Offset is the extra space around each character. `offset.y` can be thought
   # of as modifying the line spacing, and `offset.x` as modifying the letter
@@ -166,16 +166,21 @@ font:
   #  x: 0
   #  y: 0
 
+  # Thin stroke font rendering (macOS only)
+  #
+  # Thin strokes are suitable for retina displays, but for non-retina screens
+  # it is recommended to set `use_thin_strokes` to `false`.
+  #use_thin_strokes: true
 
 # If `true`, bold text is drawn using the bright color variants.
 #draw_bold_text_with_bright_colors: false
 
 # Colors (Tomorrow Night)
-colors:
+#colors:
   # Default colors
   #primary:
-  background: '#1d1f21'
-  foreground: '#c5c8c6'
+  #  background: '#1d1f21'
+  #  foreground: '#c5c8c6'
 
     # Bright and dim foreground colors
     #
@@ -183,8 +188,8 @@ colors:
     # present. If the bright foreground color is not set, or
     # `draw_bold_text_with_bright_colors` is `false`, the normal foreground
     # color will be used.
-  dim_foreground: '#828482'
-  bright_foreground: '#eaeaea'
+    #dim_foreground: '#828482'
+    #bright_foreground: '#eaeaea'
 
   # Cursor colors
   #
@@ -262,15 +267,15 @@ colors:
   #  background: CellForeground
 
   # Normal colors
-  normal:
-    black:   '#000000'
-    red:     '#ff0000'
-    green:   '#00ff00'
-    yellow:  '#ffff00'
-    blue:    '#0000ff'
-    magenta: '#ff00ff'
-    cyan:    '#00ffff'
-    white:   '#ffffff'
+  #normal:
+  #  black:   '#1d1f21'
+  #  red:     '#cc6666'
+  #  green:   '#b5bd68'
+  #  yellow:  '#f0c674'
+  #  blue:    '#81a2be'
+  #  magenta: '#b294bb'
+  #  cyan:    '#8abeb7'
+  #  white:   '#c5c8c6'
 
   # Bright colors
   #bright:
@@ -352,7 +357,7 @@ colors:
 #
 # Window opacity as a floating point number from `0.0` to `1.0`.
 # The value `0.0` is completely transparent and `1.0` is opaque.
-background_opacity: 0.9
+#background_opacity: 1.0
 
 #selection:
   # This string contains all characters that are used as separators for
@@ -362,16 +367,16 @@ background_opacity: 0.9
   # When set to `true`, selected text will be copied to the primary clipboard.
   #save_to_clipboard: false
 
-cursor:
+#cursor:
   # Cursor style
-  style:
+  #style:
     # Cursor shape
     #
     # Values for `shape`:
     #   - ▇ Block
     #   - _ Underline
     #   - | Beam
-    shape: Block
+    #shape: Block
 
     # Cursor blinking state
     #
@@ -402,7 +407,7 @@ cursor:
   #thickness: 0.15
 
 # Live config reload (changes require restart)
-live_config_reload: true
+#live_config_reload: true
 
 # Shell
 #
@@ -444,9 +449,9 @@ live_config_reload: true
 #
 # Terminal hints can be used to find text in the visible part of the terminal
 # and pipe it to other applications.
-hints:
+#hints:
   # Keys used for the hint labels.
-  alphabet: "jfkdls;ahgurieowpq"
+  #alphabet: "jfkdls;ahgurieowpq"
 
   # List with all available hints
   #
@@ -824,3 +829,24 @@ hints:
   #- { key: F,              mods: Command|Control,            action: ToggleFullscreen      }
   #- { key: F,              mods: Command, mode: ~Search,     action: SearchForward         }
   #- { key: B,              mods: Command, mode: ~Search,     action: SearchBackward        }
+
+#debug:
+  # Display the time it takes to redraw each frame.
+  #render_timer: false
+
+  # Keep the log file after quitting Alacritty.
+  #persistent_logging: false
+
+  # Log level
+  #
+  # Values for `log_level`:
+  #   - Off
+  #   - Error
+  #   - Warn
+  #   - Info
+  #   - Debug
+  #   - Trace
+  #log_level: Warn
+
+  # Print all received window events.
+  #print_events: false

@@ -5,7 +5,7 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'lervag/vimtex'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
-Plug 'gruvbox-community/gruvbox'
+Plug 'dracula/vim'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-syntastic/syntastic'
 Plug 'junegunn/vim-easy-align'
@@ -77,13 +77,13 @@ nnoremap <C-l> <C-w>l
 let g:gruvbox_italic='1'
 let g:gruvbox_contrast_dark='medium'
 let g:gruvbox_vert_split='bg3'
-colorscheme gruvbox
+colorscheme dracula
 
 
 """""""""""""""""""""""""""""
 "         AIRLINE           "
 """""""""""""""""""""""""""""
-let g:airline_theme='base16_gruvbox_dark_hard'
+let g:airline_theme='dracula'
 let g:airline_powerline_fonts=1
 
 

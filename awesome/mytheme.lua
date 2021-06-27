@@ -8,27 +8,27 @@ local themes_path = gfs.get_themes_dir()
 local theme = {}
 
 theme.widget_shape = function(cr, width, height)
-  shape.partially_rounded_rect(cr, width, height, true, true, false, false)
+  shape.rounded_rect(cr, width, height, 5)
 end
 theme.font="Lato, Light 12"
 theme.mono_font="JetBrains Mono 12"
 theme.sep_font="JetBrains Mono 16"
 theme.rounded_corners=20
 
-theme.bg_normal     = "#222222"
-theme.bg_focus      = "#333333"
+theme.bg_normal     = "#282a36"
+theme.bg_focus      = "#44475a"
 theme.bg_urgent     = "#ff0000"
 theme.bg_minimize   = "#444444"
 theme.bg_widget     = theme.bg_focus
 theme.bg_seperator  = theme.bg_normal
 theme.bg_systray    = theme.bg_widget
 
-theme.fg_normal     = "#aaaaaa"
-theme.fg_focus      = "#ffffff"
-theme.fg_urgent     = "#ffffff"
-theme.fg_minimize   = "#ffffff"
+theme.fg_normal     = "#f8f8f2"
+theme.fg_focus      = theme.fg_normal
+theme.fg_urgent     = theme.fg_normal
+theme.fg_minimize   = theme.fg_normal
 theme.fg_widget     = theme.fg_normal
-theme.fg_seperator  = "#666666"
+theme.fg_seperator  = theme.fg_normal
 
 theme.useless_gap   = dpi(10)
 theme.gap_single_client=true
@@ -37,17 +37,17 @@ theme.border_normal = "#000000"
 theme.border_focus  = "#444444"
 theme.border_marked = "#91231c"
 
-theme.taglist_bg_empty = theme.bg_widget
+theme.taglist_bg_empty = theme.bg_focus
 theme.taglist_fg_empty = theme.taglist_bg_empty
 theme.taglist_bg_occupied = theme.taglist_bg_empty
 theme.taglist_fg_occupied = theme.taglist_bg_occupied
-theme.taglist_bg_focus = "#555555"
+theme.taglist_bg_focus = "#616682"
 theme.taglist_fg_focus = theme.taglist_bg_focus
 
 theme.hotkeys_font="SpaceMono for Powerline 14"
 theme.hotkeys_description_font="Lato 14"
-theme.hotkeys_modifiers_fg="#bbbbbb"
-theme.hotkeys_fg="#ffffff"
+theme.hotkeys_modifiers_fg = theme.fg_normal
+theme.hotkeys_fg = theme.fg_normal
 
 theme.menu_submenu_icon = themes_path.."default/submenu.png"
 theme.menu_height = dpi(15)

@@ -630,6 +630,6 @@ client.connect_signal("property::geometry", function(c)
 
 -- Autostart Applications
 awful.spawn.with_shell("picom")
-awful.spawn.with_shell("feh --recursive --randomize --bg-fill ~/wallpapers")
+awful.spawn.with_shell("feh  --bg-fill ~/wallpapers/Dracula/arch.png")
 awful.spawn.with_shell("numlockx on")
 --awful.spawn("thunderbird",{tag="<Email>"})
