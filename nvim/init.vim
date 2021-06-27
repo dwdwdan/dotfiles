@@ -102,8 +102,6 @@ set mouse=a
 set list lcs=tab:\|\ "
 
 
-
-
 """"""""""""""""""""""""""""""
 "       WRAPPING             "
 """"""""""""""""""""""""""""""
@@ -141,6 +139,7 @@ endfunction
 
 "coc-explorer
 	nnoremap <leader>t :CocCommand explorer<CR>
+
 
 """"""""""""""""""""""""""""""
 "         VIMTEX             "
