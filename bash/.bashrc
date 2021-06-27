@@ -26,6 +26,7 @@ export PS1;
 export GH_EDITOR="nvim"
 export EDITOR="nvim"
 export VISUAL="nvim"
+export PATH="~/.local/bin:$PATH"
 
 alias v=nvim
 alias vim=nvim
