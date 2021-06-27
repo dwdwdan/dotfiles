@@ -25,8 +25,6 @@ Plug 'folke/trouble.nvim'
 
 Plug 'nvim-treesitter/nvim-treesitter',{'do':':TSUpdate'}
 Plug 'nvim-treesitter/playground'
-
-Plug 'ThePrimeagen/harpoon'
 call plug#end()
 
 set termguicolors
