@@ -49,6 +49,7 @@ endif
 " Use magic search automatically
 nnoremap / /\v
 
+colorscheme dracula
 
 """"""""""""""""""""""""""""""
 "       COMMANDS             "
