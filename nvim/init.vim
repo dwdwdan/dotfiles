@@ -72,15 +72,6 @@ nnoremap <C-l> <C-w>l
 
 
 """""""""""""""""""""""""""""
-"         GRUVBOX           "
-"""""""""""""""""""""""""""""
-let g:gruvbox_italic='1'
-let g:gruvbox_contrast_dark='medium'
-let g:gruvbox_vert_split='bg3'
-colorscheme dracula
-
-
-"""""""""""""""""""""""""""""
 "         AIRLINE           "
 """""""""""""""""""""""""""""
 let g:airline_theme='dracula'
