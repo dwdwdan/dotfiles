@@ -30,7 +30,7 @@ theme.fg_widget     = theme.fg_normal
 theme.fg_seperator  = theme.fg_normal
 
 theme.useless_gap   = dpi(10)
-theme.gap_single_client=true
+theme.gap_single_client = false
 theme.border_width  = 0
 theme.border_normal = "#000000"
 theme.border_focus  = "#444444"
