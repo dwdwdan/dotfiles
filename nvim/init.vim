@@ -33,9 +33,6 @@ set termguicolors
 inoremap jk <esc>
 let mapleader=" "
 
-" make it so that j and k move by visual lines rather than active lines
-nnoremap j gj
-nnoremap k gk
 
 " Allow backspacing beyond the point when entered insert mode
 set backspace=indent,start,eol
