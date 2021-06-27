@@ -65,10 +65,10 @@ command! SynID echo synIDattr(synID(line("."), col("."), 1), "name")
 "       MOVEMENT             "
 """"""""""""""""""""""""""""""
 " Easier navigation around splits
-nnoremap <C-h> <C-w>h
-nnoremap <C-j> <C-w>j
-nnoremap <C-k> <C-w>k
-nnoremap <C-l> <C-w>l
+nnoremap <leader>h <C-w>h
+nnoremap <leader>j <C-w>j
+nnoremap <leader>k <C-w>k
+nnoremap <leader>l <C-w>l
 
 
 """""""""""""""""""""""""""""
