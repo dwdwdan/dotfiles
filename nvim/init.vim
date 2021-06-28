@@ -25,6 +25,7 @@ Plug 'nvim-treesitter/nvim-treesitter',{'do':':TSUpdate'}
 Plug 'nvim-treesitter/playground'
 
 Plug 'hoob3rt/lualine.nvim'
+Plug 'christoomey/vim-tmux-navigator'
 call plug#end()
 
 set termguicolors
@@ -54,15 +55,6 @@ command! Vimrc so ~/.config/nvim/init.vim
 
 " Echo current syntax type
 command! SynID echo synIDattr(synID(line("."), col("."), 1), "name")
-
-""""""""""""""""""""""""""""""
-"       MOVEMENT             "
-""""""""""""""""""""""""""""""
-" Easier navigation around splits
-nnoremap <leader>h <C-w>h
-nnoremap <leader>j <C-w>j
-nnoremap <leader>k <C-w>k
-nnoremap <leader>l <C-w>l
 
 
 """""""""""""""""""""""""""""
