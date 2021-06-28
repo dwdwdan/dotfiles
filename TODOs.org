@@ -14,18 +14,7 @@
 ** TODO Focus thunderbird
 ** TODO Open calendar Specifically
 
-* CANCELLED Fix battery widget
-  CLOSED: [2021-06-18 Fri 10:57]
-  Not currently showing a % sign for some reason.
-
 * TODO Add notification on low battery
   Laptop keeps dying. Need to check for low battery and warn when gets low.
 - Will need a flag of some kind to avoid notifications every 30 seconds (or however often it updates)
 - Possibly also change background colour of widget to red to highlight it if below 15%?
-
-* TODO Add feh config
-  This just needs moving and linking
-
-* TODO Fix neofetch linkage and configure
-  Have a look through the neofetch config file and see if theres anything to adjust. Maybe use an arch logo instead of endeavour?
-
