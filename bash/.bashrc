@@ -58,3 +58,5 @@ function Conda() {
         fi
     fi
 }
+
+source ~/.profile
