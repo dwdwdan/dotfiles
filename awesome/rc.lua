@@ -379,7 +379,7 @@ awful.key({ modkey , "Control" }, "b",     function ()
   {description = "Change Background", group = "utility"}),
 
 awful.key({ modkey }, "p",     function ()
-  logout_popup.launch{bg_color='#141414',text_color='#aaaaaa',accent_color='#91231c'} end,
+  logout_popup.launch{bg_color='#44475a',text_color='#f8f8f2',accent_color='#ffffff'} end,
   {description = "Show Shutdown Menu", group = "awesome"}),
 
 awful.key({ modkey }, "x",
