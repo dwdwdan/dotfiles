@@ -53,7 +53,7 @@ beautiful.init("~/.config/awesome/mytheme.lua")
 local theme = require("mytheme")
 local xrandr=require("xrandr")
 local default_layout=2
-awful.spawn.with_shell("~/.screenlayout/primary.sh")
+--awful.spawn.with_shell("~/.screenlayout/primary.sh")
 
 -- This is used later as the default terminal and editor to run.
 terminal = "alacritty"
@@ -611,7 +611,7 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 -- beautiful.notification_max_height=100
 
 -- Autostart Applications
-awful.spawn.with_shell("picom")
+--awful.spawn.with_shell("picom")
 awful.spawn.with_shell("feh  --bg-fill ~/wallpapers/Dracula/arch.png")
-awful.spawn.with_shell("numlockx on")
+--awful.spawn.with_shell("numlockx on")
 --awful.spawn("thunderbird",{tag="<Email>"})

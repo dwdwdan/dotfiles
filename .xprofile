@@ -1,0 +1,3 @@
+/home/dw/.screenlayout/primary.sh &
+picom &
+numlockx on
