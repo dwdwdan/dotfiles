@@ -26,6 +26,8 @@ Plug 'nvim-treesitter/playground'
 
 Plug 'hoob3rt/lualine.nvim'
 Plug 'christoomey/vim-tmux-navigator'
+
+Plug 'kristijanhusak/orgmode.nvim'
 call plug#end()
 
 set termguicolors
@@ -181,6 +183,10 @@ nnoremap <c-T> <cmd>TodoTrouble<cr>
 lua require('troubleConfig')
 
 
+""""""""""""""""""""""""""""""
+"           Org-Mode         "
+""""""""""""""""""""""""""""""
+lua require('orgConfig')
 """"""""""""""""""""""""""""""
 "       AUTOCMDS             "
 """"""""""""""""""""""""""""""
