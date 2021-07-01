@@ -1,3 +1,4 @@
 /home/dw/.screenlayout/primary.sh &
 picom &
-numlockx on
+numlockx on &
+/home/dw/bin/keyboardConfig &
