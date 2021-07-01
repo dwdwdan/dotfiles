@@ -16,3 +16,6 @@
 
 * TODO Autostart mpd
   Start mpd and mpdris2 on startup
+
+* TODO Theme ncmpcpp
+  Make ncmpcpp look more dracula like
