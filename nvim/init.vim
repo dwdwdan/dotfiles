@@ -46,6 +46,7 @@ endif
 
 " Use magic search automatically
 nnoremap / /\v
+nnoremap ZA <cmd>w<cr>
 
 colorscheme dracula
 
