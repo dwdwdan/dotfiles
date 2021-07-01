@@ -28,6 +28,7 @@ Plug 'hoob3rt/lualine.nvim'
 Plug 'christoomey/vim-tmux-navigator'
 
 Plug 'kristijanhusak/orgmode.nvim'
+Plug 'karb94/neoscroll.nvim'
 call plug#end()
 
 set termguicolors
@@ -189,6 +190,14 @@ lua require('troubleConfig')
 "           Org-Mode         "
 """"""""""""""""""""""""""""""
 lua require('orgConfig')
+
+
+""""""""""""""""""""""""""""""
+"          neoscroll         "
+""""""""""""""""""""""""""""""
+lua require('neoscroll').setup()
+
+
 """"""""""""""""""""""""""""""
 "       AUTOCMDS             "
 """"""""""""""""""""""""""""""
