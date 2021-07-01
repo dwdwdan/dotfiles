@@ -607,8 +607,8 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 
 
 
--- beautiful.notification_max_width=300
--- beautiful.notification_max_height=100
+beautiful.notification_max_width=300
+beautiful.notification_max_height=100
 
 -- Autostart Applications
 --awful.spawn.with_shell("picom")
