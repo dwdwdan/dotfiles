@@ -25,11 +25,12 @@ local music_widget = wibox.widget {
 
 watch("mpc -f \"[%artist% - ][%album%][ - %title%]\"", 3, function(widget, stdout, stderr, exitreason, exitcode)
 	if (stderr == "MPD error: Connection refused\n") then
-		music_text:set_text("MPD not running")
+		text = "MPD not running"
 	elseif (stdout == "volume: n/a   repeat: off   random: off   single: off   consume: off\n") then
-		music_text:set_text("Playlist Empty")
+		text = "Playlist Empty"
 	else
-		music_text:set_text("🎵 "..stdout)
+		text = stdout
+	music_text:set_text("🎵 "..text)
 	end
 end, music_widget)
 
