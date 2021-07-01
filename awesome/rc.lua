@@ -141,6 +141,7 @@ local my_battery = require('my-widgets.battery')
 local my_date = require('my-widgets.date')
 local my_pack = require('my-widgets.pack')
 local my_weather = require('my-widgets.weather')
+local my_music_info = require('my-widgets.music')
 local sep = require('my-widgets.sep')
 local pad = require('my-widgets.pad')
 
@@ -182,6 +183,7 @@ bar:setup{
 		nil,
 		{ -- Right widgets
 			layout = wibox.layout.fixed.horizontal,
+			my_music_info, pad,
 			my_weather, pad,
 			-- my_pack, sep,
 			my_date, pad,
