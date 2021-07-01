@@ -33,7 +33,7 @@ call plug#end()
 set termguicolors
 
 " Roll from j to k to leave insert mode
-inoremap jk <esc>
+"inoremap jk <esc>
 let mapleader=" "
 
 
