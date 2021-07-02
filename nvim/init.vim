@@ -29,6 +29,7 @@ Plug 'christoomey/vim-tmux-navigator'
 
 Plug 'kristijanhusak/orgmode.nvim'
 Plug 'karb94/neoscroll.nvim'
+Plug 'plasticboy/vim-markdown'
 call plug#end()
 
 set termguicolors
@@ -196,6 +197,13 @@ lua require('orgConfig')
 "          neoscroll         "
 """"""""""""""""""""""""""""""
 lua require('neoscroll').setup()
+
+
+""""""""""""""""""""""""""""""
+"          markdown          "
+""""""""""""""""""""""""""""""
+let g:vim_markdown_frontmatter = 1
+let g:vim_markdown_math = 1
 
 
 """"""""""""""""""""""""""""""
