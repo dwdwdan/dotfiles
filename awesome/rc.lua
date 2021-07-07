@@ -330,8 +330,8 @@ globalkeys = gears.table.join(
 
 -- Dmenu
 awful.key({ modkey }, "r",     function ()
-  awful.util.spawn("dmenu_run -fn 'Lato, Light-14' -sb '#282828' -sf '#ffffff' -nb '#141414' -nf '#aaaaaa'") end,
-  {description = "run dmenu", group = "launcher"}),
+  awful.util.spawn("rofi -show run") end,
+  {description = "run rofi", group = "launcher"}),
 
 awful.key({ modkey, "Control", "Shift" }, "m", function() xrandr.xrandr() end,
   {description = "cycle through multimonitor", group = "utility"}),
