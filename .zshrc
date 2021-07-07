@@ -1,6 +1,6 @@
 # PLUGIN CONFIG
 VI_MODE_SET_CURSOR=true
-ZSH_TMUX_AUTOSTART=true
+ZSH_TMUX_AUTOSTART=false
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
