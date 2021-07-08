@@ -31,6 +31,7 @@ Plug 'kristijanhusak/orgmode.nvim'
 Plug 'karb94/neoscroll.nvim'
 Plug 'plasticboy/vim-markdown'
 Plug 'mhinz/vim-startify'
+Plug 'tjdevries/cyclist.vim'
 call plug#end()
 
 set termguicolors
