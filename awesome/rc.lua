@@ -56,7 +56,7 @@ local default_layout=2
 --awful.spawn.with_shell("~/.screenlayout/primary.sh")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "alacritty"
+terminal = "kitty"
 guiFileManager = "pcmanfm"
 browser = "brave"
 editor = os.getenv("EDITOR") or "editor"
@@ -365,7 +365,7 @@ awful.key({ modkey }, "d",     function ()
   {description = "Ferdi - Messaging", group = "software"}),
 
 awful.key({ modkey, "Control" }, "f",     function ()
-  awful.spawn("alacritty -e ranger") end,
+  awful.spawn("kitty -e ranger") end,
   {description = "Ranger", group = "software"}),
 
 awful.key({ modkey, }, "f",     function ()
