@@ -95,6 +95,8 @@ set sidescrolloff=3 " Similarly but horizontally
 set signcolumn=yes
 set mouse=a
 
+set inccommand=split
+
 " Use | character to show indent levels
 set list lcs=tab:\|\ "
 
