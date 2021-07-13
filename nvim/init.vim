@@ -30,6 +30,7 @@ Plug 'sirver/ultisnips'
 Plug 'preservim/nerdtree'
 Plug 'ryanoasis/vim-devicons'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'airblade/vim-gitgutter'
 call plug#end()
 
 set termguicolors
@@ -240,4 +241,5 @@ augroup DWDWDAN
 	autocmd!
 	autocmd BufWritePre * :%s/\s\+$//e " Clears white space at end of lign on save
 	autocmd InsertEnter * :norm zz " centre cursor when enter insert mode
+	autocmd VimEnter * :GitGutterEnable "Enable git gutter by default
 augroup END
