@@ -158,8 +158,8 @@ inoremap <silent><expr> <C-e>     compe#close('<C-e>')
 """"""""""""""""""""""""""""""
 let g:UltiSnipsSnippetDirectories=["UltiSnips"]
 let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsJumpForwardTrigger="<c-s>"
+let g:UltiSnipsJumpBackwardTrigger="<c-d>"
 
 
 """"""""""""""""""""""""""""""
