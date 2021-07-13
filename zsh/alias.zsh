@@ -1,5 +1,6 @@
 alias v=nvim
 alias vim=nvim
+alias vf="v \$(fzf-tmux)"
 alias q="exit"
 alias g="git"
 alias gs="git status"

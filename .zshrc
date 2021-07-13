@@ -78,6 +78,7 @@ plugins=(
 	colored-man-pages
 	vi-mode
 	extract
+	fzf
 	tmux)
 
 source ~/.profile
