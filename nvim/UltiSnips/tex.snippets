@@ -31,31 +31,31 @@ snippet begin "General begin env"
 endsnippet
 
 # Theorem type environments
-snippet th(eore)?m "Theorem env" r
+snippet theorem "Theorem env"
 \begin{theorem}
 	$0
 \end{theorem}
 endsnippet
 
-snippet lem(ma)? "lemma env" r
+snippet lemma "lemma env"
 \begin{lemma}
 	$0
 \end{lemma}
 endsnippet
 
-snippet cor(ollary)? "corollary env" r
+snippet corollary "corollary env"
 \begin{corollary}
 	$0
 \end{corollary}
 endsnippet
 
-snippet prop(osition)? "proposition env" r
+snippet proposition "proposition env"
 \begin{proposition}
 	$0
 \end{proposition}
 endsnippet
 
-snippet sol(utio)?n "solution env" r
+snippet solution "solution env"
 \begin{solution}
 	$0
 \end{solution}
@@ -73,7 +73,7 @@ snippet claim "claim env"
 \end{claim}
 endsnippet
 
-snippet tab(ular)? "tabular env" r
+snippet tabular "tabular env"
 \begin{tabular}{${1:c|c}}
 	$2 & $3 \\
 	$0
@@ -92,7 +92,7 @@ snippet table "table env"
 \end{table}
 endsnippet
 
-snippet fig(ure)? "figure env" r
+snippet figure "figure env"
 \begin{figure}
 	\centering
 	\includegraphics[width=${1:0.8}\textwidth]{${2:Image Filepath}}
@@ -108,17 +108,17 @@ snippet align* "align* env"
 \end{align*}
 endsnippet
 
-snippet sec(tion)? "Section" r
+snippet section "Section"
 \section{${1:section heading}}
 \label{sec: ${2:$1}}
 endsnippet
 
-snippet sub(sec(tion)?)? "subsection" r
+snippet subsection "subsection"
 \subsection{${1:subsection heading}}
 \label{sub: ${2:$1}}
 endsnippet
 
-snippet sub(sub(sec(tion)?)?)?|ssub "subsubsection" r
+snippet subsubsection "subsubsection"
 \subsubsection{${1:subsubsection heading}}
 \label{ssub: ${2:$1}}
 endsnippet
