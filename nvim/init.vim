@@ -33,6 +33,7 @@ Plug 'plasticboy/vim-markdown'
 Plug 'mhinz/vim-startify'
 Plug 'tjdevries/cyclist.vim'
 Plug 'hrsh7th/nvim-compe'
+Plug 'sirver/ultisnips'
 call plug#end()
 
 set termguicolors
@@ -150,6 +151,13 @@ lua require('compeConfig')
 inoremap <silent><expr> <C-Space> compe#complete()
 inoremap <silent><expr> <CR>      compe#confirm('<CR>')
 inoremap <silent><expr> <C-e>     compe#close('<C-e>')
+
+
+""""""""""""""""""""""""""""""
+"         ULTISNIPS          "
+""""""""""""""""""""""""""""""
+let g:UltiSnipsSnippetDirectories=["UltiSnips"]
+
 
 """"""""""""""""""""""""""""""
 "         VIMTEX             "
