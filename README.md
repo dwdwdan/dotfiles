@@ -2,7 +2,9 @@
 These are my dotfiles for nvim, bash and tmux.
 
 ## Requirements
- - Neovim Nightly (0.5+)
+ - Neovim 0.5
+ - zsh
+ - fzf
  - [Vim-Plug](https://github.com/junegunn/vim-plug)
 
 ## Installation
@@ -15,8 +17,7 @@ The installation for these relies on symlinks, I shall list the required ones be
  - `~/.local/share/nvim/site/ftplugin` -> `nvim/ftplugin`
  - `~/.config/coc/ultisnips` -> `nvim/snippets`
  - `~/.tmux.conf` -> `.tmux.conf`
-
-You can create a file `~/.personalbashrc` to add personal bash commands. I have aliases to get around my file system quicker.
+ - `~/.zshrc` -> `.zshrc`
 
 For the awesome weather widget create a file `weather_conf.lua` inside `awesome` with the contents
 ```
