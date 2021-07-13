@@ -1,5 +1,4 @@
 call plug#begin(stdpath('config').'/plugged')
-"Plug 'neoclide/coc.nvim',{'branch':'release'}
 Plug 'lervag/vimtex'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
@@ -9,24 +8,18 @@ Plug 'vim-syntastic/syntastic'
 Plug 'wincent/scalpel'
 Plug 'preservim/nerdcommenter'
 Plug 'norcalli/nvim-colorizer.lua'
-
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
-"Plug 'fannheyward/telescope-coc.nvim'
 Plug 'nvim-telescope/telescope-github.nvim'
 Plug 'numkil/ag.nvim'
-
 Plug 'folke/todo-comments.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'folke/trouble.nvim'
-
 Plug 'nvim-treesitter/nvim-treesitter',{'do':':TSUpdate'}
 Plug 'nvim-treesitter/playground'
-
 Plug 'hoob3rt/lualine.nvim'
 Plug 'christoomey/vim-tmux-navigator'
-
 Plug 'kristijanhusak/orgmode.nvim'
 Plug 'karb94/neoscroll.nvim'
 Plug 'plasticboy/vim-markdown'
