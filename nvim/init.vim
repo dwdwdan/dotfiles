@@ -1,5 +1,5 @@
 call plug#begin(stdpath('config').'/plugged')
-Plug 'neoclide/coc.nvim',{'branch':'release'}
+"Plug 'neoclide/coc.nvim',{'branch':'release'}
 Plug 'lervag/vimtex'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
@@ -13,7 +13,7 @@ Plug 'norcalli/nvim-colorizer.lua'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
-Plug 'fannheyward/telescope-coc.nvim'
+"Plug 'fannheyward/telescope-coc.nvim'
 Plug 'nvim-telescope/telescope-github.nvim'
 Plug 'numkil/ag.nvim'
 
@@ -32,6 +32,7 @@ Plug 'karb94/neoscroll.nvim'
 Plug 'plasticboy/vim-markdown'
 Plug 'mhinz/vim-startify'
 Plug 'tjdevries/cyclist.vim'
+Plug 'hrsh7th/nvim-compe'
 call plug#end()
 
 set termguicolors
@@ -118,28 +119,37 @@ nnoremap <silent> <leader>w :set wrap! <CR>
 """"""""""""""""""""""""""""""
 "       COC.NVIM             "
 """"""""""""""""""""""""""""""
-let g:coc_global_extensions = ["coc-snippets","coc-json","coc-vimtex","coc-git","coc-explorer"]
+"let g:coc_global_extensions = ["coc-snippets","coc-json","coc-vimtex","coc-git","coc-explorer"]
 
-" Use tab to trigger completion and navigate
-inoremap <silent><expr> <TAB>
-	\ pumvisible() ? "\<C-n>" :
-	\ <SID>check_back_space() ? "\<TAB>" :
-	\ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+"" Use tab to trigger completion and navigate
+"inoremap <silent><expr> <TAB>
+	"\ pumvisible() ? "\<C-n>" :
+	"\ <SID>check_back_space() ? "\<TAB>" :
+	"\ coc#refresh()
+"inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
-function! s:check_back_space() abort
-	let col = col('.') - 1
-	return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
+"function! s:check_back_space() abort
+	"let col = col('.') - 1
+	"return !col || getline('.')[col - 1]  =~# '\s'
+"endfunction
 
-"coc-snippets
-	" Use <C-d> to expand snippets
-	imap <C-d> <Plug>(coc-snippets-expand)
-	let g:coc_snippet_next = '<C-f>' " Use <C-f> to move to next location in snippet
+""coc-snippets
+	"" Use <C-d> to expand snippets
+	"imap <C-d> <Plug>(coc-snippets-expand)
+	"let g:coc_snippet_next = '<C-f>' " Use <C-f> to move to next location in snippet
 
-"coc-explorer
-	nnoremap <leader>t :CocCommand explorer<CR>
+""coc-explorer
+	"nnoremap <leader>t :CocCommand explorer<CR>
 
+
+""""""""""""""""""""""""""""""
+"         COMPE              "
+""""""""""""""""""""""""""""""
+set completeopt=menuone,noselect
+lua require('compeConfig')
+inoremap <silent><expr> <C-Space> compe#complete()
+inoremap <silent><expr> <CR>      compe#confirm('<CR>')
+inoremap <silent><expr> <C-e>     compe#close('<C-e>')
 
 """"""""""""""""""""""""""""""
 "         VIMTEX             "

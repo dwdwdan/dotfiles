@@ -12,5 +12,5 @@ telescope.setup{
 		},
 	},
 }
-telescope.load_extension('coc')
+--telescope.load_extension('coc')
 telescope.load_extension('gh')
