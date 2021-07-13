@@ -27,6 +27,9 @@ Plug 'mhinz/vim-startify'
 Plug 'tjdevries/cyclist.vim'
 Plug 'hrsh7th/nvim-compe'
 Plug 'sirver/ultisnips'
+Plug 'preservim/nerdtree'
+Plug 'ryanoasis/vim-devicons'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 call plug#end()
 
 set termguicolors
@@ -153,6 +156,12 @@ let g:UltiSnipsSnippetDirectories=["UltiSnips"]
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-s>"
 let g:UltiSnipsJumpBackwardTrigger="<c-d>"
+
+
+""""""""""""""""""""""""""""""
+"         NERDTREE           "
+""""""""""""""""""""""""""""""
+nnoremap <leader>t <cmd>NERDTreeToggle<cr>
 
 
 """"""""""""""""""""""""""""""
