@@ -11,7 +11,7 @@ dotfiles(){
 
 		 # Name first Pane and start zsh
 		 tmux rename-window -t 0 'Main'
-		 tmux send-keys -t 'Main' 'cd ~/repos/dotfiles' C-m 'neofetch' C-m
+		 tmux send-keys -t 'Main' 'cd ~/repos/dotfiles' C-m 'clear' C-m
 
 	fi
 
