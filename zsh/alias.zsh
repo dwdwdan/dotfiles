@@ -1,3 +1,4 @@
+alias rm="mv -t ~/.trash/"
 alias v=nvim
 alias vim=nvim
 alias vf="v \$(fzf-tmux)"
