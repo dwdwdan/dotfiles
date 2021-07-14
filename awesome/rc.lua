@@ -147,7 +147,7 @@ local pad = require('my-widgets.pad')
 
 function makeMainScreenWiBar()
 	local thisscreen=screen[1]
-	awful.tag({"1","2","3","4","5","6","7","8","9"}, thisscreen, awful.layout.layouts[default_layout])
+	awful.tag({"[term]","[www]","[doc]","[chat]","[music]","[email]"}, thisscreen, awful.layout.layouts[default_layout])
 	local mytasklist = awful.widget.tasklist {
 		screen  = thisscreen,
 		filter  = awful.widget.tasklist.filter.currenttags,
@@ -167,8 +167,8 @@ function makeMainScreenWiBar()
 		filter  = awful.widget.taglist.filter.all,
 		buttons = taglist_buttons,
     style = {
-      shape = gears.shape.circle,
-      spacing = 7,
+      shape = theme.tag_shape,
+      spacing = 5,
     },
 	}
 
