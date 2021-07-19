@@ -28,7 +28,7 @@ require('compe').setup {
 		nvim_lua = true;
 		vsnip = false;
 		ultisnips = true;
-		luasnip = fale;
+		luasnip = false;
 		omni = true;
 		treesitter = true;
 	};
