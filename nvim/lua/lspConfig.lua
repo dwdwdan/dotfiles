@@ -40,9 +40,18 @@ buf_set_keymap("n", "<leader>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
 end
 nvim_lsp.texlab.setup{on_attach = on_attach}
 
+local on_new_config = function (client, dir)
+	if dir == vim.env.HOME .. '/repos/dotfiles' then
+		for _, val in ipairs({ 'client', 'awesome', 'screen', 'root', 'mypromptbox', 'mytextclock'}) do
+			table.insert(client.settings.Lua.diagnostics.globals, val)
+		end
+	end
+end
+
 require'lspconfig'.sumneko_lua.setup {
 	cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"};
 	on_attach = on_attach,
+	on_new_config = on_new_config,
 	settings = {
 		Lua = {
 			runtime = {
@@ -53,15 +62,7 @@ require'lspconfig'.sumneko_lua.setup {
 				},
 			diagnostics = {
 				-- Get the language server to recognize the `vim` global
-				globals = {
-					'vim',
-					-- Keywords from awesome's config
-					'client',
-					'awesome',
-					'screen',
-					'root',
-					'mypromptbox',
-					'mytextclock'},
+				globals = {'vim'},
 				},
 			workspace = {
 				-- Make the server aware of Neovim runtime files
@@ -74,6 +75,7 @@ require'lspconfig'.sumneko_lua.setup {
 		},
 	},
 }
+
 
 nvim_lsp.vimls.setup{on_attach = on_attach}
 
