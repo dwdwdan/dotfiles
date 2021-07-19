@@ -12,10 +12,10 @@ theme.widget_shape = function(cr, width, height)
 end
 
 theme.tag_shape = function(cr, width, height)
-  shape.rounded_rect(cr, width, height, height//2)
+  shape.rounded_rect(cr, width, height, math.min(width//2, height//2))
 end
 theme.mono_font="JetBrains Mono 12"
-theme.font="JetBrains Mono Medium 12"
+theme.font="Lato 12"
 theme.sep_font="JetBrains Mono 16"
 
 theme.bg_normal     = "#282a36"

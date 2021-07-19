@@ -207,7 +207,7 @@ local function makeSecondScreenWibar()
 		filter  = awful.widget.taglist.filter.all,
 		buttons = taglist_buttons,
     style = {
-      shape = gears.shape.circle,
+      shape = theme.tag_shape,
       spacing = 7,
     },
 	}
