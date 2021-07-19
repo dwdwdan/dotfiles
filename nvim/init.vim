@@ -31,6 +31,7 @@ Plug 'preservim/nerdtree'
 Plug 'ryanoasis/vim-devicons'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-gitgutter'
+Plug 'neovim/nvim-lspconfig'
 call plug#end()
 
 set termguicolors
@@ -206,6 +207,12 @@ lua require('neoscroll').setup()
 """"""""""""""""""""""""""""""
 let g:vim_markdown_frontmatter = 1
 let g:vim_markdown_math = 1
+
+
+""""""""""""""""""""""""""""""
+"          LSP               "
+""""""""""""""""""""""""""""""
+lua require("lspConfig")
 
 
 """"""""""""""""""""""""""""""
