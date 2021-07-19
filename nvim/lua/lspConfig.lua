@@ -74,3 +74,17 @@ require'lspconfig'.sumneko_lua.setup {
 		},
 	},
 }
+
+nvim_lsp.vimls.setup{on_attach = on_attach}
+
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities.textDocument.completion.completionItem.snippetSupport = true
+
+nvim_lsp.html.setup{
+	on_attach = on_attach,
+	capabilities = capabilities,
+}
+nvim_lsp.cssls.setup {
+	on_attach = on_attach,
+  capabilities = capabilities,
+}
