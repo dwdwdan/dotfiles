@@ -10,8 +10,12 @@ local theme = {}
 theme.widget_shape = function(cr, width, height)
   shape.rounded_rect(cr, width, height, 5)
 end
-theme.font="Lato, Light 12"
+
+theme.tag_shape = function(cr, width, height)
+  shape.rounded_rect(cr, width, height, math.min(width//2, height//2))
+end
 theme.mono_font="JetBrains Mono 12"
+theme.font="Lato 12"
 theme.sep_font="JetBrains Mono 16"
 
 theme.bg_normal     = "#282a36"
@@ -36,12 +40,12 @@ theme.border_normal = "#000000"
 theme.border_focus  = "#444444"
 theme.border_marked = "#91231c"
 
-theme.taglist_bg_empty = theme.bg_focus
-theme.taglist_fg_empty = theme.taglist_bg_empty
+theme.taglist_bg_empty = theme.bg_normal
+theme.taglist_fg_empty = theme.fg_normal
 theme.taglist_bg_occupied = theme.taglist_bg_empty
-theme.taglist_fg_occupied = theme.taglist_bg_occupied
-theme.taglist_bg_focus = "#616682"
-theme.taglist_fg_focus = theme.taglist_bg_focus
+theme.taglist_fg_occupied = theme.fg_normal
+theme.taglist_bg_focus = theme.bg_focus
+theme.taglist_fg_focus = theme.fg_normal
 
 theme.hotkeys_font="SpaceMono for Powerline 14"
 theme.hotkeys_description_font="Lato 14"
