@@ -31,6 +31,7 @@ Plug 'preservim/nerdtree'
 Plug 'ryanoasis/vim-devicons'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'airblade/vim-gitgutter'
+Plug 'neovim/nvim-lspconfig'
 call plug#end()
 
 set termguicolors
@@ -112,32 +113,6 @@ set breakindentopt=shift:2 " Indent wrapped words by 2
 let &showbreak='⮡ ' " Show ⮡ at the start of wrapped lines (Unicode U+2BA1)
 " Toggle to turn wrap on and off
 nnoremap <silent> <leader>w :set wrap! <CR>
-
-
-""""""""""""""""""""""""""""""
-"       COC.NVIM             "
-""""""""""""""""""""""""""""""
-"let g:coc_global_extensions = ["coc-snippets","coc-json","coc-vimtex","coc-git","coc-explorer"]
-
-"" Use tab to trigger completion and navigate
-"inoremap <silent><expr> <TAB>
-	"\ pumvisible() ? "\<C-n>" :
-	"\ <SID>check_back_space() ? "\<TAB>" :
-	"\ coc#refresh()
-"inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-"function! s:check_back_space() abort
-	"let col = col('.') - 1
-	"return !col || getline('.')[col - 1]  =~# '\s'
-"endfunction
-
-""coc-snippets
-	"" Use <C-d> to expand snippets
-	"imap <C-d> <Plug>(coc-snippets-expand)
-	"let g:coc_snippet_next = '<C-f>' " Use <C-f> to move to next location in snippet
-
-""coc-explorer
-	"nnoremap <leader>t :CocCommand explorer<CR>
 
 
 """"""""""""""""""""""""""""""
@@ -232,6 +207,12 @@ lua require('neoscroll').setup()
 """"""""""""""""""""""""""""""
 let g:vim_markdown_frontmatter = 1
 let g:vim_markdown_math = 1
+
+
+""""""""""""""""""""""""""""""
+"          LSP               "
+""""""""""""""""""""""""""""""
+lua require("lspConfig")
 
 
 """"""""""""""""""""""""""""""
