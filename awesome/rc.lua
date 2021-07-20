@@ -148,7 +148,7 @@ local pad = require('my-widgets.pad')
 local function makeMainScreenWiBar()
 	local thisscreen=screen[1]
 
-awful.tag({"[term]","[www]","[doc]","[chat]","[music]","[email]"}, thisscreen, awful.layout.layouts[default_layout])
+awful.tag({"[term]","[www]","[work]","[chat]","[music]","[email]"}, thisscreen, awful.layout.layouts[default_layout])
 
 	local bar=awful.wibar({
 		position="top",
