@@ -24,7 +24,7 @@ Plug 'karb94/neoscroll.nvim'
 Plug 'plasticboy/vim-markdown'
 Plug 'mhinz/vim-startify'
 Plug 'tjdevries/cyclist.vim'
-Plug 'hrsh7th/nvim-compe'
+Plug 'nvim-lua/completion-nvim'
 Plug 'sirver/ultisnips'
 Plug 'preservim/nerdtree'
 Plug 'ryanoasis/vim-devicons'
@@ -119,12 +119,15 @@ nnoremap <silent> <leader>w :set wrap! <CR>
 """"""""""""""""""""""""""""""
 "         COMPE              "
 """"""""""""""""""""""""""""""
-set completeopt=menuone,noselect
-lua require('compeConfig')
-inoremap <silent><expr> <C-Space> compe#complete()
-inoremap <silent><expr> <CR>      compe#confirm('<CR>')
-inoremap <silent><expr> <C-e>     compe#close('<C-e>')
+" Set completeopt to have a better completion experience
+set completeopt=menuone,noinsert,noselect
 
+" Avoid showing message extra message when using completion
+set shortmess+=c
+
+let g:completion_enable_snippet = 'UltiSnips'
+let g:completion_enable_auto_hover = 1
+imap <silent> <tab> <Plug>(completion_trigger)
 
 """"""""""""""""""""""""""""""
 "         ULTISNIPS          "
@@ -292,4 +295,5 @@ augroup DWDWDAN
 	autocmd BufWritePre * :%s/\s\+$//e " Clears white space at end of lign on save
 	autocmd InsertEnter * :norm zz " centre cursor when enter insert mode
 	autocmd VimEnter * :GitGutterEnable "Enable git gutter by default
+	autocmd BufEnter * :lua require'completion'.on_attach()
 augroup END
