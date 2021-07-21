@@ -147,11 +147,8 @@ local my_music_info = require('my-widgets.music')
 local pad = require('my-widgets.pad')
 
 local tags = charitable.create_tags(
-	{ "1", "2", "3", "4", "5", "6", "7", "8", "9" },
+	{"[term]","[www]","[work]","[chat]","[music]","[email]"},
 	{
-		awful.layout.layouts[1],
-		awful.layout.layouts[1],
-		awful.layout.layouts[1],
 		awful.layout.layouts[1],
 		awful.layout.layouts[1],
 		awful.layout.layouts[1],
