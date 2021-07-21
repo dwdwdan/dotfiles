@@ -149,12 +149,12 @@ local pad = require('my-widgets.pad')
 local tags = charitable.create_tags(
 	{"[term]","[www]","[work]","[chat]","[music]","[email]"},
 	{
-		awful.layout.layouts[1],
-		awful.layout.layouts[1],
-		awful.layout.layouts[1],
-		awful.layout.layouts[1],
-		awful.layout.layouts[1],
-		awful.layout.layouts[1],
+		awful.layout.layouts[default_layout],
+		awful.layout.layouts[default_layout],
+		awful.layout.layouts[default_layout],
+		awful.layout.layouts[default_layout],
+		awful.layout.layouts[default_layout],
+		awful.layout.layouts[default_layout],
 	}
 )
 
