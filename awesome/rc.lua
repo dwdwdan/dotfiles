@@ -52,6 +52,7 @@ beautiful.init("~/.config/awesome/mytheme.lua")
 -- Multiple monitor helper
 local theme = require("mytheme")
 local xrandr=require("xrandr")
+local charitable = require("charitable")
 local default_layout=2
 --awful.spawn.with_shell("~/.screenlayout/primary.sh")
 
@@ -145,10 +146,24 @@ local my_music_info = require('my-widgets.music')
 --local sep = require('my-widgets.sep')
 local pad = require('my-widgets.pad')
 
+local tags = charitable.create_tags(
+	{ "1", "2", "3", "4", "5", "6", "7", "8", "9" },
+	{
+		awful.layout.layouts[1],
+		awful.layout.layouts[1],
+		awful.layout.layouts[1],
+		awful.layout.layouts[1],
+		awful.layout.layouts[1],
+		awful.layout.layouts[1],
+		awful.layout.layouts[1],
+		awful.layout.layouts[1],
+		awful.layout.layouts[1],
+	}
+)
+
 local function makeMainScreenWiBar()
 	local thisscreen=screen[1]
 
-awful.tag({"[term]","[www]","[work]","[chat]","[music]","[email]"}, thisscreen, awful.layout.layouts[default_layout])
 
 	local bar=awful.wibar({
 		position="top",
@@ -156,6 +171,7 @@ awful.tag({"[term]","[www]","[work]","[chat]","[music]","[email]"}, thisscreen, 
 		width=thisscreen.geometry.width,
 		})
 
+	thisscreen.scratch = awful.tag.add('scratch-' .. thisscreen.index, {})
 	local tray = wibox.widget.systray()
 	tray:set_screen(thisscreen)
 	local mytaglist = awful.widget.taglist {
@@ -166,6 +182,7 @@ awful.tag({"[term]","[www]","[work]","[chat]","[music]","[email]"}, thisscreen, 
       shape = theme.tag_shape,
       spacing = 5,
     },
+		source = function(screen, args) return tags end,
 	}
 
 bar:setup{
@@ -191,13 +208,13 @@ end
 
 local function makeSecondScreenWibar()
 	local thisscreen=screen[screen.count()]
-	awful.tag({"1","2","3","4","5","6","7","8","9"}, thisscreen, awful.layout.layouts[default_layout])
 	local bar=awful.wibar({
 		position="top",
 		screen=thisscreen,
 		width=thisscreen.geometry.width,
 		})
 
+	thisscreen.scratch = awful.tag.add('scratch-' .. thisscreen.index, {})
 	local mytaglist = awful.widget.taglist {
 		screen  = thisscreen,
 		filter  = awful.widget.taglist.filter.all,
@@ -206,6 +223,7 @@ local function makeSecondScreenWibar()
       shape = theme.tag_shape,
       spacing = 7,
     },
+		source = function(screen, args) return tags end,
 	}
 	bar:setup{
 		layout=wibox.layout.stack,
@@ -464,22 +482,12 @@ for i = 1, 9 do
 	globalkeys = gears.table.join(globalkeys,
 		-- View tag only.
 		awful.key({ MODKEY }, "#" .. i + 9,
-			function ()
-				local screen = awful.screen.focused()
-				local tag = screen.tags[i]
-				if tag then
-					tag:view_only()
-				end
-			end,
+			function () charitable.select_tag(tags[i], awful.screen.focused()) end,
 			{description = "view tag #"..i, group = "tag"}),
 		-- Toggle tag display.
 		awful.key({ MODKEY, "Control" }, "#" .. i + 9,
 			function ()
-				local screen = awful.screen.focused()
-				local tag = screen.tags[i]
-				if tag then
-					awful.tag.viewtoggle(tag)
-				end
+				charitable.toggle_tag(tags[i], awful.screen.focused())
 			end,
 			{description = "toggle tag #" .. i, group = "tag"}),
 		-- Move client to tag.
@@ -600,6 +608,15 @@ end)
 client.connect_signal("focus", function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_normal end)
 
+tag.connect_signal("request::screen", function(t)
+	t.selected = false
+	for s in capi.screen do
+		if s ~= t.screen then
+			t.screen = s
+			return
+		end
+	end
+end)
 
 
 beautiful.notification_font = theme.font
@@ -614,3 +631,5 @@ beautiful.notification_icon_size = 0.9*beautiful.notification_max_height
 awful.spawn.with_shell("feh  --bg-fill ~/wallpapers/custom/gimp.png")
 --awful.spawn.with_shell("numlockx on")
 --awful.spawn("thunderbird",{tag="<Email>"})
+
+awful.tag.history.restore = function() end
