@@ -7,3 +7,6 @@
 [submodule "awesome/awesome-buttons"]
 	path = awesome/awesome-buttons
 	url = https://github.com/streetturtle/awesome-buttons.git
+[submodule "awesome/charitable"]
+	path = awesome/charitable
+	url = https://github.com/frioux/charitable.git
