@@ -506,6 +506,21 @@ awful.rules.rules = {
 		}
 	},
 
+	{ rule = { class = "Thunderbird" },
+		properties = { tag = "[email]" } },
+
+	{ rule = { class = "Brave-browser" },
+		properties = { tag = "[www]" } },
+
+	{ rule = { class = "Spotify" },
+		properties = { tag = "[music]" } },
+
+	{ rule_any = {
+		class = {
+			"discord"
+		} },
+		properties = { tag = "[chat]" } },
+
 	-- Floating clients.
 	{ rule_any = {
 		instance = {
