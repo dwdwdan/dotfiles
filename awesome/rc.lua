@@ -585,9 +585,6 @@ beautiful.notification_icon_size = 0.9*beautiful.notification_max_height
 
 
 -- Autostart Applications
---awful.spawn.with_shell("picom")
 awful.spawn.with_shell("feh  --bg-fill ~/wallpapers/custom/gimp.png")
---awful.spawn.with_shell("numlockx on")
---awful.spawn("thunderbird",{tag="<Email>"})
 
 awful.tag.history.restore = function() end
