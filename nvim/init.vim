@@ -130,7 +130,7 @@ set shortmess+=c
 let g:completion_enable_snippet = 'UltiSnips'
 let g:completion_chain_complete_list = [{'complete_items': ['lsp', 'snippet', 'ts', 'tmux']}]
 let g:completion_enable_auto_hover = 1
-imap <silent> <tab> <Plug>(completion_trigger)
+imap <silent> <C-tab> <Plug>(completion_trigger)
 
 """"""""""""""""""""""""""""""
 "         ULTISNIPS          "
