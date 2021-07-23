@@ -281,6 +281,7 @@ myEventHook = mempty
 myStartupHook = do
 			spawn "feh --bg-fill ~/wallpapers/custom/gimp.png &"
 			spawnOnce "conky &"
+			spawnOnce "dunst &"
 
 ------------------------------------------------------------------------
 -- Now run xmonad with all the defaults we set up.
