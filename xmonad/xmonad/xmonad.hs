@@ -6,6 +6,8 @@ import System.Exit
 import XMonad.Actions.CycleWS
 import XMonad.Hooks.ManageDocks
 import XMonad.Hooks.DynamicLog
+import XMonad.Layout.NoBorders
+import XMonad.Layout.ToggleLayouts
 import XMonad.Util.NamedScratchpad
 import XMonad.Util.SpawnOnce
 import XMonad.Util.Run
@@ -90,6 +92,8 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
 	 , ((modm,               xK_n), namedScratchpadAction myScratchPads "notes")
 
+	 , ((modm,               xK_m), sendMessage ToggleStruts >> sendMessage ToggleLayout) -- Maximises current window
+
     -- launch dmenu
     , ((modm,               xK_r     ), spawn "rofi -show run")
 
@@ -115,7 +119,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm,               xK_k     ), windows W.focusUp  )
 
     -- Move focus to the master window
-    , ((modm,               xK_m     ), windows W.focusMaster  )
+    , ((modm .|. shiftMask, xK_m     ), windows W.focusMaster  )
 
     -- Swap the focused window and the master window
     , ((modm,               xK_Return), windows W.swapMaster)
@@ -211,7 +215,7 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
 -- The available layouts.  Note that each layout is separated by |||,
 -- which denotes layout choice.
 --
-myLayout = avoidStruts (tiled ||| Mirror tiled ||| Full)
+myLayout = avoidStruts( toggleLayouts (noBorders Full) (tiled) ||| toggleLayouts Full (Mirror tiled) ||| noBorders Full)
 		where
      -- default tiling algorithm partitions the screen into two panes
      tiled   = Tall nmaster delta ratio
