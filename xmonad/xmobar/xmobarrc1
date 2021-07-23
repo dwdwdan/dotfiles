@@ -1,0 +1,36 @@
+Config { font = "xft:JetBrains Mono:pixelsize=18:antialias=true:hinting=true"
+       , additionalFonts = ["xft:NotoEmoji Nerd Font Mono:pixelsize=18:antialias=true:hinting=true",
+		 							 "xft:Noto Sans Symbols 2:pixelsize=18:antialias=true:hinting=true"]
+       , borderColor = "black"
+       , border = TopB
+       , bgColor = "#282a36"
+       , fgColor = "#f8f8f2"
+       , alpha = 255
+       , position = Top
+       , iconOffset = -1
+       , lowerOnStart = True
+       , pickBroadest = False
+       , persistent = False
+       , hideOnStart = False
+       , iconRoot = "."
+       , allDesktops = True
+       , overrideRedirect = True
+       , commands = [ Run Weather "EGBB" ["-t","<tempC>C",
+                                          "-L","10","-H","25",
+                                          "--normal","green",
+                                          "--high","#ff5555",
+                                          "--low","lightblue"] 36000
+                    , Run Network "enp2s0" ["--template","<rx>Kb/s  <tx>Kb/s"] 10
+                    , Run Cpu ["-H","50",
+                               "--normal","green","--high","#ff5555"] 10
+                    , Run Memory ["-t","Mem: <usedratio>%"] 10
+                    , Run Swap [] 10
+                    , Run Com "uname" ["-s","-r"] "" 36000
+                    , Run Date "%a %b %_d %Y %H:%M:%S" "date" 10
+						  , Run Battery ["-t","<left>%", "--", "-l","#ff5555", "-p","#50fa7b"] 60
+						  , Run StdinReader
+                    ]
+       , sepChar = "%"
+       , alignSep = "}{"
+       , template = " %StdinReader% }{ <fc=#bd93f9><fn=1>📆</fn> %date%</fc> | <fc=#50fa7b><fn=2>🌡</fn> %EGBB%</fc> | <fc=#f1fa8c><fn=1>🔋</fn>%battery%</fc> "
+       }

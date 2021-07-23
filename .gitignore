@@ -5,3 +5,5 @@ nvim/plugged
 newsboat/urls
 nohup.out
 awesome/weather_conf.lua
+xmonad/xmonad/*
+!xmonad/xmonad/xmonad.hs
