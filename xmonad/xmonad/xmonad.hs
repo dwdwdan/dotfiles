@@ -269,6 +269,7 @@ myEventHook = mempty
 -- per-workspace layout choices.
 myStartupHook = do
 			spawn "feh --bg-fill ~/wallpapers/custom/gimp.png &"
+			spawnOnce "conky &"
 
 ------------------------------------------------------------------------
 -- Now run xmonad with all the defaults we set up.
