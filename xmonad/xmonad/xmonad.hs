@@ -2,6 +2,7 @@
 
 import XMonad
 import Data.Monoid
+import Graphics.X11.ExtraTypes.XF86
 import System.Exit
 import XMonad.Actions.CycleWS
 import XMonad.Hooks.ManageDocks
@@ -35,7 +36,7 @@ myBorderWidth   = 2
 
 myModMask       = mod4Mask -- Use the "windows" key
 
-myWorkspaces    = ["term", "www", "work", "chat", "music", "email"]
+myWorkspaces    = ["term", "www", "work", "chat", "game", "music", "email"]
 
 
 --SCRATCHPADS
@@ -175,6 +176,10 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- Restart xmonad
     , ((modm .|. shiftMask, xK_r     ), spawn "xmonad --recompile; xmonad --restart")
 
+    , ((0, xF86XK_AudioLowerVolume      ), spawn "pamixer -d 2")
+    , ((0, xF86XK_AudioRaiseVolume      ), spawn "pamixer -i 2")
+    , ((0, xF86XK_AudioMute             ), spawn "pamixer -t")
+
     ]
     ++
 
@@ -258,6 +263,7 @@ myLayout = avoidStruts( toggleLayouts (noBorders Full) (tiled) ||| toggleLayouts
 myManageHook = composeAll
     [ className =? "MPlayer"        --> doFloat
     , className =? "Gimp"           --> doFloat
+	 , className =? "Steam"          --> doFloat
     , resource  =? "desktop_window" --> doIgnore
     , resource  =? "kdesktop"       --> doIgnore ]
 
