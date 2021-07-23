@@ -43,6 +43,7 @@ myScratchPads :: [NamedScratchpad]
 myScratchPads = [ NS "terminal" spawnTerm findTerm manageTerm
                 , NS "calculator" spawnCalc findCalc manageCalc
 					 , NS "notes" spawnNotes findNotes manageNotes
+					 , NS "pavucontrol" spawnPavucontrol findPavucontrol managePavucontrol
                 ]
   where
     spawnTerm  = myTerminal ++ " --title scratchpad"
@@ -64,6 +65,14 @@ myScratchPads = [ NS "terminal" spawnTerm findTerm manageTerm
     spawnNotes  = myTerminal ++ " --title notes -- nvim ~/notes.md"
     findNotes   = title =? "notes"
     manageNotes = customFloating $ W.RationalRect l t w h
+               where
+                 h = 0.5
+                 w = 0.5
+                 t = 0.1
+                 l = 0.95 -w
+    spawnPavucontrol  = "pavucontrol"
+    findPavucontrol   = className =? "Pavucontrol"
+    managePavucontrol = customFloating $ W.RationalRect l t w h
                where
                  h = 0.5
                  w = 0.5
@@ -91,6 +100,8 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 	 , ((modm .|. shiftMask, xK_t), namedScratchpadAction myScratchPads "terminal")
 
 	 , ((modm,               xK_n), namedScratchpadAction myScratchPads "notes")
+
+	 , ((modm,               xK_a), namedScratchpadAction myScratchPads "pavucontrol") -- Audio mixer
 
 	 , ((modm,               xK_m), sendMessage ToggleStruts >> sendMessage ToggleLayout) -- Maximises current window
 
