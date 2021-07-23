@@ -70,8 +70,8 @@ myScratchPads = [ NS "terminal" spawnTerm findTerm manageTerm
 
 -- Border colors for unfocused and focused windows, respectively.
 --
-myNormalBorderColor  = "#dddddd"
-myFocusedBorderColor = "#ff0000"
+myNormalBorderColor  = "#282a36"
+myFocusedBorderColor = "#ff5555"
 
 ------------------------------------------------------------------------
 -- BINDINGS
