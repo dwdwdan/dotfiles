@@ -6,7 +6,7 @@ Config { font = "xft:JetBrains Mono:pixelsize=18:antialias=true:hinting=true"
        , bgColor = "#282a36"
        , fgColor = "#f8f8f2"
        , alpha = 255
-       , position = Top
+       , position = TopW L 95
        , iconOffset = -1
        , lowerOnStart = True
        , pickBroadest = False
@@ -32,5 +32,5 @@ Config { font = "xft:JetBrains Mono:pixelsize=18:antialias=true:hinting=true"
                     ]
        , sepChar = "%"
        , alignSep = "}{"
-       , template = " %StdinReader% }{ <fc=#ffb86c>%cpu%</fc> | <fc=#8be9fd>%memory%</fc> | <fc=#ff79c6><fn=1>📶</fn> %enp2s0%</fc> | <fc=#bd93f9><fn=1>📆</fn> %date%</fc> | <fc=#50fa7b><fn=2>🌡</fn> %EGBB%</fc> | <fc=#f1fa8c><fn=1>🔋</fn>%battery%</fc> "
+       , template = " %StdinReader% }{ <fc=#ffb86c>%cpu%</fc> | <fc=#8be9fd>%memory%</fc> | <fc=#ff79c6><fn=1>📶</fn> %enp2s0%</fc> | <fc=#bd93f9><fn=1>📆</fn> %date%</fc> | <fc=#50fa7b><fn=2>🌡</fn> %EGBB%</fc> | <fc=#f1fa8c><fn=1>🔋</fn> %battery%</fc> |"
        }
