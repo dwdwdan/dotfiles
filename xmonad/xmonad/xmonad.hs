@@ -288,7 +288,9 @@ myStartupHook = do
 			spawn "feh --bg-fill ~/wallpapers/custom/gimp.png &"
 			spawnOnce "conky &"
 			spawnOnce "dunst &"
-			spawnOnce "trayer --edge top --align right --width 5 --monitor 1 --transparent true --alpha 256 --expand false"
+			spawnOnce "trayer --edge top --align right --width 5 --monitor 1 --transparent true --alpha 256 --expand false &"
+			spawnOnce "nm-applet &"
+			spawnOnce "pnmixer &"
 
 ------------------------------------------------------------------------
 -- Now run xmonad with all the defaults we set up.
