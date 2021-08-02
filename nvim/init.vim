@@ -54,6 +54,28 @@ endif
 " Use magic search automatically
 nnoremap / /\v
 nnoremap ZA <cmd>w<cr>
+" Make Y behave similarly to C and D
+nnoremap Y y$
+
+"Undo break points
+inoremap , ,<c-g>u
+inoremap . .<c-g>u
+inoremap ! !<c-g>u
+inoremap ? ?<c-g>u
+
+" Centre on search
+nnoremap n nzzzv
+nnoremap N Nzzzv
+nnoremap J mzJ`z
+
+
+" Add to jump list if do relative motion over size
+nnoremap <expr> k (v:count > 5 ? "m'" . v:count : ""). 'k'
+nnoremap <expr> j (v:count > 5 ? "m'" . v:count : ""). 'j'
+
+" Moving text
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
 
 colorscheme dracula
 
