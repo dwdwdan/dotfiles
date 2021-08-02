@@ -36,4 +36,5 @@ fi
 picom &
 numlockx on &
 /home/dw/bin/keyboardConfig &
+xsetroot -cursor_name arrow &
 exec xmonad
