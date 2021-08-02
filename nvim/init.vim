@@ -78,6 +78,9 @@ vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
 
 colorscheme dracula
+highlight CursorLineNr guibg=#44475a
+highlight CursorLine guibg=#282a36
+
 
 """"""""""""""""""""""""""""""
 "       COMMANDS             "
