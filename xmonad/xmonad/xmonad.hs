@@ -34,7 +34,7 @@ myClickJustFocuses = False
 --
 myBorderWidth   = 2
 
-myModMask       = mod3Mask -- Use the "hyper" key
+myModMask       = mod4Mask -- Use the "windows" key
 
 myWorkspaces    = ["term", "www", "work", "chat", "game", "music", "email"]
 
