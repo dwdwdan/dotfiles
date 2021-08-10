@@ -10,3 +10,6 @@
 [submodule "awesome/charitable"]
 	path = awesome/charitable
 	url = https://github.com/frioux/charitable.git
+[submodule "zsh/plugins/zsh-autosuggestions"]
+	path = zsh/plugins/zsh-autosuggestions
+	url = https://github.com/zsh-users/zsh-autosuggestions

@@ -79,7 +79,8 @@ plugins=(
 	vi-mode
 	extract
 	fzf
-	tmux)
+	tmux
+	zsh-autosuggestions)
 
 source ~/.profile
 source $ZSH/oh-my-zsh.sh
