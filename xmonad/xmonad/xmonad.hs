@@ -176,9 +176,15 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- Restart xmonad
     , ((modm .|. shiftMask, xK_r     ), spawn "xmonad --recompile; xmonad --restart")
 
+
+    -- Media Keys
     , ((0, xF86XK_AudioLowerVolume      ), spawn "pamixer -d 2")
     , ((0, xF86XK_AudioRaiseVolume      ), spawn "pamixer -i 2")
     , ((0, xF86XK_AudioMute             ), spawn "pamixer -t")
+    , ((0, xF86XK_AudioPlay             ), spawn "playerctl play-pause")
+    , ((0, xF86XK_AudioNext             ), spawn "playerctl next")
+    , ((0, xF86XK_AudioPrev             ), spawn "playerctl previous")
+    , ((0, xF86XK_AudioStop             ), spawn "playerctl stop")
 
     ]
     ++
