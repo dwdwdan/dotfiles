@@ -6,6 +6,7 @@ import Graphics.X11.ExtraTypes.XF86
 import System.Exit
 import XMonad.Actions.CycleWS
 import XMonad.Hooks.ManageDocks
+import XMonad.Hooks.ManageHelpers
 import XMonad.Hooks.DynamicLog
 import XMonad.Layout.NoBorders
 import XMonad.Layout.ToggleLayouts
@@ -89,7 +90,9 @@ myFocusedBorderColor = "#ff5555"
 -- BINDINGS
 myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
+-- START BINDINGS
     -- launch a terminal
+	 -- SECTION Applications
     [ ((modm .|. shiftMask, xK_Return), spawn $ XMonad.terminal conf)
 
     , ((modm,               xK_b), spawn myBrowser)
@@ -104,13 +107,13 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
 	 , ((modm,               xK_a), namedScratchpadAction myScratchPads "pavucontrol") -- Audio mixer
 
-	 , ((modm,               xK_m), sendMessage ToggleStruts >> sendMessage ToggleLayout) -- Maximises current window
-
-    -- launch dmenu
     , ((modm,               xK_r     ), spawn "rofi -show run")
 
+    -- SECTION Windows
     -- close focused window
     , ((modm,               xK_q     ), kill)
+
+	 , ((modm,               xK_m), sendMessage ToggleStruts >> sendMessage ToggleLayout) -- Maximises current window
 
      -- Rotate through the available layout algorithms
     , ((modm,               xK_space ), sendMessage NextLayout)
@@ -158,14 +161,18 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- Deincrement the number of windows in the master area
     , ((modm              , xK_period), sendMessage (IncMasterN (-1)))
 
+
+    -- SECTION Xmonad
     -- Quit xmonad
     , ((modm .|. shiftMask, xK_q     ), io (exitWith ExitSuccess))
+
+    , ((modm , xK_s     ), spawn "~/bin/xmonadBindings")
 
     -- Restart xmonad
     , ((modm .|. shiftMask, xK_r     ), spawn "xmonad --recompile; xmonad --restart")
 
 
-    -- Media Keys
+    -- SECTION Media Keys
     , ((0, xF86XK_AudioLowerVolume      ), spawn "pamixer -d 2")
     , ((0, xF86XK_AudioRaiseVolume      ), spawn "pamixer -i 2")
     , ((0, xF86XK_AudioMute             ), spawn "pamixer -t")
@@ -177,6 +184,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     ]
     ++
 
+-- END BINDINGS
     --
     -- mod-[1..9], Switch to workspace N
     -- mod-shift-[1..9], Move client to workspace N
@@ -258,6 +266,7 @@ myManageHook = composeAll
     [ className =? "MPlayer"        --> doFloat
     , className =? "Gimp"           --> doFloat
 	 , className =? "Steam"          --> doFloat
+	 , title     =? "Mappings"       --> doCenterFloat --This is my custom mappings script
     , resource  =? "desktop_window" --> doIgnore
     , resource  =? "kdesktop"       --> doIgnore ]
 
