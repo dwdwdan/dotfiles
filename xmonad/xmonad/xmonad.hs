@@ -110,7 +110,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
 	 , ((modm,               xK_a), namedScratchpadAction myScratchPads "pavucontrol") -- Audio mixer
 
-    , ((modm,               xK_r     ), spawn "rofi -show run")
+    , ((modm,               xK_r     ), spawn "dmenu_run -m 0")
 
     -- SECTION Windows
     -- close focused window

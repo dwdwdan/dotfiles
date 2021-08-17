@@ -6,7 +6,7 @@ Config { font = "xft:JetBrains Mono:pixelsize=18:antialias=true:hinting=true"
        , bgColor = "#282a36"
        , fgColor = "#f8f8f2"
        , alpha = 255
-       , position = TopW L 95
+       , position = TopSize L 95 32
        , iconOffset = -1
        , lowerOnStart = True
        , pickBroadest = False
