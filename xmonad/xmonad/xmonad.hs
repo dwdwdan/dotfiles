@@ -22,6 +22,7 @@ import qualified Data.Map        as M
 myTerminal      = "kitty"
 myBrowser       = "brave"
 myFileGUI       = "thunar"
+myEmail         = "thunderbird"
 
 -- Whether focus follows the mouse pointer.
 myFocusFollowsMouse :: Bool
@@ -98,6 +99,8 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm,               xK_b), spawn myBrowser)
 
 	 , ((modm,               xK_f), spawn myFileGUI)
+
+	 , ((modm .|. controlMask, xK_e), spawnOnce myEmail)
 
 	 , ((modm,               xK_c), namedScratchpadAction myScratchPads "calculator")
 
@@ -266,6 +269,7 @@ myManageHook = composeAll
     [ className =? "MPlayer"        --> doFloat
     , className =? "Gimp"           --> doFloat
 	 , className =? "Steam"          --> doFloat
+	 , className =? "Thunderbird"    --> doShift "email"
 	 , title     =? "Mappings"       --> doCenterFloat --This is my custom mappings script
     , resource  =? "desktop_window" --> doIgnore
     , resource  =? "kdesktop"       --> doIgnore ]
