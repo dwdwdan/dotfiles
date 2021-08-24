@@ -13,7 +13,7 @@ alias zshrc="source ~/.zshrc"
 # Ls aliases
 alias ls="exa --icons --all"
 alias ll="exa --icons --long --header --git --across --all --no-user"
-alias l="exa --icons --long --header --git --across --all --no-user"
+alias l="exa --icons --all"
 alias lg="ll | grep "
 
 # Other aliases
