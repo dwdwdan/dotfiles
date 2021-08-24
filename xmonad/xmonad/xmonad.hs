@@ -112,6 +112,8 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     , ((modm,               xK_r     ), spawn "dmenu_run -m 0")
 
+    , ((modm .|. controlMask, xK_c   ), spawn "dm-confedit")
+
     -- SECTION Windows
     -- close focused window
     , ((modm,               xK_q     ), kill)
