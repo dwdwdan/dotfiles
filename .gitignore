@@ -7,4 +7,6 @@ nohup.out
 awesome/weather_conf.lua
 xmonad/xmonad/*
 !xmonad/xmonad/xmonad.hs
-.emacs.d/elpa
+.emacs.d/*
+!.emacs.d/init.el
+!.emacs.d/init.org
