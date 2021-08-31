@@ -1,5 +1,3 @@
---IMPORTS
-
 import XMonad
 import Data.Monoid
 import Graphics.X11.ExtraTypes.XF86
@@ -17,12 +15,18 @@ import XMonad.Util.Run
 import qualified XMonad.StackSet as W
 import qualified Data.Map        as M
 
-
---DEFAULT SOFTWARE
 myTerminal      = "kitty"
 myBrowser       = "brave"
 myFileGUI       = "thunar"
 myEmail         = "thunderbird"
+myEmacs         = "emacsclient -a \"\" -c -n"
+
+myWorkspaces    = ["term", "www", "work", "chat", "game", "music", "email"]
+
+myNormalBorderColor  = "#282a36"
+myFocusedBorderColor = "#ff5555"
+
+myBorderWidth   = 2
 
 -- Whether focus follows the mouse pointer.
 myFocusFollowsMouse :: Bool
@@ -32,16 +36,6 @@ myFocusFollowsMouse = True
 myClickJustFocuses :: Bool
 myClickJustFocuses = False
 
--- Width of the window border in pixels.
---
-myBorderWidth   = 2
-
-myModMask       = mod4Mask -- Use the "windows" key
-
-myWorkspaces    = ["term", "www", "work", "chat", "game", "music", "email"]
-
-
---SCRATCHPADS
 myScratchPads :: [NamedScratchpad]
 myScratchPads = [ NS "terminal" spawnTerm findTerm manageTerm
                 , NS "calculator" spawnCalc findCalc manageCalc
@@ -82,33 +76,29 @@ myScratchPads = [ NS "terminal" spawnTerm findTerm manageTerm
                  t = 0.1
                  l = 0.95 -w
 
--- Border colors for unfocused and focused windows, respectively.
---
-myNormalBorderColor  = "#282a36"
-myFocusedBorderColor = "#ff5555"
+myModMask       = mod4Mask -- Use the "windows" key
 
-------------------------------------------------------------------------
--- BINDINGS
 myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
 -- START BINDINGS
-    -- launch a terminal
-	 -- SECTION Applications
-    [ ((modm .|. shiftMask, xK_Return), spawn $ XMonad.terminal conf)
+         -- SECTION Applications
+         [ ((modm .|. shiftMask, xK_Return), spawn $ XMonad.terminal conf)
 
-    , ((modm,               xK_b), spawn myBrowser)
+         , ((modm,               xK_b), spawn myBrowser)
 
-	 , ((modm,               xK_f), spawn myFileGUI)
+         , ((modm,               xK_f), spawn myFileGUI)
 
-	 , ((modm .|. controlMask, xK_e), spawnOnce myEmail)
+         , ((modm .|. controlMask, xK_e), spawnOnce myEmail)
 
-	 , ((modm,               xK_c), namedScratchpadAction myScratchPads "calculator")
+         , ((modm,               xK_p), spawnOnce myEmacs)
 
-	 , ((modm .|. shiftMask, xK_t), namedScratchpadAction myScratchPads "terminal")
+         , ((modm,               xK_c), namedScratchpadAction myScratchPads "calculator")
 
-	 , ((modm,               xK_n), namedScratchpadAction myScratchPads "notes")
+         , ((modm .|. shiftMask, xK_t), namedScratchpadAction myScratchPads "terminal")
 
-	 , ((modm,               xK_a), namedScratchpadAction myScratchPads "pavucontrol") -- Audio mixer
+         , ((modm,               xK_n), namedScratchpadAction myScratchPads "notes")
+
+         , ((modm,               xK_a), namedScratchpadAction myScratchPads "pavucontrol") -- Audio mixer
 
     , ((modm,               xK_r     ), spawn "dmenu_run -m 0")
 
@@ -118,7 +108,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- close focused window
     , ((modm,               xK_q     ), kill)
 
-	 , ((modm,               xK_m), sendMessage ToggleStruts >> sendMessage ToggleLayout) -- Maximises current window
+         , ((modm,               xK_m), sendMessage ToggleStruts >> sendMessage ToggleLayout) -- Maximises current window
 
      -- Rotate through the available layout algorithms
     , ((modm,               xK_space ), sendMessage NextLayout)
@@ -148,8 +138,8 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm,               xK_o), shiftNextScreen >> nextScreen)
 
     -- Move focus to other screens
-	 , ((modm .|. controlMask, xK_j), prevScreen)
-	 , ((modm .|. controlMask, xK_k), nextScreen)
+         , ((modm .|. controlMask, xK_j), prevScreen)
+         , ((modm .|. controlMask, xK_k), nextScreen)
 
     -- Shrink the master area
     , ((modm,               xK_h     ), sendMessage Shrink)
@@ -207,10 +197,6 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
         | (key, sc) <- zip [xK_w, xK_e] [0..]
         , (f, m) <- [(W.view, 0), (W.shift, shiftMask)]]
 
-
-------------------------------------------------------------------------
---MOUSE BINDINGS
-
 myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
 
     -- mod-button1, Set the window to floating mode and move by dragging
@@ -227,17 +213,8 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
     -- you may also bind events to the mouse scroll wheel (button4 and button5)
     ]
 
-------------------------------------------------------------------------
--- Layouts:
+myEventHook = mempty
 
--- You can specify and transform your layouts by modifying these values.
--- If you change layout bindings be sure to use 'mod-shift-space' after
--- restarting (with 'mod-q') to reset your layout state to the new
--- defaults, as xmonad preserves your old layout settings by default.
---
--- The available layouts.  Note that each layout is separated by |||,
--- which denotes layout choice.
---
 myLayout = avoidStruts( toggleLayouts (noBorders Full) (tiled) ||| toggleLayouts Full (Mirror tiled) ||| noBorders Full)
 		where
      -- default tiling algorithm partitions the screen into two panes
@@ -252,21 +229,6 @@ myLayout = avoidStruts( toggleLayouts (noBorders Full) (tiled) ||| toggleLayouts
      -- Percent of screen to increment by when resizing panes
      delta   = 3/100
 
-------------------------------------------------------------------------
--- Window rules:
-
--- Execute arbitrary actions and WindowSet manipulations when managing
--- a new window. You can use this to, for example, always float a
--- particular program, or have a client always appear on a particular
--- workspace.
---
--- To find the property name associated with a program, use
--- > xprop | grep WM_CLASS
--- and click on the client you're interested in.
---
--- To match on the WM_NAME, you can use 'title' in the same way that
--- 'className' and 'resource' are used below.
---
 myManageHook = composeAll
     [ className =? "MPlayer"        --> doFloat
     , className =? "Gimp"           --> doFloat
@@ -276,23 +238,6 @@ myManageHook = composeAll
     , resource  =? "desktop_window" --> doIgnore
     , resource  =? "kdesktop"       --> doIgnore ]
 
-------------------------------------------------------------------------
--- Event handling
-
--- * EwmhDesktops users should change this to ewmhDesktopsEventHook
---
--- Defines a custom handler function for X Events. The function should
--- return (All True) if the default handler is to be run afterwards. To
--- combine event hooks use mappend or mconcat from Data.Monoid.
---
-myEventHook = mempty
-
-------------------------------------------------------------------------
--- Startup hook
-
--- Perform an arbitrary action each time xmonad starts or is restarted
--- with mod-q.  Used by, e.g., XMonad.Layout.PerWorkspace to initialize
--- per-workspace layout choices.
 myStartupHook = do
 			spawn "feh --bg-fill ~/wallpapers/custom/gimp.png &"
 			spawnOnce "conky &"
@@ -300,12 +245,8 @@ myStartupHook = do
 			spawnOnce "trayer --edge top --align right --width 5 --monitor 1 --transparent true --alpha 256 --expand false &"
 			spawnOnce "nm-applet &"
 			spawnOnce "pnmixer &"
+			spawnOnce "~/bin/keyboardConfig/script &"
 
-------------------------------------------------------------------------
--- Now run xmonad with all the defaults we set up.
-
--- Run xmonad with the settings you specify. No need to modify this.
---
 main = do
 	xmproc0 <- spawnPipe "xmobar -x 0 /home/dw/.config/xmobar/xmobarrc0"
 	xmproc1 <- spawnPipe "xmobar -x 1 /home/dw/.config/xmobar/xmobarrc1"
@@ -341,4 +282,3 @@ main = do
 				  },
         startupHook        = myStartupHook
     }
-
