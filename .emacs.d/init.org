@@ -325,65 +325,65 @@ I use yasnippets for my snippets, the folder they are stored in is [[file:snippe
 ** LaTeX
 This section was adapted from [[https://www.reddit.com/r/emacs/comments/cd6fe2/how_to_make_emacs_a_latex_ide/?utm_source=share&utm_medium=ios_app&utm_name=iossmf][this reddit thead]]
 #+begin_src emacs-lisp
-        (use-package pdf-tools
-          :ensure t
-          :config
-          (pdf-tools-install)
-          (setq-default pdf-view-display-size 'fit-page)
-          (setq pdf-annot-activate-created-annotations t)
-          (define-key pdf-view-mode-map (kbd "C-s") 'isearch-forward)
-          (define-key pdf-view-mode-map (kbd "C-r") 'isearch-backward)
-          (add-hook 'pdf-view-mode-hook (lambda ()
-                                          (bms/pdf-midnite-amber))) ; automatically turns on midnight-mode for pdfs
-          )
+  (use-package pdf-tools
+    :ensure t
+    :config
+    (pdf-tools-install)
+    (setq-default pdf-view-display-size 'fit-page)
+    (setq pdf-annot-activate-created-annotations t)
+    (define-key pdf-view-mode-map (kbd "C-s") 'isearch-forward)
+    (define-key pdf-view-mode-map (kbd "C-r") 'isearch-backward)
+    (add-hook 'pdf-view-mode-hook (lambda ()
+                                    (bms/pdf-midnite-amber))) ; automatically turns on midnight-mode for pdfs
+    )
 
-        (use-package auctex-latexmk
-          :ensure t
-          :config
-          (auctex-latexmk-setup)
-          (setq auctex-latexmk-inherit-TeX-PDF-mode t))
+  (use-package auctex-latexmk
+    :ensure t
+    :config
+    (auctex-latexmk-setup)
+    (setq auctex-latexmk-inherit-TeX-PDF-mode t))
 
-        (use-package reftex
-          :ensure t
-          :defer t
-          :config
-          (setq reftex-cite-prompt-optional-args t)) ;; Prompt for empty optional arguments in cite
+  (use-package reftex
+    :ensure t
+    :defer t
+    :config
+    (setq reftex-cite-prompt-optional-args t)) ;; Prompt for empty optional arguments in cite
 
-        (use-package company-auctex
-          :ensure t
-          :init (company-auctex-init))
+  (use-package company-auctex
+    :ensure t
+    :init (company-auctex-init))
 
-        (use-package tex
-          :ensure auctex
-          :mode ("\\.tex\\'" . latex-mode)
-          :config (progn
-                    (setq TeX-source-correlate-mode t)
-                    (setq TeX-source-correlate-method 'synctex)
-                    (setq TeX-auto-save t)
-                    (setq TeX-parse-self t)
-                    (setq-default TeX-master "main.tex")
-                    (setq reftex-plug-into-AUCTeX t)
-                    (pdf-tools-install)
-                    (setq TeX-view-program-selection '((output-pdf "PDF Tools"))
-                          TeX-source-correlate-start-server t)
-                    ;; Update PDF buffers after successful LaTeX runs
-                    (add-hook 'TeX-after-compilation-finished-functions
-                              #'TeX-revert-document-buffer)
-                    (add-hook 'LaTeX-mode-hook
-                              (lambda ()
-                                (reftex-mode t)
-                                (flyspell-mode t)))
-                    ))
+  (use-package tex
+    :ensure auctex
+    :mode ("\\.tex\\'" . latex-mode)
+    :config (progn
+              (setq TeX-source-correlate-mode t)
+              (setq TeX-source-correlate-method 'synctex)
+              (setq TeX-auto-save t)
+              (setq TeX-parse-self t)
+              (setq-default TeX-master "main.tex")
+              (setq reftex-plug-into-AUCTeX t)
+              (pdf-tools-install)
+              (setq TeX-view-program-selection '((output-pdf "PDF Tools"))
+                    TeX-source-correlate-start-server t)
+              ;; Update PDF buffers after successful LaTeX runs
+              (add-hook 'TeX-after-compilation-finished-functions
+                        #'TeX-revert-document-buffer)
+              (add-hook 'LaTeX-mode-hook
+                        (lambda ()
+                          (reftex-mode t)
+                          (flyspell-mode t)))
+              ))
 
-          (add-hook `tex-mode `lsp)
+  (add-hook `tex-mode `lsp)
 
   (setq font-latex-fontify-script nil)
-  
+
 #+end_src
 ** Haskell
 This is just for syntax highlighting on my xmonad config
 #+begin_src emacs-lisp
-(use-package haskell-mode)
+  (use-package haskell-mode)
 #+end_src
 
 * Commenting
@@ -472,6 +472,6 @@ I use the modeline from Doom Emacs. I'm not particularly attached to this but it
 * Backups
 I consolidate all my backup files in =~/fileBackups=
 #+begin_src emacs-lisp
-(setq backup-directiory-alist `(("." . "~/fileBackups")))
+  (setq backup-directiory-alist `(("." . "~/fileBackups")))
 #+end_src
 
