@@ -273,6 +273,13 @@ Make it so org mode does not fill the entire width of the screen. This makes org
     (setq org-agenda-files (seq-filter 'file-readable-p (delete-dups (append org-agenda-files (org-projectile-todo-files))))))
 #+end_src
 
+*** Mailto
+We need to set mailto links to open in thunderbird rather than in emacs
+#+begin_src emacs-lisp
+  (setq browse-url-mailto-function 'browse-url-generic)
+  (setq browse-url-generic-program "thunderbird")
+#+end_src
+
 *** Keys
 #+begin_src emacs-lisp
   (dan/leader-keys
