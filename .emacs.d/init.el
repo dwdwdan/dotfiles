@@ -50,10 +50,12 @@
 
 ;; Set the colour scheme
 (use-package doom-themes
+  :demand t
   :config
   (load-theme `doom-dracula t))
 
 (use-package evil
+  :demand t
   :init
   (setq evil-want-integration t)
   (setq evil-want-keybinding nil)
@@ -63,6 +65,7 @@
   (evil-mode 1))
 
 (use-package evil-collection
+  :demand t
   :after evil
   :config
   (evil-collection-init))
@@ -87,7 +90,10 @@
   ("C-x b" . helm-buffers-list)
   ("C-x C-f" . helm-find-files))
 
+(use-package helm-ag)
+
 (use-package general
+  :demand t
   :config
   (general-create-definer dan/leader-keys
     :keymaps `(normal visual emacs)
@@ -115,6 +121,7 @@
   (ivy-mode 1))
 
 (use-package org
+  :demand t
   :hook (org-mode . dan/org-mode-setup)
   :config
   (setq org-ellipsis " ▼"))
@@ -160,7 +167,7 @@
   :hook (org-mode . dan/org-mode-visual-fill))
 
 (setq org-agenda-files
-      `("~/Dropbox/Org/todo.org"))
+      `("~/Dropbox/Org/"))
 (setq org-agenda-start-with-log-mode t)
 (setq org-log-done `time)
 (setq org-log-into-drawer t)
@@ -183,10 +190,15 @@
       `(("t" "Todo" entry (file+headline "~/Dropbox/Org/todo.org" "Inbox") "* TODO %?\n %U\n %a\n %i" :empty-lines 1)))
 
 (use-package org-projectile
+  :demand t
   :config
   (org-projectile-per-project)
   (setq org-projectile-per-project-filepath "TODO.org")
-  (setq org-agenda-files (append org-agenda-files (org-projectile-todo-files))))
+  (setq org-projectile-capture-template "* TODO %?\n %U\n %a\n %i")
+  (setq org-agenda-files (seq-filter 'file-readable-p (delete-dups (append org-agenda-files (org-projectile-todo-files))))))
+
+(setq browse-url-mailto-function 'browse-url-generic)
+(setq browse-url-generic-program "thunderbird")
 
 (dan/leader-keys
   "o" `(:ignore t :which-key "Org")
@@ -196,6 +208,7 @@
   "pc" `(org-projectile-capture-for-current-project :which-key "Org Capture"))
 
 (use-package yasnippet
+  :demand t
   :init
   (yas-global-mode 1)
   (setq yas-snippet-dirs `("~/.emacs.d/snippets")))
@@ -219,56 +232,56 @@
 (add-hook `python-mode `lsp)
 
 (use-package pdf-tools
-        :ensure t
-        :config
-        (pdf-tools-install)
-        (setq-default pdf-view-display-size 'fit-page)
-        (setq pdf-annot-activate-created-annotations t)
-        (define-key pdf-view-mode-map (kbd "C-s") 'isearch-forward)
-        (define-key pdf-view-mode-map (kbd "C-r") 'isearch-backward)
-        (add-hook 'pdf-view-mode-hook (lambda ()
-                                        (bms/pdf-midnite-amber))) ; automatically turns on midnight-mode for pdfs
-        )
+  :ensure t
+  :config
+  (pdf-tools-install)
+  (setq-default pdf-view-display-size 'fit-page)
+  (setq pdf-annot-activate-created-annotations t)
+  (define-key pdf-view-mode-map (kbd "C-s") 'isearch-forward)
+  (define-key pdf-view-mode-map (kbd "C-r") 'isearch-backward)
+  (add-hook 'pdf-view-mode-hook (lambda ()
+                                  (bms/pdf-midnite-amber))) ; automatically turns on midnight-mode for pdfs
+  )
 
-      (use-package auctex-latexmk
-        :ensure t
-        :config
-        (auctex-latexmk-setup)
-        (setq auctex-latexmk-inherit-TeX-PDF-mode t))
+(use-package auctex-latexmk
+  :ensure t
+  :config
+  (auctex-latexmk-setup)
+  (setq auctex-latexmk-inherit-TeX-PDF-mode t))
 
-      (use-package reftex
-        :ensure t
-        :defer t
-        :config
-        (setq reftex-cite-prompt-optional-args t)) ;; Prompt for empty optional arguments in cite
+(use-package reftex
+  :ensure t
+  :defer t
+  :config
+  (setq reftex-cite-prompt-optional-args t)) ;; Prompt for empty optional arguments in cite
 
-      (use-package company-auctex
-        :ensure t
-        :init (company-auctex-init))
+(use-package company-auctex
+  :ensure t
+  :init (company-auctex-init))
 
-      (use-package tex
-        :ensure auctex
-        :mode ("\\.tex\\'" . latex-mode)
-        :config (progn
-                  (setq TeX-source-correlate-mode t)
-                  (setq TeX-source-correlate-method 'synctex)
-                  (setq TeX-auto-save t)
-                  (setq TeX-parse-self t)
-                  (setq-default TeX-master "main.tex")
-                  (setq reftex-plug-into-AUCTeX t)
-                  (pdf-tools-install)
-                  (setq TeX-view-program-selection '((output-pdf "PDF Tools"))
-                        TeX-source-correlate-start-server t)
-                  ;; Update PDF buffers after successful LaTeX runs
-                  (add-hook 'TeX-after-compilation-finished-functions
-                            #'TeX-revert-document-buffer)
-                  (add-hook 'LaTeX-mode-hook
-                            (lambda ()
-                              (reftex-mode t)
-                              (flyspell-mode t)))
-                  ))
+(use-package tex
+  :ensure auctex
+  :mode ("\\.tex\\'" . latex-mode)
+  :config (progn
+            (setq TeX-source-correlate-mode t)
+            (setq TeX-source-correlate-method 'synctex)
+            (setq TeX-auto-save t)
+            (setq TeX-parse-self t)
+            (setq-default TeX-master "main.tex")
+            (setq reftex-plug-into-AUCTeX t)
+            (pdf-tools-install)
+            (setq TeX-view-program-selection '((output-pdf "PDF Tools"))
+                  TeX-source-correlate-start-server t)
+            ;; Update PDF buffers after successful LaTeX runs
+            (add-hook 'TeX-after-compilation-finished-functions
+                      #'TeX-revert-document-buffer)
+            (add-hook 'LaTeX-mode-hook
+                      (lambda ()
+                        (reftex-mode t)
+                        (flyspell-mode t)))
+            ))
 
-        (add-hook `tex-mode `lsp)
+(add-hook `tex-mode `lsp)
 
 (setq font-latex-fontify-script nil)
 
@@ -280,6 +293,7 @@
   "c" `(evilnc-comment-or-uncomment-lines :which-key "comment"))
 
 (use-package company
+  :demand t
   :config
   :hook (prog-mode . company-mode)
   :custom
@@ -300,6 +314,7 @@
   "gl" `(magit-log-current :which-key "log"))
 
 (use-package projectile
+  :demand t
   :diminish projectile-mode
   :config (projectile-mode)
   :bind-keymap ("C-c p" . projectile-command-map)
@@ -314,7 +329,8 @@
 (dan/leader-keys
   "p" `(:ignore t :which-key "Projectile")
   "pp" `(projectile-switch-project :which-key "Switch Project")
-  "pf" `(projectile-find-file :which-key "Find Files"))
+  "pf" `(projectile-find-file :which-key "Find Files")
+  "pg" `(projectile-ag :which-key "Project Grep"))
 
 (use-package which-key
   :init
@@ -331,17 +347,3 @@
   (doom-modeline-mode 1))
 
 (setq backup-directiory-alist `(("." . "~/fileBackups")))
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(helm-minibuffer-history-key "M-p")
- '(package-selected-packages
-   '(helm-ag org-projectile which-key visual-fill-column visual-fill use-package rainbow-delimiters pdf-tools org-bullets magic-latex-buffer lsp-ui ivy-rich hydra helpful helm-projectile haskell-mode general forge evil-nerd-commenter evil-collection dracula-theme doom-themes doom-modeline counsel-projectile company-box company-auctex auto-dictionary auctex-latexmk)))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
