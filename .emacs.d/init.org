@@ -68,6 +68,7 @@ Set emacs to display line numbers, except when in org mode or one of the various
 #+begin_src emacs-lisp
   ;; Set the colour scheme
   (use-package doom-themes
+    :demand t
     :config
     (load-theme `doom-dracula t))
 #+end_src
@@ -76,6 +77,7 @@ Set emacs to display line numbers, except when in org mode or one of the various
 Set up evil. I use ~evil-collection~ to have evil bindings in things like magit.
 #+begin_src emacs-lisp
   (use-package evil
+    :demand t
     :init
     (setq evil-want-integration t)
     (setq evil-want-keybinding nil)
@@ -85,6 +87,7 @@ Set up evil. I use ~evil-collection~ to have evil bindings in things like magit.
     (evil-mode 1))
 
   (use-package evil-collection
+    :demand t
     :after evil
     :config
     (evil-collection-init))
@@ -125,6 +128,7 @@ I use helm as my main completion engine as it is what I'm used to from previous 
 This creates the leader key definer which is used later throughout the file
 #+begin_src emacs-lisp
   (use-package general
+    :demand t
     :config
     (general-create-definer dan/leader-keys
       :keymaps `(normal visual emacs)
@@ -161,6 +165,7 @@ Hydra is a package that allows you to make mappings that stick around. Fpr examp
     (ivy-mode 1))
 
   (use-package org
+    :demand t
     :hook (org-mode . dan/org-mode-setup)
     :config
     (setq org-ellipsis " ▼"))
@@ -260,6 +265,7 @@ Make it so org mode does not fill the entire width of the screen. This makes org
 *** Org-projectile
 #+begin_src emacs-lisp
   (use-package org-projectile
+    :demand t
     :config
     (org-projectile-per-project)
     (setq org-projectile-per-project-filepath "TODO.org")
@@ -280,6 +286,7 @@ Make it so org mode does not fill the entire width of the screen. This makes org
 I use yasnippets for my snippets, the folder they are stored in is [[file:snippets][here]]. Each snippet has it's own file, organised into types by folder.
 #+begin_src emacs-lisp
   (use-package yasnippet
+    :demand t
     :init
     (yas-global-mode 1)
     (setq yas-snippet-dirs `("~/.emacs.d/snippets")))
@@ -383,6 +390,7 @@ This is just for syntax highlighting on my xmonad config
 I use company mode to show completion options
 #+begin_src emacs-lisp
   (use-package company
+    :demand t
     :config
     :hook (prog-mode . company-mode)
     :custom
@@ -410,6 +418,7 @@ Magit is a brilliant git client for emacs. Forge is used to get issues and PRs f
 Projectile is a project management package. 
 #+begin_src emacs-lisp
   (use-package projectile
+    :demand t
     :diminish projectile-mode
     :config (projectile-mode)
     :bind-keymap ("C-c p" . projectile-command-map)
