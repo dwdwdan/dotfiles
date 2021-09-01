@@ -230,7 +230,7 @@ Make it so org mode does not fill the entire width of the screen. This makes org
 *** Agenda
 #+begin_src emacs-lisp
   (setq org-agenda-files
-        `("~/Dropbox/Org/todo.org"))
+        `("~/Dropbox/Org/"))
   (setq org-agenda-start-with-log-mode t)
   (setq org-log-done `time)
   (setq org-log-into-drawer t)
