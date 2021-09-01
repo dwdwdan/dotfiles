@@ -269,7 +269,8 @@ Make it so org mode does not fill the entire width of the screen. This makes org
     :config
     (org-projectile-per-project)
     (setq org-projectile-per-project-filepath "TODO.org")
-    (setq org-agenda-files (append org-agenda-files (org-projectile-todo-files))))
+    (setq org-projectile-capture-template "* TODO %?\n %U\n %a\n %i")
+    (setq org-agenda-files (seq-filter 'file-readable-p (delete-dups (append org-agenda-files (org-projectile-todo-files))))))
 #+end_src
 
 *** Keys
@@ -437,8 +438,7 @@ Projectile is a project management package.
     "pg" `(projectile-ag :which-key "Project Grep"))
 
 #+end_src
-** TODO Change project path
-There are too many projects in this path. Many of them are git repos that I cloned so I could build myself. I want to keep them however as they contain some configuration. The solution is probably to create a new folder (~\~/projects~ maybe?) and move my actual projects there.
+
 * Which-key
 I use which-key to show the available key mappings in a series. This is useful for discovering the different functions of my plugins as well as if I forget the key. I have it set to have a 0.3 second delay after me pressing the key for it to show up. This means that it doesn't appear if I know the keys, as generally I'll press them quicker than that.
 #+begin_src emacs-lisp

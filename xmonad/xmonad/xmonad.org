@@ -105,8 +105,6 @@ myScratchPads = [ NS "terminal" spawnTerm findTerm manageTerm
                  l = 0.95 -w
 #+end_src
 
-** TODO Change notes scratchpad to emacs
-
 * Keybindings
 Set my keybindings. The =SECTION= comments are used by a script to generate a nice window to see keybindings.
 #+begin_src haskell

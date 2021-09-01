@@ -1,0 +1,3 @@
+* TODO Change notes scratchpad to emacs
+* TODO Change project path
+There are too many projects in this path. Many of them are git repos that I cloned so I could build myself. I want to keep them however as they contain some configuration. The solution is probably to create a new folder (~\~/projects~ maybe?) and move my actual projects there.
