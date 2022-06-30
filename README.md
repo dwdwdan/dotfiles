@@ -1,3 +1,6 @@
+# ARCHIVED
+My new dotfiles are at [dwdwdan/.dotfiles](https://github.com/dwdwdan/.dotfiles)
+
 # My Dotfiles
 These are my dotfiles for nvim, bash and tmux.
 
